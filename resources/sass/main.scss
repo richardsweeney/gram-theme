@@ -5,6 +5,7 @@
 @import "neat/neat";
 
 @import "wordpress";
+@import "components/blog";
 
 img {
 	max-width: 100%;
@@ -20,3 +21,4 @@ img {
 .screen-reader-text {
 	display: none;
 }
+

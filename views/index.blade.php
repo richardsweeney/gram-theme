@@ -2,25 +2,21 @@
 
 @section( 'main' )
 
-    <div class="posts-list">
+    <section class="posts-list">
+
+        <header>
+            <h1>{{ the_archive_title() }}</h1>
+        </header>
 
         @while( have_posts() )
             {{ the_post() }}
-
-            <article {{ post_class() }}>
-
-                <header>
-                    <h2><a href="{{ the_permalink() }}">{{ the_title() }}</a></h2>
-                </header>
-
-                <footer>
-                    <p>{{ __( 'Published', 'shipyard' ) }}: <time datetime="{{ the_time( 'Y-m-d H:i:s' ) }}">{{ date_i18n( get_option( 'date_format' ) ) }}</time> {{ __( 'in', 'shipyard' ) }} {{ the_category( ', ') }}. {{ the_tags( __( 'Tags: ', 'shipyard' ), ', ', ' ' ) }}</p>
-                </footer>
-
-                {{ the_content() }}
-            </article>
+            @include( 'views.posts.excerpt' )
         @endwhile
 
-    </div>
+    </section>
+
+    <aside class="sidebar">
+        <?php dynamic_sidebar( 'sidebar-1' ) ?>
+    </aside>
 
 @endsection

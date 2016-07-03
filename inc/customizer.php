@@ -37,18 +37,6 @@ function shipyard_customize_register( $wp_customize ) {
 		]
 	) );
 
-	$wp_customize->add_setting( 'foodservice_logo' );
-	$wp_customize->add_control( new WP_Customize_Image_Control(
-		$wp_customize,
-		'foodservice_logo',
-		[
-			'label'       => __( 'Foodservice logo', 'msp' ),
-			'section'     => 'shipyard_header_section',
-			'settings'    => 'foodservice_logo',
-			'priority'    => 3,
-		]
-	) );
-
 
 	// Contact info
 	$wp_customize->add_section( 'shipyard_contact_info_section' , [

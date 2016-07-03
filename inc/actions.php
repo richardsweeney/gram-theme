@@ -13,15 +13,12 @@ add_action( 'wp_enqueue_scripts', function() {
 		$main_css = '/resources/css/main.min.css';
 	}
 
-	$slick_js = '/resources/js/vendor/slick-carousel/slick/slick.min.js';
-
 	$ua_code = get_theme_mod( 'shipyard_google_analytics_code' );
 	if ( empty( $ua_code ) || ( is_user_logged_in() && current_user_can( 'manage_options' ) ) ) {
 		$ua_code = '';
 	}
 
-	wp_enqueue_script( 'slick-js', get_template_directory_uri() . $slick_js, [ 'jquery' ], filemtime( get_template_directory() . $slick_js ), true );
-	wp_enqueue_script( 'shipyard-js', get_template_directory_uri() . $main_js, [ 'jquery', 'slick-js' ], filemtime( get_template_directory() . $main_js ), true );
+	wp_enqueue_script( 'shipyard-js', get_template_directory_uri() . $main_js, [ 'jquery' ], filemtime( get_template_directory() . $main_js ), true );
 
 	wp_enqueue_style( 'shipyard-css', get_template_directory_uri() . $main_css, [], filemtime( get_template_directory() . $main_css ) );
 
@@ -49,4 +46,20 @@ add_action( 'login_enqueue_scripts', function() {
 		</style>
 
 	<?php }
+});
+
+
+/**
+ * Register the sidebar
+ */
+add_action( 'widgets_init', function() {
+	register_sidebar( [
+		'name'          => __( 'Sidebar', 'gram' ),
+		'id'            => 'sidebar-1',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	] );
 });

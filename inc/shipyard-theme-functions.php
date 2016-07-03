@@ -70,3 +70,14 @@ function shipyard_render_customizer_social_icons() {
 
 	<?php return ob_get_clean();
 }
+
+
+function shipyard_get_logo() {
+	$logo = get_theme_mod( 'main_logo', null );
+//	dd( $logo );
+	if ( ! $logo ) {
+		return '';
+	}
+
+	return $logo;
+}

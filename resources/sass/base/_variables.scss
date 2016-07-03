@@ -1,17 +1,16 @@
 // Typography
 $base-font-family: 'Open Sans', sans-serif;
-$heading-font-family: $base-font-family;
-$script-font-family: 'Gochi Hand';
+$heading-font-family: 'Pathway Gothic One';
 
 // Font Sizes
-$base-font-size: rem( 14 );
+$base-font-size: rem( 16 );
 
 // Line height
 $base-line-height: 1.5;
 $heading-line-height: 1.2;
 
 // Other Sizes
-$base-border-radius: 3px;
+$base-border-radius: 2px;
 $base-spacing: $base-line-height * 1rem;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
@@ -22,7 +21,7 @@ $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
 
-$footer-color: #3f4042;
+$footer-color: #8BA6A2;
 $accent-color: #ec6707;
 $nav-bg-color: #ececec;
 
