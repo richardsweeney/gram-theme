@@ -1,0 +1,21 @@
+{
+  "name": "gram/gram-theme",
+  "description": "WordPress Theme for Gram Malmö",
+  "keywords": ["wordpress"],
+  "homepage": "http://theshipyard.se",
+  "license": "MIT",
+  "version": "0.1",
+  "authors": [
+    {
+      "name": "Richard Sweeney",
+      "email": "richards@theshipyard.se",
+      "homepage": "http://theshipyard.se"
+    }
+  ],
+  "type": "wordpress-theme",
+  "require": {
+    "php": ">=5.5",
+    "composer/installers": "~1.0"
+  }
+}
+

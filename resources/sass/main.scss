@@ -1,0 +1,22 @@
+// $visual-grid: true;
+
+@import "bourbon/bourbon";
+@import "base/base";
+@import "neat/neat";
+
+@import "wordpress";
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.site-container {
+	@include outer-container;
+	background: #fff;
+}
+
+.skip-link,
+.screen-reader-text {
+	display: none;
+}

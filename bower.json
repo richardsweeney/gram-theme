@@ -1,0 +1,25 @@
+{
+  "name": "wordpress-theme-for-gram",
+  "version": "0.1",
+  "description": "WordPress Theme for Gram Malmö",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "Wordpress",
+    "Theme"
+  ],
+  "license": "MIT",
+  "homepage": "http://grammalmo.se",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "resources/js/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
