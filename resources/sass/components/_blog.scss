@@ -1,20 +1,21 @@
-.site-content {
-    @include outer-container;
+.parallax-window {
+    margin-bottom: $base-spacing;
+    min-height: 400px;
+    background: transparent;
 }
-
-.posts-list {
-    @include media( $medium-screen-up ) {
-        @include span-columns( 8 );
-    }
-}
-
-.sidebar {
-    @include media( $medium-screen-up ) {
-        @include span-columns( 4 );
-    }
-}
-
 
 article.excerpt {
     margin-bottom: $base-spacing * 2;
+}
+
+body div.sharedaddy {
+    padding: $base-spacing 0 $small-spacing;
+    h3.sd-title {
+        font-size: rem(24);
+        font-weight: normal;
+        margin-bottom: $small-spacing;
+        &:before {
+            display: none;
+        }
+    }
 }

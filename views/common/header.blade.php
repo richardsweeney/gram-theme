@@ -1,12 +1,16 @@
 <a class="skip-link screen-reader-text" href="#content">{{ __( 'Skip to content', 'gram' ) }}</a>
 
-<img src="{{ shipyard_get_logo() }}">
+<div class="js-menu sliding-panel-content main-navi">
+    <button class="sliding-panel-close">&#215;</button>
+    <nav id="site-navigation">
+        <?php wp_nav_menu([ 'theme_location' => 'primary' ]); ?>
+    </nav>
+</div>
 
 <header id="masthead" class="site-header">
-    <nav id="site-navigation" class="main-navigation">
-        <a class="mobile-nav-toggle" id="mobile-nav-toggle" href="#"></a>
-        <span class="close-link" id="close-link" href="#">&#215;</span>
+    <a class="no-border" href="{{ home_url( '/') }}"><img class="main-logo" src="{{ shipyard_get_logo() }}" alt="Gram Malmö Logo"></a>
 
-        {{ wp_nav_menu( [ 'theme_location' => 'primary' ] ) }}
-    </nav>
+    {{--    <span class="tagline">{{ get_bloginfo( 'description' ) }}</span>--}}
+
+    <button class="menu-toggle" id="menu-toggle"></button>
 </header>

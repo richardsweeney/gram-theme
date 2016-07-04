@@ -24,9 +24,9 @@
                 @yield( 'main' )
             </div>
 
-            @include( 'views.common.footer' )
-
         </div>
+
+        @include( 'views.common.footer' )
 
         {{ wp_footer() }}
     </body>

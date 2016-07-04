@@ -1,0 +1,109 @@
+
+$header-height: 80px;
+
+button.menu-toggle {
+    float: right;
+    display: block;
+    padding-top: 5px;
+    background: url( '../img/menu.svg' ) no-repeat center center;
+    background-size: cover;
+    text-indent: -99999px;
+    color: white;
+    font-size: rem( 60 );
+    line-height: 0.5;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    @include media( $small-screen-up ) {
+        width: 50px;
+        height: 50px;
+    }
+    &:hover,
+    &:active {
+        color: white;
+    }
+}
+.nav-visible {
+    .menu-toggle {
+        background-image: none;
+        text-indent: 0;
+    }
+}
+
+button.sliding-panel-close {
+    color: white;
+    font-size: rem( 36 );
+    line-height: 0.75;
+    width: auto;
+    height: auto;
+    padding: 12px 15px;
+    @include position( absolute, 0 0 null null );
+}
+
+.admin-bar {
+    .sliding-panel-content {
+        @include position( fixed, 0 0 0 auto );
+    }
+}
+
+.sliding-panel-content {
+    $sliding-panel-background: $action-color;
+    $sliding-panel-background-hover: lighten( $action-color, 5% );
+    $sliding-panel-background-focus: lighten( $sliding-panel-background, 5% );
+    background: $sliding-panel-background;
+    padding-top: $base-spacing * 1.5;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    transform: translateX( 300px );
+    transition: all 0.25s linear;
+    z-index: 999999;
+    @include position( fixed, $header-height 0 0 auto );
+    @include size( 300px 100% );
+    ul {
+        clear: both;
+        padding: $base-spacing 0 0;
+        margin: 0;
+        list-style: none;
+        ul li {
+            padding-left: $small-spacing;
+        }
+    }
+    a {
+        border-bottom: 1px solid rgba( white, 0.2 );
+        padding: $small-spacing $base-spacing;
+        display: block;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #fff;
+        background: $sliding-panel-background;
+        @include transition( background 0.15s ease );
+        &:focus {
+            background-color: $sliding-panel-background-focus;
+        }
+        &:hover {
+            background-color: $sliding-panel-background-hover;
+        }
+    }
+    &.is-visible {
+        transform: translateX( 0 );
+    }
+}
+
+.sliding-panel-fade-screen {
+    @include position( fixed, $header-height 0 0 0 );
+    background: black;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    visibility: hidden;
+    z-index: 999998;
+    &.is-visible {
+        opacity: 0.4;
+        visibility: visible;
+    }
+}
+
+.admin-bar {
+    .sliding-panel-fade-screen {
+        @include position( fixed, ( $header-height + 32 ) 0 0 0 );
+    }
+}

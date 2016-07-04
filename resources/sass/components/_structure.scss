@@ -1,0 +1,22 @@
+.site-content {
+    @include outer-container;
+}
+
+.blog,
+.single-post,
+.single-page,
+.archive {
+    .site-content {
+        @include align-items(flex-start);
+        @include display(flex);
+        @include flex-direction(row);
+        @include flex-wrap(nowrap);
+        @include align-content(space-between);
+    }
+    .posts-list {
+        @include media($medium-screen-up) {
+            padding-right: $base-spacing * 2;
+            @include flex(2);
+        }
+    }
+}

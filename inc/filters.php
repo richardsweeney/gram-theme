@@ -56,7 +56,8 @@ add_filter( 'pre_option_blog_public', function( $option ) {
  * Sanitize filenames on upload
  */
 add_filter( 'sanitize_file_name', function( $filename ) {
-	$ext = end( explode( '.', $filename ) );
+	$ext = explode( '.', $filename );
+	$ext = end( $ext );
 
 	// Replace all weird characters
 	$sanitized = preg_replace( '/[^a-zA-Z0-9-_.]/', '', substr( $filename, 0, - ( strlen( $ext ) + 1 ) ) );
@@ -65,4 +66,22 @@ add_filter( 'sanitize_file_name', function( $filename ) {
 	$sanitized = str_replace( '.','-', $sanitized );
 
 	return strtolower( $sanitized . '.' . $ext );
+});
+
+
+/**
+ * Allow SVG uploads.
+ */
+add_filter( 'upload_mimes', function( $mimes ) {
+	$mimes['svg'] = 'image/svg+xml';
+
+	return $mimes;
+});
+
+add_filter( 'body_class', function( $classes ) {
+	if ( is_page() && ! is_front_page() ) {
+		$classes[] = 'single-page';
+	}
+
+	return $classes;
 });

@@ -5,11 +5,24 @@
 @import "neat/neat";
 
 @import "wordpress";
+@import "components/header";
+@import "components/navigation";
+@import "components/footer";
+@import "components/sidebar";
+@import "components/structure";
+
 @import "components/blog";
+@import "components/pages";
+@import "components/search";
 
 img {
 	max-width: 100%;
 	height: auto;
+}
+
+body {
+	margin: 0;
+	padding: 0;
 }
 
 .site-container {

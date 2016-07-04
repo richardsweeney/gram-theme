@@ -1,0 +1,36 @@
+.sidebar {
+    aside {
+        margin-bottom: $base-spacing;
+    }
+    @include media( $medium-screen-up ) {
+        @include flex( 1 );
+    }
+}
+
+.jetpack-image-container {
+    padding: $small-spacing;
+}
+
+.search-form {
+    position: relative;
+    .search-field {
+        margin-right: 50px;
+    }
+    .search-submit {
+        text-indent: -99999px;
+        background: $action-color url( '../img/search.svg' ) no-repeat center center;
+        background-size: 25px;
+        width: 50px;
+        padding: 0.75em 1em;
+        font-size: $base-font-size;
+        @include position( absolute, 0 0 null null );
+    }
+}
+
+.widget_recent_entries ul {
+    list-style: none;
+    padding-left: 0;
+    font-family: $heading-font-family;
+    text-transform: uppercase;
+    font-size: rem(24);
+}

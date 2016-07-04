@@ -72,12 +72,55 @@ function shipyard_render_customizer_social_icons() {
 }
 
 
+/**
+ * Get the site logo.
+ *
+ * @return string
+ */
 function shipyard_get_logo() {
 	$logo = get_theme_mod( 'main_logo', null );
-//	dd( $logo );
 	if ( ! $logo ) {
 		return '';
 	}
 
 	return $logo;
 }
+
+
+/**
+ * Get the featured image for a post.
+ *
+ * @param string $size
+ *
+ * @return array|bool|false
+ */
+function shipyard_get_featured_image( $size = 'full' ) {
+	if ( has_post_thumbnail() ) {
+		return wp_get_attachment_image_src( get_post_thumbnail_id(), $size );
+	}
+
+	return false;
+}
+
+
+function shipyard_get_featured_image_src( $size = 'full' ) {
+	$img = shipyard_get_featured_image();
+	if ( $img ) {
+		return $img[0];
+	}
+
+	return false;
+}
+
+
+function shipyard_render_image_metadata() {
+	if ( ! has_post_thumbnail() ) return;
+
+	$featured_image = shipyard_get_featured_image();
+	?>
+    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="<?php echo $featured_image[0] ?>">
+        <meta itemprop="width" content="<?php echo $featured_image[1] ?>">
+        <meta itemprop="height" content="<?php echo $featured_image[2] ?>">
+    </div>
+<?php }

@@ -2,26 +2,16 @@
 
 @section( 'main' )
 
-    @while( have_posts() )
-        {{ the_post() }}
+    <section class="posts-list">
 
-        <article {{ post_class() }}>
+        @while( have_posts() )
+            {{ the_post() }}
 
-            @if ( has_post_thumbnail() )
-                <div class="post-thumbnail-container">
-                    {{ the_post_thumbnail( 'large' ) }}
-                </div>
-            @endif
+            @include( 'views.pages.page' )
+        @endwhile
 
-            <header>
-                <h1>{{ the_title() }}</h1>
-            </header>
+    </section>
 
-            <div class="post-content">
-                {{ the_content() }}
-            </div>
-
-        </article>
-    @endwhile
+    @include( 'views.common.sidebar' )
 
 @endsection
