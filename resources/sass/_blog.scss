@@ -1,0 +1,329 @@
+section.post-list {
+  @include outer-container;
+}
+
+
+article.excerpt {
+  $base-border-color: white !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #DF4B35 !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-background: lighten($card-border-color, 10%);
+  $card-header-background: $card-background;
+  $card-margin: 1em;
+  $card-image-hover-opacity: 0.7;
+
+  background-color: white;
+  border: $card-border;
+  border-radius: $base-border-radius;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 2em;
+
+  @include media($large-screen) {
+    @include span-columns(6);
+    @include omega(2n);
+  }
+
+  .card-image {
+    height: auto;
+    max-height: 150px;
+    overflow: hidden;
+
+    img {
+      @include border-top-radius($base-border-radius);
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+    }
+  }
+
+  .card-header {
+    background-color: white;
+    border-bottom: $card-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: ($base-spacing / 3) ($base-spacing / 2);
+    transition: all 0.2s ease-in-out;
+    .entry-title {
+      padding: .5em 0;
+    }
+    .post-details {
+      position: relative;
+      font-size: 12px;
+      width: 90%;
+      color: lighten(black, 30%);
+      i.fa {
+        padding-left: 10px;
+      }
+      i.fa:first-child {
+        padding: 0;
+      }
+      .post-comments-badge {
+        height: 60px;
+        width: 60px;
+        position: absolute;
+        top: -55px;
+        right: -35px;
+        border: none;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        border-radius: 100px;
+        background: #C2D7CE;
+        text-align: center;
+        display: table;
+
+        a {
+          display: table-cell;
+          vertical-align: middle;
+          color: white;
+          font-size: 16px;
+          line-height: 20px;
+        }
+
+        i.fa {
+          display: block;
+          font-size: 15px;
+          padding: 0;
+          margin-bottom: 4px;
+        }
+
+        &:hover {
+          background-color: darken(#C2D7CE, 10%);
+        }
+      }
+    }
+  }
+
+  .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: ($base-spacing / 2) ($base-spacing / 2);
+
+    p {
+      margin: 0 0 ($base-spacing / 2);
+    }
+  }
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+
+    img {
+      opacity: $card-image-hover-opacity;
+    }
+  }
+
+  &:active {
+    background-color: white;
+
+    .card-header {
+      background-color: white;
+    }
+  }
+}
+
+/* ----------------------------------
+        SINGLE POSTS
+  ----------------------------------- */
+
+.single-post-wrapper {
+  @include outer-container;
+  position:relative;
+
+  .posts-list {
+    background-color: white;
+    cursor: pointer;
+    margin-bottom: 2em;
+    border: none;
+    padding-right: 4%;
+    @include span-columns(9);
+
+    .card-image {
+      height: auto;
+      max-height: 150px;
+      overflow: hidden;
+
+      img {
+        @include border-top-radius($base-border-radius);
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+        width: 100%;
+      }
+    }
+
+    .card-header {
+      background-color: white;
+      font-weight: bold;
+      line-height: 1.5em;
+      padding: ($base-spacing / 3) ($base-spacing / 2);
+      .entry-title {
+        padding: .5em 0;
+      }
+      .post-details {
+        position: relative;
+        font-size: 12px;
+        width: 90%;
+        color: lighten(black, 30%);
+        i.fa {
+          padding-left: 10px;
+        }
+        i.fa:first-child {
+          padding: 0;
+        }
+        .post-comments-badge {
+          height: 60px;
+          width: 60px;
+          position: absolute;
+          top: -55px;
+          right: -35px;
+          border: none;
+          -webkit-border-radius: 100px;
+          -moz-border-radius: 100px;
+          border-radius: 100px;
+          background: #C2D7CE;
+          text-align: center;
+          display: table;
+
+          a {
+            display: table-cell;
+            vertical-align: middle;
+            color: white;
+            font-size: 16px;
+            line-height: 20px;
+          }
+
+          i.fa {
+            display: block;
+            font-size: 15px;
+            padding: 0;
+            margin-bottom: 4px;
+          }
+
+          &:hover {
+            background-color: darken(#C2D7CE, 10%);
+          }
+        }
+      }
+    }
+
+    .card-copy {
+      font-size: 0.9em;
+      line-height: 1.5em;
+      padding: ($base-spacing / 2) ($base-spacing / 2);
+
+      p {
+        margin: 0 0 ($base-spacing / 2);
+      }
+    }
+
+    &:focus,
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: white;
+
+      .card-header {
+        background-color: white;
+      }
+    }
+  }
+
+  section.sidebar {
+    position: relative;
+    @include media($large-screen) {
+      @include span-columns(3);
+      @include omega(2n);
+    }
+
+    .widget {
+      margin-bottom: 1em;
+      .text-widget {
+        font-size: 0.8em;
+        font-weight: bold;
+      }
+    }
+
+    h3.widget-title {
+      font-family: 'Pathway Gothic One', sans-serif;
+      color:#C29341;
+      font-size: 1.4em;
+      margin: 1em 0;
+      font-weight: normal;
+      text-align: center;
+      border: 1px solid #C29341;
+      padding: 0.2em 0;
+    }
+
+    li  {
+      margin: 0.5em 0;
+    }
+
+    .cat-item a {
+      background-color:lighten(#ccc, 5%);
+      color: #fff;
+      padding: 0.2em;
+      margin: 2em 0;
+      &:hover{
+        color: #fff;
+        background-color: lighten(#ccc, 10%);
+        border-bottom: 2px solid #ddd;
+      }
+    }
+
+    a {
+      color: lighten(#333, 20%);
+      padding: 0.2em;
+      &:hover{
+        color: transparentize(#333, 0);
+        border-bottom: 1px solid #333;
+      }
+    }
+
+    .post-author-meta {
+      display: block;
+      width: 225px;
+      list-style: none;
+      position: absolute;
+      top: 570px;
+      left: 50%;
+      margin-left: -600px;
+      text-align: left;
+      li {
+        display: block;
+      }
+      li.author-bio {
+        font-size: 13px;
+        color: #b2b2b2;
+      }
+
+      .author-social {
+        float: left;
+        padding: 15px 0;
+        border-bottom: 3px solid #f3f3f3;
+        i.fa {
+          color:#b2b2b2;
+          margin-right: 0.5em;
+          &:hover {
+            color: darken(#b2b2b2, 30%);
+          }
+        }
+      }
+
+
+    }
+
+
+  }
+}
+
+
+

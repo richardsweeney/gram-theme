@@ -23,6 +23,17 @@ add_action( 'wp_enqueue_scripts', function() {
 	wp_register_script( 'parallax-js', get_template_directory_uri() . $parallax_js, [ 'jquery' ], filemtime( get_template_directory() . $parallax_js ), true );
 	wp_enqueue_script( 'shipyard-js', get_template_directory_uri() . $main_js, [ 'jquery', 'parallax-js' ], filemtime( get_template_directory() . $main_js ), true );
 
+	// Google Fonts:
+	wp_enqueue_style( 'google-heading', '//fonts.googleapis.com/css?family=Pathway+Gothic+One&subset=latin-ext');
+
+	wp_enqueue_style( 'google-body', '//fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+	wp_enqueue_style( 'shipyard-style', get_stylesheet_uri() );/* Custom stylesheet */
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
 	wp_enqueue_style( 'shipyard-css', get_template_directory_uri() . $main_css, [], filemtime( get_template_directory() . $main_css ) );
 
 	$t10ns = [
@@ -58,7 +69,7 @@ add_action( 'login_enqueue_scripts', function() {
 add_action( 'widgets_init', function() {
 	register_sidebar( [
 		'name'          => __( 'Sidebar', 'gram' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'sidebar',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',

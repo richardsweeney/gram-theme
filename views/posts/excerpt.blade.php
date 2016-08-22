@@ -1,34 +1,31 @@
 <article id="post-{{ get_the_ID() }}" {{ post_class( 'excerpt' ) }} itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="card">
+    <div class="card-header">
 
-    <header>
-        <h3 itemprop="headline"><a href="{{ the_permalink() }}">{{ the_title() }}</a></h3>
-    </header>
+        @if( is_single() ) : {{ the_title( '<h3 class="entry-title">', '</h3>' ) }}
+        @else
+           {{ the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ) }}
+        @endif
+        <div class="post-details">
+            <i class="fa fa-user"></i> {{ get_the_author() }}
+            <i class="fa fa-clock-o"></i> <time>{{ the_date() }}</time>
+            <i class="fa fa-folder"></i> {{ the_category( ', ') }}
+            <div class="post-comments-badge">
+                <a href="{{ comments_link() }}"><i class="fa fa-comments"></i> {{ comments_number( 0, 1, '%') }}</a>
+            </div><!-- post-comments-badge -->
 
-    @if( has_post_thumbnail() )
-        <p><a class="no-border" href="{{ the_permalink() }}">{{ the_post_thumbnail( 'large' ) }}</a></p>
-    @endif
+            {{ edit_post_link(' Edit', '<i class="fa fa-pencil"></i>') }}
+        </div>
 
-    <div itemprop="articleBody">
-        {{ the_excerpt() }}
     </div>
 
-    <p><a href="{{ the_permalink() }}">{{ __( 'Read more', 'gram' ) }}</a></p>
+    @if( has_post_thumbnail() )
+        <div class="card-image"><a href="{{ the_permalink() }}">{{ the_post_thumbnail() }}</a></div>
+    @endif
 
-    <footer>
-        <p>
-            {{ __( 'Published by', 'gram' ) }}
-            <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                <a href="{{ get_author_posts_url( get_the_author_meta( 'ID' ) ) }}"><span itemprop="name">{{ get_the_author() }}</span></a>
-            </span>
-            {{ __( 'on', 'gram' ) }}
-            <time class="blogDate" itemprop="datePublished" datetime="{{ the_time( 'Y-m-d H:i:s' ) }}">{{ date_i18n( get_option( 'date_format' ) ) }}</time>
-            <meta itemprop="dateModified" content="{{ the_modified_time( 'Y-m-d H:i:s' ) }}">
-            {{ __( 'in', 'gram' ) }} {{ the_category( ', ') }}.
-            {{ the_tags( __( 'Tags: ', 'gram' ), ', ', ' ' ) }}
-        </p>
-        <meta itemprop="publisher" content="GRAM Malmö">
-    </footer>
-
-    {!! shipyard_render_image_metadata() !!}
+    <div class="card-copy">
+      <p>{{ the_excerpt() }}</p>
+    </div>
+  </div>
 
 </article>

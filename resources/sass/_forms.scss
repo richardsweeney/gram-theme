@@ -1,0 +1,8 @@
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="url"] {
+	@include prefixer(appearance, none, webkit moz ms o spec);
+	border-radius: 0;
+}

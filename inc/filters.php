@@ -68,7 +68,6 @@ add_filter( 'sanitize_file_name', function( $filename ) {
 	return strtolower( $sanitized . '.' . $ext );
 });
 
-
 /**
  * Allow SVG uploads.
  */

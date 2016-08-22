@@ -1,37 +1,75 @@
-// $visual-grid: true;
+$visual-grid: false;
 
 @import "bourbon/bourbon";
 @import "base/base";
 @import "neat/neat";
 
+@import "vars";
+@import "mixins";
 @import "wordpress";
-@import "components/header";
-@import "components/navigation";
-@import "components/footer";
-@import "components/sidebar";
-@import "components/structure";
+@import "woocommerce";
+@import "forms";
+@import "maps";
+@import "kint";
 
-@import "components/blog";
-@import "components/pages";
-@import "components/search";
+@import "header";
+@import "frontpage";
+@import "footer";
+
+@import "parallax";
+@import "navigation";
+@import "blog";
+@import "video";
+@import "about";
+@import "globals";
+
+// Remove this style when starting new project.
+// @import "shipyard-starter-theme-style";
+
+
+body {
+	margin: 0;
+}
 
 img {
 	max-width: 100%;
 	height: auto;
 }
 
-body {
-	margin: 0;
-	padding: 0;
+.site-header,
+.site-content,
+.site-footer {
+	@include outer-container();
+
+	.content-area {
+		@include media( $medium-screen ) {
+			@include span-columns( 8 );
+		}
+	}
+
+	.widget-area {
+		@include media( $medium-screen ) {
+			@include span-columns( 4 );
+		}
+	}
 }
 
-.site-container {
-	@include outer-container;
-	background: #fff;
-}
-
-.skip-link,
-.screen-reader-text {
+.skip-link, .screen-reader-text {
 	display: none;
+}
+
+
+h1.title {
+	text-align: center;
+	text-transform: uppercase;
+	margin: 2em 0;
+}
+
+.sidebar {
+  float: right;
+  @include span-columns(3);
+  @include media($large-screen) {
+    @include span-columns(12);
+  }
 }
 

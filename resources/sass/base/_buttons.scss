@@ -1,6 +1,5 @@
 #{$all-button-inputs},
-button,
-a.button {
+button {
   @include appearance(none);
   -webkit-font-smoothing: antialiased;
   background-color: $action-color;
@@ -9,11 +8,11 @@ a.button {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: $heading-font-family;
-  font-size: rem(24);
-  //text-transform: uppercase;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: 600;
   line-height: 1;
-  padding: 0.5em 1em;
+  padding: 0.75em 1em;
   text-decoration: none;
   user-select: none;
   vertical-align: middle;

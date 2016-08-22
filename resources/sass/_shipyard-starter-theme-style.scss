@@ -1,0 +1,32 @@
+.site-header,
+.site-content,
+.site-footer {
+	padding: 20px;
+}
+
+.site-header {
+	border-bottom: 3px solid black;
+	text-align: center;
+	.main-navigation {
+		li {
+			@include media( $medium-screen ) {
+				display: inline-block;
+				margin: 10px
+			}
+		}
+	}
+}
+
+.site-content {
+	min-height: 400px;
+}
+
+.site-footer {
+	border-top: 3px solid black;
+	.social-link-container {
+		text-align: center;
+		li {
+			display: inline-block;
+		}
+	}
+}

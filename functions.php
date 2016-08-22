@@ -42,8 +42,10 @@ function shipyard_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'shipyard' ),
+		'primary' => __( 'primary', 'shipyard' ),
+		'footer-menu' => esc_html__( 'Footer', 'shipyard' ),
 	) );
+
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -79,6 +81,42 @@ require get_template_directory() . '/inc/actions.php';
 require get_template_directory() . '/inc/filters.php';
 
 /**
+ * Register widget area.
+ *
+ */
+function shipyard_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Footer 1', 'shipyard' ),
+		'id'            => 'footer-1',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+		register_sidebar( array(
+		'name'          => __( 'Footer 2', 'shipyard' ),
+		'id'            => 'footer-2',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+		register_sidebar( array(
+		'name'          => __( 'Footer 3', 'shipyard' ),
+		'id'            => 'footer-3',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'shipyard_widgets_init' );
+
+
+/**
  * Add customizer settings
  */
 require get_template_directory() . '/inc/customizer.php';
@@ -86,3 +124,22 @@ require get_template_directory() . '/inc/customizer.php';
  * Include shipyard functions
  */
 require get_template_directory() . '/inc/shipyard-theme-functions.php';
+
+/**
+ * Replaces the excerpt "more" text by a link.
+ */
+function new_excerpt_more($more) {
+    global $post;
+	return '... <a class="moretag" href="'. get_permalink($post->ID) . '"> continue reading &raquo;</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
+
+
+
+
+
+
+
+

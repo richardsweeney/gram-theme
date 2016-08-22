@@ -1,34 +1,33 @@
 // Typography
 $base-font-family: 'Open Sans', sans-serif;
-$heading-font-family: 'Pathway Gothic One';
+$heading-font-family: 'Pathway Gothic One', sans-serif;
 
 // Font Sizes
-$base-font-size: rem(16);
+$base-font-size: 1em;
 
 // Line height
 $base-line-height: 1.5;
 $heading-line-height: 1.2;
 
 // Other Sizes
-$base-border-radius: 2px;
-$base-spacing: $base-line-height * 1rem;
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$blue: #477dca;
-$dark-gray: #333;
-$medium-gray: #999;
 $light-gray: #ddd;
+$dark-gray: #333;
+$orange: #DF4B35;
 
-$footer-color: #8ba6a2;
-$accent-color: #ec6707;
-$nav-bg-color: #ececec;
+$primary-theme-color: #C2D7CE;
+$secondary-theme-color: #E4DED0;
+$terniary-theme-color: #C29341;
 
 // Font Colors
-$base-background-color: #fff;
+$base-background-color: $primary-theme-color;
 $base-font-color: $dark-gray;
-$action-color: $footer-color;
+$action-color: $orange;
 
 // Border
 $base-border-color: $light-gray;

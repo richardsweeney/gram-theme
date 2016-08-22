@@ -1,0 +1,53 @@
+$parallax-window-height: 30em;
+$parallax-background-height: $parallax-window-height * 2;
+
+header {
+  margin-bottom: 3em;
+}
+
+.parallax-window {
+  max-height: $parallax-window-height;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.parallax-static-content {
+  padding: 3em 2em;
+  position: relative;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  width: 50%;
+  margin: 100px auto;
+  top: 3.1em;
+  .page-title {
+    color: white;
+    text-transform: uppercase;
+  }
+  b {
+    background-color: transparentize(black, 0.7);
+    color: #fff;
+    h1 {
+      padding: 0.5em 0;
+    }
+    p {
+      font-weight: normal;
+      font-size: 1.5em;
+    }
+
+  }
+}
+
+.parallax-background {
+  background: url("/content/uploads/2016/08/bg.jpg") repeat;
+  background-position: top;
+  background-size: cover;
+  background-color: beige;
+  height: $parallax-background-height;
+  left: 0;
+  position: absolute;
+  top: - $parallax-window-height / 3;
+  width: 100%;
+}

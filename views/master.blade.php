@@ -6,9 +6,9 @@
 
         <meta charset="{{ bloginfo( 'charset' ) }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <link rel="profile" href="http://gmpg.org/xfn/11">
-        <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One&subset=latin-ext" rel="stylesheet">
+        <!-- Font Awesome Icons -->
+        <script src="https://use.fontawesome.com/1d1c7c86b0.js"></script>
 
         {{ wp_head() }}
 
@@ -16,9 +16,15 @@
 
     <body {{ body_class() }}>
 
-        <div class="hfeed site-container">
+        <div id="page" class="hfeed site">
 
             @include( 'views.common.header' )
+
+            @if ( is_front_page() )
+                @include( 'views.common.frontpage-sections.intro' )
+            @else
+                blablala
+            @endif
 
             <div id="content" class="site-content">
                 @yield( 'main' )
@@ -31,3 +37,9 @@
         {{ wp_footer() }}
     </body>
 </html>
+
+
+
+
+
+

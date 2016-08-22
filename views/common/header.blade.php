@@ -1,16 +1,56 @@
-<a class="skip-link screen-reader-text" href="#content">{{ __( 'Skip to content', 'gram' ) }}</a>
-
-<div class="js-menu sliding-panel-content main-navi">
-    <button class="sliding-panel-close">&#215;</button>
-    <nav id="site-navigation">
-        <?php wp_nav_menu([ 'theme_location' => 'primary' ]); ?>
+<header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="{{ home_url( '/') }}" class="logo">
+      <img class="main-logo" src="{{ shipyard_get_logo() }}" alt="Gram Malmö Logo">
+    </a>
+    <a href="{{ home_url( '/') }}" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show random">
+        {{ wp_nav_menu([ 'theme_location' => 'primary' ]) }}
+      </ul>
     </nav>
-</div>
-
-<header id="masthead" class="site-header">
-    <a class="no-border" href="{{ home_url( '/') }}"><img class="main-logo" src="{{ shipyard_get_logo() }}" alt="Gram Malmö Logo"></a>
-
-    {{--    <span class="tagline">{{ get_bloginfo( 'description' ) }}</span>--}}
-
-    <button class="menu-toggle" id="menu-toggle"></button>
+  </div>
 </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

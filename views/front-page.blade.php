@@ -2,25 +2,22 @@
 
 @section( 'main' )
 
-</div></div>
-<div class="parallax-window" data-z-index="100" data-parallax="scroll" data-image-src="{{ shipyard_get_featured_image_src() }}"></div>
-<div class="site-container"><div class="site-content">
+<!-- INTRO
+    ================================================== -->
+	{{--@include( 'views.common.frontpage-sections.intro' )--}}
 
-    @while( have_posts() )
-        {{ the_post() }}
+<!-- MAILCHIMP SIGN-UP FORM
+    ================================================== -->
+	{{--@include( 'views.common.frontpage-sections.signup-form', [ 'register_text' => $register_text ] )--}}
 
-        @include( 'views.pages.front' )
+<!-- VIDEO SECTION
+    ================================================== -->
+	@include( 'views.common.frontpage-sections.video-home', [ 'video_title' => $video_title, 'video_text' => $video_text, 'video_url' => $video_url ] )
 
-    @endwhile
-
-    <section class="frontpage-blogs">
-        <header>
-            <h2>{{ __( 'Latest blog posts', 'gram' ) }}</h2>
-        </header>
-
-        <div class="frontpage-blogs--container">
-            @include( 'views.pages.frontpage-blogs' )
-        </div>
-    </section>
+<!-- ABOUT SECTION
+    ================================================== -->
+	@include( 'views.common.frontpage-sections.about-home', [ 'about_home_title' => $about_home_title, 'about_home_text' => $about_home_text, 'about_home_image' => $about_home_image ] )
 
 @endsection
+
+

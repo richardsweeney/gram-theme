@@ -1,0 +1,16 @@
+// Omega Reset
+@mixin omega-reset( $nth ) {
+	&:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+	&:nth-of-type(#{$nth}) { margin-right: flex-gutter(); }
+ 	&:nth-child(#{$nth}+1) { clear: none }
+ 	&:nth-of-type(#{$nth}+1) { clear: none }
+}
+
+@mixin ship-omega( $nth ) {
+	&:nth-of-type(#{$nth}) {
+		margin-right: 0;
+	}
+	&:nth-of-type(#{$nth}+1) {
+    	clear: left;
+    }
+}
