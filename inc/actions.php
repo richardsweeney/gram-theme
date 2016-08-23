@@ -30,6 +30,8 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_style( 'shipyard-style', get_stylesheet_uri() );/* Custom stylesheet */
 
+	// wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/js/all/isotope.pkgd.min.js', array('jquery'), '3.0.1', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -86,3 +88,18 @@ add_action( 'widgets_init', function() {
 		'after_title'   => '</h3>',
 	] );
 });
+
+/**
+* Custom Post Types
+*/
+require get_template_directory() . '/inc/post-types/CPT.php';
+
+//Product Custom Post Type
+require get_template_directory() . '/inc/post-types/register-products.php';
+
+
+
+
+
+
+

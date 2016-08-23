@@ -52,13 +52,15 @@ else {
 // var_dump( $about_bg_image_2 );
 
 bladerunner( 'views.pages.about', [
-	'about_bg_img'        => $about_img_src,
-	'about_feature_title' => papi_get_field( 'about_feature_title' ),
-	'about_feature_text'  => papi_get_field( 'about_feature_text' ),
-	'about_bg_image_2'    => $about_img_src_2,
-	'about_post_title'    => papi_get_field( 'about_post_title' ),
-	'about_post_article'  => papi_get_field( 'about_post_article' ),
-	'about_side_img'      => $about_side_img_src,
+    'about_bg_img'        => $about_img_src,
+    'about_feature_title' => papi_get_field( 'about_feature_title' ),
+    'about_feature_text'  => papi_get_field( 'about_feature_text' ),
+    'about_bg_image_2'    => $about_img_src_2,
+    'about_post_title'    => papi_get_field( 'about_post_title' ),
+    'about_post_article'  => papi_get_field( 'about_post_article' ),
+    'about_post_sidebar'  => papi_get_field( 'about_post_sidebar' ),
+    'about_side_img'      => $about_side_img_src,
 ] );
+
 
 

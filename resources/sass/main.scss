@@ -21,7 +21,10 @@ $visual-grid: false;
 @import "blog";
 @import "video";
 @import "about";
+@import "signup";
 @import "globals";
+@import "about-page";
+@import "products";
 
 // Remove this style when starting new project.
 // @import "shipyard-starter-theme-style";
@@ -35,6 +38,8 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+
 
 .site-header,
 .site-content,

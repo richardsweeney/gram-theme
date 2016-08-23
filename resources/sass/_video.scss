@@ -2,11 +2,9 @@ section.video-wrapper {
   @include outer-container;
 
   .video-left {
-    background-color: white;
     cursor: pointer;
     margin-bottom: 2em;
     border: none;
-    padding-right: 4%;
     @include span-columns(6);
   }
 
@@ -14,19 +12,27 @@ section.video-wrapper {
     position: relative;
     @include media($large-screen) {
       @include span-columns(6);
-      @include omega(2n);
+      // @include omega(2n);
+      clear:none;
+    }
+    h3 {
+      width: 20%;
+      margin: 0 auto;
+      padding: 0.4em 0.2em;
+      text-align: center;
+      color: #C29341;
+      border: 1px solid #C29341;
+    }
+    .text {
+      margin-top: 1.5em;
     }
   }
 
-  h3 {
-    width: 20%;
-    margin: 0 auto;
-    padding: 0.4em 0em;
-    text-align: center;
-    color: #C29341;
-    border: 1px solid #C29341;
-  }
 }
+
+
+
+
 
 
 

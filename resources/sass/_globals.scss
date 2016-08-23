@@ -1,7 +1,14 @@
+
+
 /* layout */
 .container {
 	@include outer-container;
 	padding: 0 .5em;
+}
+
+#content section.newsletter {
+	margin-top: 0;
+	padding: 4em;
 }
 
 #content section {
@@ -16,4 +23,6 @@
 		padding: 1em;
 	}
 }
+
+
 

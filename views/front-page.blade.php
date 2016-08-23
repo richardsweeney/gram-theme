@@ -12,11 +12,11 @@
 
 <!-- VIDEO SECTION
     ================================================== -->
-	@include( 'views.common.frontpage-sections.video-home', [ 'video_title' => $video_title, 'video_text' => $video_text, 'video_url' => $video_url ] )
+	{{--@include( 'views.common.frontpage-sections.video-home', [ 'video_title' => $video_title, 'video_text' => $video_text, 'video_url' => $video_url ] )--}}
 
 <!-- ABOUT SECTION
     ================================================== -->
-	@include( 'views.common.frontpage-sections.about-home', [ 'about_home_title' => $about_home_title, 'about_home_text' => $about_home_text, 'about_home_image' => $about_home_image ] )
+	{{--@include( 'views.common.frontpage-sections.about-home', [ 'about_home_title' => $about_home_title, 'about_home_text' => $about_home_text, 'about_home_image' => $about_home_image ] )--}}
 
 @endsection
 

@@ -7,15 +7,15 @@
   $action-color: #DF4B35 !default;
   $medium-screen: 40em !default;
   $large-screen: 53.75em !default;
-  $footer-background: #C2D7CE;
+  $footer-background: #84AF9D;
   $footer-color: white;
   $footer-link-color: transparentize($footer-color, 0.6);
   $footer-disclaimer-color: transparentize($footer-color, 0.6);
-
+  // margin-top: 2em;
 
   @include outer-container( 100% );
   background: $footer-background;
-  padding: 5em;
+  padding: 3% 2% 0 2%;
   width: 100%;
 
   .footer-logo {
@@ -23,15 +23,39 @@
     //float:left;
     //width: 50%;
     @include span-columns( 6 );
-
-    img {
-      height: 6em;
-    }
   }
 
   .footer-social {
     @include span-columns( 6 );
     @include omega;
+
+    .genericon {
+      color: rgb(255, 255, 255);
+      font-size: 2em;
+      float: right;
+      padding-left: 0.5em;
+      &:hover {
+        color: #C2D7CE;
+      }
+    }
+
+    h3.widget-title {
+      text-align: right;
+      font-family: 'Pathway Gothic One', sans-serif;
+      font-weight: normal;
+      color: #fff;
+      padding: 0 0 10px 0;
+      margin-bottom: 15px;
+    }
+    i.fa.fa-envelope {
+      color: #fff;
+      font-size: 2em;
+      float: right;
+      padding-left: 0.5em;
+      &:hover {
+        color: #C2D7CE;
+      }
+    }
   }
 
   .footer-links {
@@ -105,14 +129,11 @@
 
   background: $footer-background;
   display: inline-block;
-  padding: $base-spacing;
+  padding: 1.5em 1em 0em;
   border-top: 2px solid $footer-color;
   width: 100%;
 
   .footer-logo {
-    margin-bottom: 1em;
-    margin-right: 1em;
-
     @include media($large-screen) {
       float: left;
       margin-bottom: 0;
@@ -126,11 +147,6 @@
     margin-bottom: $base-spacing;
     margin-right: 1em;
     color: $footer-color;
-  }
-
-
-  .footer-logo img {
-    height: 1.6em;
   }
 
   ul {
@@ -154,6 +170,13 @@
       display: inline;
       text-align: left;
     }
+
+  }
+
+  ul li.current_page_item a {
+    color: #fff;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #fff;
   }
 
   ul li a {
@@ -162,7 +185,9 @@
 
     &:focus,
     &:hover {
-      color: $footer-link-color;
+      color: white;
+      padding-bottom: 5px;
+      border-bottom: 2px solid white;
     }
   }
 

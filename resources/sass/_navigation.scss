@@ -4,7 +4,9 @@ body {
   color: #333333;
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
-  line-height: 1.5; }
+  line-height: 1.5;
+  background: url('/content/themes/gram-theme/resources/img/tile.jpg') top left repeat;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Pathway Gothic One', sans-serif;
@@ -79,7 +81,6 @@ dl {
   box-sizing: border-box; }
 
 header.navigation {
-  background-color: #fff;
   height: 60px;
   width: 100%;
   z-index: 999;
@@ -109,6 +110,8 @@ header.navigation {
       padding: .8em 0; }
   header.navigation #menu-main-menu.menu {
     float:right;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 1.2em;
   }
   header.navigation .navigation-menu-button {
     color: rgba(255, 255, 255, 0.7);

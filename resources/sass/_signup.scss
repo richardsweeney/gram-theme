@@ -1,0 +1,32 @@
+section.newsletter .container {
+	@include outer-container(100%);
+	background-color: #84AF9D;
+	padding: 4% 20%;
+	margin-top: 0;
+	text-align: center;
+	.feature-home-text {
+		@include span-columns(6);
+		color: #fff;
+		text-align: center;
+		margin-bottom: 2em;
+		float: left;
+		font-size: 1.2em;
+	}
+	.nl-form {
+		@include span-columns(6);
+		float: right;
+		padding: 1em;
+		button {
+			width: 100%;
+		}
+	}
+
+	i.fa.fa-chevron-down {
+		color: #fff;
+    	font-size: 2em;
+    	text-align: center;
+	}
+
+}
+
+

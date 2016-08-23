@@ -2,40 +2,55 @@
 
 @section( 'main' )
 
-<article {{ post_class() }}>
+</div>
 
-    <header>
-        <h1>{{ the_title() }}</h1>
-    </header>
+<article id="about-page" {{ post_class() }}>
 
-    @if ( has_post_thumbnail() )
-        <div class="post-thumbnail-container">
-            {{ the_post_thumbnail( 'large' ) }}
+    <!-- <div id="js-parallax-window" class="parallax-window">
+        <div class="parallax-static-content">
+            <h1>{{ the_title() }}</h1>
         </div>
-    @endif
-
-    <!-- <div class="post-content">
-        {{ the_content() }}
+        @if ( has_post_thumbnail() )
+        <div id="js-parallax-background" class="parallax-background" style="background: url('{{ the_post_thumbnail_url() }}')"></div>
+        @endif
     </div> -->
+
+
     @if ( $about_bg_img )
     <img src="{{ $about_bg_img }}" alt="">
     @endif
 
-    <h2>{{ $about_feature_title }}</h2>
-    <p>{{ $about_feature_text }}</p>
+    <div class="about-feature-msg">
+        <h3>{{ $about_feature_title }}</h3>
+        <p>{{ $about_feature_text }}</p>
+    </div>
 
-    @if ( !empty( $about_bg_image_2 ) )
-        <img src="{{ $about_bg_image_2 }}" alt="">
-    @endif
-    <h3>{{ $about_post_title }}</h3>
-    <p>{{ $about_post_article }}</p>
-    @if ( $about_side_img )
-        <img src="{{ $about_side_img }}" alt="">
-    @endif
+    <div class="container">
+
+
+    <div class="about-article">
+
+        <h3>{{ $about_post_title }}</h3>
+
+        <div class="article-left">
+            <p>{{ $about_post_article }}</p>
+        </div>
+
+        <div class="about-sidebar-right">
+
+            <p class="about-sidebar">{{ $about_post_sidebar }}</p>
+
+            @if ( !empty( $about_bg_image_2 ) )
+                <img src="{{ $about_bg_image_2 }}" alt="">
+            @endif
+        </div>
+    </div>
 
 </article>
 
+
 @endsection
+
 
 
 

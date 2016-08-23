@@ -1,10 +1,10 @@
 <footer class="footer" role="contentinfo">
   	<div class="footer-logo">
-    <?php dynamic_sidebar( 'footer-1' ); ?>
+      {{ dynamic_sidebar( 'footer-1' ) }}
  	</div>
 
     <ul class="footer-social">
-      <?php dynamic_sidebar( 'footer-2' ); ?>
+      {{ dynamic_sidebar( 'footer-2' ) }}
     </ul>
 
 </footer>

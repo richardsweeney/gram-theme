@@ -73,6 +73,14 @@ class About_Page_Type extends Papi_Page_Type {
 				],
 			] ),
 			papi_property( [
+				'title'    => __( 'About Post Sidebar', 'gram' ),
+				'slug'     => 'about_post_sidebar',
+				'type'     => 'text',
+				'settings' => [
+					'allow_html' => true
+				],
+			] ),
+			papi_property( [
 				'title'    => __( 'About Side Image', 'gram' ),
 				'slug'     => 'about_side_img',
 				'type'     => 'image',

@@ -23,8 +23,6 @@
 
         </section>
 
-        @if(isset(is_single_post)) {
-            @include( 'views.common.sidebar' )
-        }
+        @include( 'views.common.sidebar' )
     </div>
 @endsection

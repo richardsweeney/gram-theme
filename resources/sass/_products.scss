@@ -1,0 +1,16 @@
+article#products .items-wrapper {
+  	@include outer-container();
+
+	.single-product {
+		@include span-columns(3);
+	}
+
+	figure {
+		display: block;
+	}
+
+
+}
+
+
+

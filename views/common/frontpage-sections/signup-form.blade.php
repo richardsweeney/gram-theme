@@ -2,15 +2,12 @@
     <div class="color-overlay"></div>
     <div class="container">
 
-    <!--     <div class="nl-text">
-            <p></p>
-        </div> -->
 
         <div class="feature-home-text">
             {{ $register_text }}
         </div>
 
-        <!-- <div class="nl-form">
+        <div class="nl-form">
             <form class="form-inline" role="form" action="assets/subscribe.php" method="post">
                 <div class="form-group">
                     <label class="sr-only" for="subscribe-email">Email address</label>
@@ -21,7 +18,10 @@
 
             <div class="success-message"></div>
             <div class="error-message"></div>
-        </div> -->
+        </div>
+
+        <!-- <a href="#video" class="jump-down"><i class="fa fa-chevron-down"></i></a> -->
 
     </div>
 </section>
+
