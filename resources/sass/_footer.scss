@@ -18,22 +18,33 @@
   padding: 3% 2% 0 2%;
   width: 100%;
 
+
   .footer-logo {
-    margin-bottom: 1em;
-    //float:left;
-    //width: 50%;
     @include span-columns( 6 );
+    float: left;
+    margin-bottom: 0;
+    @include media($mobile) {
+      margin-bottom: 1em;
+      float: left;
+      display: block;
+      margin-right: 18.357652%;
+      width: 30%;
+    }
+
   }
 
   .footer-social {
     @include span-columns( 6 );
-    @include omega;
+    // @include omega;
 
     .genericon {
       color: rgb(255, 255, 255);
       font-size: 2em;
       float: right;
       padding-left: 0.5em;
+      @include media($mobile) {
+        font-size: 1.2em;
+      }
       &:hover {
         color: #C2D7CE;
       }
@@ -48,6 +59,9 @@
       margin-bottom: 15px;
     }
     i.fa.fa-envelope {
+      @include media($mobile) {
+        font-size: 1.2em;
+      }
       color: #fff;
       font-size: 2em;
       float: right;
@@ -132,13 +146,6 @@
   padding: 1.5em 1em 0em;
   border-top: 2px solid $footer-color;
   width: 100%;
-
-  .footer-logo {
-    @include media($large-screen) {
-      float: left;
-      margin-bottom: 0;
-    }
-  }
 
   .copyright-info {
     display: flex;

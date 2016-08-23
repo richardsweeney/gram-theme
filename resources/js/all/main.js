@@ -77,7 +77,7 @@
     	var postdata = $('.subscribe form').serialize();
     	$.ajax({
     		type: 'POST',
-    		url: 'resources/vendor/drewm/subscribe.php',
+    		url: 'resources/subscribe.php',
     		data: postdata,
     		dataType: 'json',
     		success: function(json) {

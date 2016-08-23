@@ -505,19 +505,26 @@ input[type="url"] {
     content: "";
     display: table; }
   .footer .footer-logo {
-    margin-bottom: 1em;
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 48.821174201%; }
-    .footer .footer-logo:last-child {
-      margin-right: 0; }
-  .footer .footer-social {
     float: left;
     display: block;
     margin-right: 2.3576515979%;
     width: 48.821174201%;
-    margin-right: 0; }
+    float: left;
+    margin-bottom: 0; }
+    .footer .footer-logo:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: 480px) {
+      .footer .footer-logo {
+        margin-bottom: 1em;
+        float: left;
+        display: block;
+        margin-right: 18.357652%;
+        width: 30%; } }
+  .footer .footer-social {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%; }
     .footer .footer-social:last-child {
       margin-right: 0; }
     .footer .footer-social .genericon {
@@ -525,6 +532,9 @@ input[type="url"] {
       font-size: 2em;
       float: right;
       padding-left: 0.5em; }
+      @media screen and (max-width: 480px) {
+        .footer .footer-social .genericon {
+          font-size: 1.2em; } }
       .footer .footer-social .genericon:hover {
         color: #C2D7CE; }
     .footer .footer-social h3.widget-title {
@@ -539,6 +549,9 @@ input[type="url"] {
       font-size: 2em;
       float: right;
       padding-left: 0.5em; }
+      @media screen and (max-width: 480px) {
+        .footer .footer-social i.fa.fa-envelope {
+          font-size: 1.2em; } }
       .footer .footer-social i.fa.fa-envelope:hover {
         color: #C2D7CE; }
   .footer .footer-links {
@@ -586,10 +599,6 @@ input[type="url"] {
   padding: 1.5em 1em 0em;
   border-top: 2px solid white;
   width: 100%; }
-  @media screen and (min-width: 53.75em) {
-    .footer-2 .footer-logo {
-      float: left;
-      margin-bottom: 0; } }
   .footer-2 .copyright-info {
     display: flex;
     flex-wrap: wrap;
@@ -721,6 +730,9 @@ header {
   .parallax-static-content .page-title {
     color: white;
     text-transform: uppercase; }
+  @media screen and (max-width: 480px) {
+    .parallax-static-content {
+      width: 70%; } }
   .parallax-static-content h1 {
     padding: 0.5em 0;
     font-size: 3em;
@@ -1535,6 +1547,9 @@ section.newsletter .container {
     font-size: 1.2em; }
     section.newsletter .container .feature-home-text:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 480px) {
+      section.newsletter .container .feature-home-text {
+        width: 100%; } }
   section.newsletter .container .nl-form {
     float: left;
     display: block;
@@ -1546,6 +1561,9 @@ section.newsletter .container {
       margin-right: 0; }
     section.newsletter .container .nl-form button {
       width: 100%; }
+    @media screen and (max-width: 480px) {
+      section.newsletter .container .nl-form {
+        width: 100%; } }
   section.newsletter .container i.fa.fa-chevron-down {
     color: #fff;
     font-size: 2em;

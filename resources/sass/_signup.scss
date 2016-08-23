@@ -11,12 +11,20 @@ section.newsletter .container {
 		margin-bottom: 2em;
 		float: left;
 		font-size: 1.2em;
+		@include media($mobile) {
+			// @include span-columns(12);
+			width: 100%;
+		}
 	}
 	.nl-form {
 		@include span-columns(6);
 		float: right;
 		padding: 1em;
 		button {
+			width: 100%;
+		}
+		@include media($mobile) {
+			// @include span-columns(12);
 			width: 100%;
 		}
 	}

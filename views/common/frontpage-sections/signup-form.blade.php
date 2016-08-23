@@ -8,7 +8,7 @@
         </div>
 
         <div class="nl-form">
-            <form class="form-inline" role="form" action="assets/subscribe.php" method="post">
+            <form class="form-inline" role="form" action="resources/subscribe.php" method="post">
                 <div class="form-group">
                     <label class="sr-only" for="subscribe-email">Email address</label>
                     <input type="text" name="email" placeholder="Enter your email..." class="subscribe-email form-control" id="subscribe-email">
