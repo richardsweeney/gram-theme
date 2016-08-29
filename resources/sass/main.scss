@@ -47,13 +47,13 @@ img {
 	@include outer-container();
 
 	.content-area {
-		@include media( $medium-screen ) {
+		@include media( 600px ) {
 			@include span-columns( 8 );
 		}
 	}
 
 	.widget-area {
-		@include media( $medium-screen ) {
+		@include media( 600px ) {
 			@include span-columns( 4 );
 		}
 	}
@@ -73,7 +73,7 @@ h1.title {
 .sidebar {
   float: right;
   @include span-columns(3);
-  @include media($large-screen) {
+  @include media(900px) {
     @include span-columns(12);
   }
 }

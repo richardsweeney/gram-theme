@@ -1,11 +1,11 @@
 .menu-toggle {
-	@include media( $medium-screen ) {
+	@include media( 600px ) {
 		display: none;
 	}
 }
 .menu {
 	display: none;
-	@include media( $medium-screen ) {
+	@include media( 600px ) {
 		display: block;
 	}
 }

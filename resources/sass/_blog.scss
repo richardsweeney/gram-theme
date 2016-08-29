@@ -22,9 +22,16 @@ article.excerpt {
   border-radius: $base-border-radius;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  margin-bottom: 2em;
+  @media screen and (min-width: 53.75em) {
+      @include span-columns(9);
+      margin-bottom: 2em;
+  }
+  // @media screen and ($mobile) {
+  //     margin-left: 2%;
+  //     margin-right: 2%;
+  // }
 
-  @include media($large-screen) {
+  @include media(900px) {
     @include span-columns(6);
     @include omega(2n);
   }
@@ -135,14 +142,21 @@ article.excerpt {
 .single-post-wrapper {
   @include outer-container;
   position:relative;
+  margin-top: 4%;
 
   .posts-list {
     background-color: white;
     cursor: pointer;
     margin-bottom: 2em;
     border: none;
-    padding-right: 4%;
-    @include span-columns(9);
+    padding: 4%;
+    @media screen and (min-width: 53.75em) {
+      @include span-columns(9);
+    }
+
+    img.article-img {
+      margin: 0 0 4% 4%;
+    }
 
     .card-image {
       height: auto;
@@ -181,7 +195,7 @@ article.excerpt {
           width: 60px;
           position: absolute;
           top: -55px;
-          right: -35px;
+          right: -70px;
           border: none;
           -webkit-border-radius: 100px;
           -moz-border-radius: 100px;
@@ -236,92 +250,102 @@ article.excerpt {
     }
   }
 
-  section.sidebar {
-    position: relative;
-    @include media($large-screen) {
-      @include span-columns(3);
-      @include omega(2n);
-    }
+    section.sidebar {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        @media screen and (min-width: 53.75em) {
+            @include span-columns(3);
+            @include omega(2n);
+        }
 
-    .widget {
-      margin-bottom: 1em;
-      .text-widget {
-        font-size: 0.8em;
-        font-weight: bold;
-      }
-    }
+        aside {
+            width: 20%;
+        }
 
-    h3.widget-title {
-      font-family: 'Pathway Gothic One', sans-serif;
-      color:#C29341;
-      font-size: 1.4em;
-      margin: 1em 0;
-      font-weight: normal;
-      text-align: center;
-      border: 1px solid #C29341;
-      padding: 0.2em 0;
-    }
+        .widget {
+            margin-bottom: 1em;
+            .text-widget {
+              font-size: 0.8em;
+              font-weight: bold;
+            }
+        }
 
-    li  {
-      margin: 0.5em 0;
-    }
+        h3.widget-title {
+            font-family: 'Pathway Gothic One', sans-serif;
+            color:#C29341;
+            font-size: 1.4em;
+            margin: 0 0 1em 0;
+            font-weight: normal;
+            text-align: center;
+            border: 1px solid #C29341;
+            padding: 0.2em 0;
+            @media screen and (min-width: 53.75em) {
+                margin: 1em 0;
+            }
+        }
 
-    .cat-item a {
-      background-color:lighten(#ccc, 5%);
-      color: #fff;
-      padding: 0.2em;
-      margin: 2em 0;
-      &:hover{
-        color: #fff;
-        background-color: lighten(#ccc, 10%);
-        border-bottom: 2px solid #ddd;
-      }
-    }
+        li  {
+            margin: 0.5em 0;
+        }
 
-    a {
-      color: lighten(#333, 20%);
-      padding: 0.2em;
-      &:hover{
-        color: transparentize(#333, 0);
-        border-bottom: 1px solid #333;
-      }
-    }
+        .cat-item a {
+            background-color:lighten(#E4DED0, 5%);
+            color: lighten(#333, 20%);
+            padding: 0.2em;
+            margin: 2em 0;
+            &:hover{
+                color: #fff;
+                background-color: darken(#E4DED0, 5%);
+                border-bottom: 2px solid #E4DED0;
+            }
+        }
 
-    .post-author-meta {
-      display: block;
-      width: 225px;
-      list-style: none;
-      position: absolute;
-      top: 570px;
-      left: 50%;
-      margin-left: -600px;
-      text-align: left;
-      li {
+        a {
+            color: lighten(#333, 20%);
+            padding: 0.2em;
+            &:hover{
+                color: darken(#dbd3c0, 10%);
+            }
+        }
+
+      .post-author-meta {
         display: block;
-      }
-      li.author-bio {
-        font-size: 13px;
-        color: #b2b2b2;
-      }
+        width: 225px;
+        list-style: none;
+        position: absolute;
+        top: 570px;
+        left: 50%;
+        margin-left: -600px;
+        text-align: left;
+        li {
+          display: block;
+        }
+        li.author-bio {
+          font-size: 13px;
+          color: #b2b2b2;
+        }
 
-      .author-social {
-        float: left;
-        padding: 15px 0;
-        border-bottom: 3px solid #f3f3f3;
-        i.fa {
-          color:#b2b2b2;
-          margin-right: 0.5em;
-          &:hover {
-            color: darken(#b2b2b2, 30%);
+        .author-social {
+          float: left;
+          padding: 15px 0;
+          border-bottom: 3px solid #f3f3f3;
+          i.fa {
+            color:#b2b2b2;
+            margin-right: 0.5em;
+            &:hover {
+              color: darken(#b2b2b2, 30%);
+            }
           }
         }
+
+
       }
 
 
     }
-
-
-  }
 }
 
 

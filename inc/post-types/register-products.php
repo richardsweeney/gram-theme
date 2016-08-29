@@ -17,3 +17,4 @@ $product->register_taxonomy(array(
     'plural'        => __('Product Tags', 'shipyard'),
     'slug'          => 'product-tag'
 ));
+

@@ -40,9 +40,12 @@
 
             <p class="about-sidebar">{{ $about_post_sidebar }}</p>
 
+            <div class="img-container">
             @if ( !empty( $about_bg_image_2 ) )
                 <img src="{{ $about_bg_image_2 }}" alt="">
             @endif
+            </div>
+
         </div>
     </div>
 

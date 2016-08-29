@@ -76,7 +76,7 @@ module.exports = function( grunt ) {
 
             livereload: {
                 options: { livereload: true },
-                files: ['resources/css/main.css']
+                files: ['resources/css/*.css']
             }
 
         }

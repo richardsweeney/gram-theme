@@ -8,6 +8,19 @@ if ( shipyard.ua_code !== "" ) {
 
 ( function( $, shipyard ) {
 
+    // DROPDOWN TOGGLE MENU
+    $('#js-mobile-menu').click(function(){
+      $(this).next('#js-navigation-menu').toggle();
+    });
+
+    $(document).click(function(e) {
+      var target = e.target;
+      if (!$(target).is('#js-mobile-menu') && !$(target).parents().is('#js-mobile-menu')) {
+        $('#js-navigation-menu').hide();
+      }
+    });
+
+
     // PRALLAX BACKGROUNDS
     $(document).ready(function() {
           if ($("#js-parallax-window").length) {
@@ -67,16 +80,24 @@ if ( shipyard.ua_code !== "" ) {
     });
 
     // SMOOTH SCROLLING DOWN
-    jQuery('a[href^="#"]').click(function(e) {
+    // jQuery('a[href^="#"]').click(function(e) {
 
-    jQuery('html,body').animate({ scrollTop: jQuery(this.hash).offset().top}, 1000);
+    // jQuery('html,body').animate({ scrollTop: jQuery(this.hash).offset().top}, 1000);
 
-    return false;
+    // return false;
 
-    e.preventDefault();
+    // e.preventDefault();
 
+    // });
+
+
+    // initialize Isotope after all images have loaded
+    var $container = $('.portfolio-items').imagesLoaded( function() {
+        $container.isotope({
+        itemSelector: '.item',
+        layoutMode: 'fitRows'
+        });
     });
-
 
 
     // MAILCHIMP SIGN-UP FORM

@@ -12,7 +12,7 @@ section.about-home-wrapper {
 
     .image-left {
       position: relative;
-      @include media($large-screen) {
+      @include media(900px) {
         @include span-columns(6);
         // @include omega(2n);
         // @include shift(6);

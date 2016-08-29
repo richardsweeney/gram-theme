@@ -1,61 +1,110 @@
 article#about-page {
-  @include outer-container(100%);
+    @include outer-container(100%);
 
-  .about-feature-msg {
-    text-align: center;
-    background-color: #84AF9D;
-    color: white;
-    padding: 4% 20%;
-    margin: 0 0 2em 0;
-    h3 {
-      margin-bottom: 1em;
-    }
-  }
-
-  .about-article {
-    @include outer-container(60%);
-    background-color: #fff;
-    padding: 2em 2em;
-    margin-top: 0;
-    h3 {
-      font-size: 1.5em;
-      font-family: 'Pathway Gothic One', sans-serif;
-      width: 40%;
-      margin: 0 auto;
-      padding: 0.4em 0.2em;
-      text-align: center;
-      color: #C29341;
-      border: 1px solid #C29341;
+    .about-feature-msg {
+        text-align: center;
+        background-color: #84AF9D;
+        color: white;
+        padding: 4% 20%;
+        margin: 0 0 2em 0;
+        h3 {
+            margin-bottom: 1em;
+        }
     }
 
-    p {
-      margin-top: 1.5em;
-    }
+    .about-article {
+        @include outer-container(80%);
+        background-color: #fff;
+        padding: 2em 2em;
+        margin-top: 0;
+        margin-bottom: 2em;
+        @include media($mobile) {
+            @include outer-container(100%);
+        }
+        @include media($medium-screen-up) {
+            @include outer-container(80%);
+        }
+        @include media($large-screen-up) {
+            @include outer-container(60%);
+        }
+        h3 {
+            font-size: 1.5em;
+            font-family: 'Pathway Gothic One', sans-serif;
+            width: 40%;
+            margin: 0 auto;
+            padding: 0.4em 0.2em;
+            text-align: center;
+            color: #C29341;
+            border: 1px solid #C29341;
+            @include media($mobile) {
+                // @include span-columns(12);
+                width:90%
+            }
+        }
 
-    .article-left {
-      margin-bottom: 2em;
-      padding-right: 2em;
-      border: none;
-      @include span-columns(9);
-      @include omega(2n);
-      p {
-        font-family: 'Open Sans', sans-serif;
-      }
-    }
+        p {
+            margin-top: 1.5em;
+        }
 
-    .about-sidebar-right {
-      position: relative;
-      text-align: left;
-      display: block;
-      color: transparentize(#C29341, 0.3);
-      font-size: 0.8em;
-      @include media($large-screen) {
-        @include span-columns(3);
-      }
-      img {
-        margin-top: 1.5em;
-      }
+        .article-left {
+            margin-bottom: 2em;
+            padding-right: 2em;
+            border: none;
+            @include media($mobile) {
+                // @include span-columns(12);
+                width:100%;
+                padding-right: 0em;
+            }
+            @include media($medium-screen-up) {
+                @include span-columns(12);
+            }
+            @include media($large-screen-up) {
+                @include span-columns(3);
+                @include omega(2n);
+            }
+            p {
+                font-family: 'Open Sans', sans-serif;
+            }
+        }
+
+        .about-sidebar-right {
+            position: relative;
+            text-align: left;
+            display: block;
+            color: transparentize(#C29341, 0.3);
+            font-size: 1em;
+            @include media($mobile) {
+                // @include span-columns(12);
+                width:100%;
+                text-align: center;
+                font-size: 0.8em;
+            }
+            @include media($medium-screen-up) {
+                @include span-columns(12);
+                text-align: left;
+            }
+            @include media($large-screen-up) {
+                @include span-columns(3);
+                text-align: left;
+            }
+
+            img {
+                margin-top: 1.5em;
+                max-width: 100%;
+                @include media($mobile) {
+                    // @include span-columns(12);
+                    max-width:100%;
+                }
+                @include media($medium-screen-up) {
+                    max-width: 100%;
+                }
+                @include media($large-screen-up) {
+                    max-width: 250%;
+                }
+            }
+        }
     }
-  }
 
 }
+
+

@@ -2,7 +2,6 @@
 
 @section( 'main' )
 
-
     <section class="posts-list">
 
         @while( have_posts() )

@@ -16,7 +16,6 @@
 
             {{ edit_post_link(' Edit', '<i class="fa fa-pencil"></i>') }}
         </div>
-
     </div>
 
     @if( has_post_thumbnail() )

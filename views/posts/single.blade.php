@@ -16,9 +16,9 @@
         </div>
     </div>
 
-    @if( has_post_thumbnail() )
+    <!-- @if( has_post_thumbnail() )
         <div class="card-image"><a href="{{ the_permalink() }}">{{ the_post_thumbnail() }}</a></div>
-    @endif
+    @endif -->
 
     <div class="card-copy">
       <p>{{ the_content() }}</p>

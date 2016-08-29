@@ -30,7 +30,9 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_style( 'shipyard-style', get_stylesheet_uri() );/* Custom stylesheet */
 
-	// wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/js/all/isotope.pkgd.min.js', array('jquery'), '3.0.1', true );
+	wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/resources/js/all/isotope.pkgd.min.js', array('jquery'), '3.0.1', true );
+
+	wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/resources/js/all/imagesloaded.pkgd.min.js', array('jquery'), '4.1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

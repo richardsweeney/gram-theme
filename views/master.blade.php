@@ -25,15 +25,17 @@
 
                 @include( 'views.common.frontpage-sections.signup-form', [ 'register_text' => $register_text ] )
             @else
-                <div id="js-parallax-window" class="parallax-window other-pages">
+            <div id="js-parallax-window" class="parallax-window other-pages">
+                <div class="overlay"></div>
                 <div class="parallax-static-content">
                     <h1>{{ the_title() }}</h1>
                 </div>
                 @if ( has_post_thumbnail() )
-                <div id="js-parallax-background" class="parallax-background" style="background: url('{{ the_post_thumbnail_url() }}'); background-position: 50% 50%;"></div>
+                <div id="js-parallax-background" class="parallax-background" style="background: url('{{ bloginfo( 'stylesheet_directory' ) }}/resources/img/bg_gram.jpg'); background-position: 50% 50%;"></div>
                 @endif
-                </div>
+            </div>
             @endif
+
 
             <div id="content" class="site-content">
                 @yield( 'main' )
