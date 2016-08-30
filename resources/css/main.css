@@ -7,15 +7,13 @@ button {
   -o-appearance: none;
   appearance: none;
   -webkit-font-smoothing: antialiased;
-  background-color: #DF4B35;
-  border-radius: 3px;
+  background-color: #84AF9D;
   border: none;
   color: #fff;
   cursor: pointer;
   display: inline-block;
   font-family: "Open Sans", sans-serif;
   font-size: 1em;
-  font-weight: 600;
   line-height: 1;
   padding: 0.75em 1em;
   text-decoration: none;
@@ -25,7 +23,7 @@ button {
   button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus,
   button:hover,
   button:focus {
-    background-color: #ac2e1b;
+    background-color: #5b8c77;
     color: #fff; }
   button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled,
   button:disabled {
@@ -75,7 +73,7 @@ textarea {
   select[multiple=multiple]:focus,
   textarea:focus {
     border-color: #ddd;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(216, 58, 34, 0.7);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(117, 165, 145, 0.7);
     outline: none; }
 
 textarea {
@@ -167,11 +165,11 @@ p {
   margin: 0 0 0.75em; }
 
 a {
-  color: #DF4B35;
+  color: #84AF9D;
   text-decoration: none;
   transition: color 0.1s linear; }
   a:active, a:focus, a:hover {
-    color: #ac2e1b; }
+    color: #5b8c77; }
   a:active, a:focus {
     outline: none; }
 
@@ -360,19 +358,25 @@ input[type="url"] {
   margin-left: auto;
   margin-right: auto;
   background: #84af9d;
-  padding: 3% 2% 0 2%;
   width: 100%; }
   .footer::after {
     clear: both;
     content: "";
     display: table; }
+  .footer .footer-inner {
+    padding: 3em 0;
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto; }
+    .footer .footer-inner::after {
+      clear: both;
+      content: "";
+      display: table; }
   .footer .footer-logo {
     float: left;
     display: block;
     margin-right: 2.3576515979%;
-    width: 48.821174201%;
-    float: left;
-    margin-bottom: 0; }
+    width: 48.821174201%; }
     .footer .footer-logo:last-child {
       margin-right: 0; }
     @media screen and (max-width: 480px) {
@@ -457,18 +461,23 @@ input[type="url"] {
 .footer-2 {
   font-family: 'Pathway Gothic One', sans-serif;
   background: #c29341;
-  display: inline-block;
-  padding: 1.5em 1em 0em;
   border-top: 2px solid white;
-  width: 100%;
-  display: flex;
   justify-content: space-between; }
+  .footer-2 .footer-inner {
+    padding: 1.5em 0;
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto; }
+    .footer-2 .footer-inner::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .footer-2 .footer-inner::after {
+      clear: both;
+      content: "";
+      display: table; }
   .footer-2 .copyright-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    margin-bottom: 1.5em;
-    margin-right: 1em;
+    float: right;
     color: white; }
   .footer-2 ul {
     display: flex;
@@ -562,7 +571,7 @@ input[type="url"] {
     margin-right: 0;
     height: 3em;
     border-radius: 0 3px 3px 0;
-    background: #DF4B35;
+    background: #84AF9D;
     text-transform: uppercase;
     margin: 0; }
     @media screen and (min-width: 600px) {
@@ -1389,6 +1398,7 @@ section.video-wrapper {
       margin-top: 1.5em; }
 
 section.about-home-wrapper {
+  padding: 1.5em 0;
   max-width: 68em;
   margin-left: auto;
   margin-right: auto; }
@@ -1398,7 +1408,6 @@ section.about-home-wrapper {
     display: table; }
   section.about-home-wrapper .about-text-right {
     cursor: pointer;
-    margin-bottom: 2em;
     border: none;
     float: left;
     display: block;
@@ -1424,9 +1433,7 @@ section.about-home-wrapper {
   margin-left: auto;
   margin-right: auto;
   background-color: #84AF9D;
-  padding: 3em 0;
-  margin-top: 0;
-  text-align: center; }
+  padding: 3em 0; }
   .newsletter .container::after {
     clear: both;
     content: "";
@@ -1437,9 +1444,6 @@ section.about-home-wrapper {
     margin-right: 2.3576515979%;
     width: 48.821174201%;
     color: #fff;
-    text-align: center;
-    margin-bottom: 2em;
-    float: left;
     font-size: 1.2em; }
     .newsletter .container .feature-home-text:last-child {
       margin-right: 0; }
@@ -1462,6 +1466,8 @@ section.about-home-wrapper {
     color: #fff;
     font-size: 2em;
     text-align: center; }
+  .newsletter .container button {
+    border: 1px solid white; }
 
 .newsletter-inner-container {
   max-width: 68em;

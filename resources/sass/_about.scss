@@ -1,8 +1,8 @@
 section.about-home-wrapper {
+    padding: $base-spacing 0;
     @include outer-container;
     .about-text-right {
         cursor: pointer;
-        margin-bottom: 2em;
         border: none;
         @include span-columns(6);
     }
@@ -17,4 +17,3 @@ section.about-home-wrapper {
         margin-top: 1.5em;
     }
 }
-

@@ -14,14 +14,15 @@
 
     @include outer-container(100%);
     background: $footer-background;
-    padding: 3% 2% 0 2%;
     width: 100%;
+    .footer-inner {
+        padding: ($base-spacing * 2) 0;
+        @include outer-container();
+    }
 
     .footer-logo {
         // background: red;
         @include span-columns(6);
-        float: left;
-        margin-bottom: 0;
         @include media($mobile) {
             margin-bottom: 1em;
             float: left;
@@ -135,21 +136,16 @@
     $footer-color: white;
     $footer-link-color: transparentize($footer-color, 0.6);
     $footer-disclaimer-color: transparentize($footer-color, 0.6);
-
     background: $footer-background;
-    display: inline-block;
-    padding: 1.5em 1em 0em;
     border-top: 2px solid $footer-color;
-    width: 100%;
-    display: flex;
     justify-content: space-between;
-
+    .footer-inner {
+        padding: $base-spacing 0;
+        @include outer-container();
+        @include clearfix;
+    }
     .copyright-info {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        margin-bottom: $base-spacing;
-        margin-right: 1em;
+        float: right;
         color: $footer-color;
     }
 

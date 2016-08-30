@@ -2,17 +2,11 @@
 	@include outer-container(100%);
 	background-color: #84AF9D;
 	padding: ($base-spacing * 2) 0 ;
-	margin-top: 0;
-	text-align: center;
 	.feature-home-text {
 		@include span-columns(6);
 		color: #fff;
-		text-align: center;
-		margin-bottom: 2em;
-		float: left;
 		font-size: 1.2em;
 		@include media($mobile) {
-			// @include span-columns(12);
 			width: 100%;
 		}
 	}
@@ -31,7 +25,9 @@
     	font-size: 2em;
     	text-align: center;
 	}
-
+	button {
+		border: 1px solid white;
+	}
 }
 
 .newsletter-inner-container {
