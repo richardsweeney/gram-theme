@@ -124,3 +124,12 @@ function shipyard_render_image_metadata() {
         <meta itemprop="height" content="<?php echo $featured_image[2] ?>">
     </div>
 <?php }
+
+
+/**
+ * Custom Post Types
+ */
+require get_template_directory() . '/inc/post-types/CPT.php';
+
+//Product Custom Post Type
+require get_template_directory() . '/inc/post-types/register-products.php';

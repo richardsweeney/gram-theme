@@ -91,15 +91,26 @@ add_action( 'widgets_init', function() {
 	] );
 });
 
-/**
-* Custom Post Types
-*/
-require get_template_directory() . '/inc/post-types/CPT.php';
 
-//Product Custom Post Type
-require get_template_directory() . '/inc/post-types/register-products.php';
+add_action( 'init', function() {
+	if ( ! isset( $_POST['mailchimp_email'] ) ) return;
 
+	if ( empty( $_POST['mailchimp_email'] ) || ! is_email( $_POST['mailchimp_email'] ) ) {
+		wp_redirect( home_url('/?mc=invalid_email' ) );
+		exit;
+	}
 
+	require get_template_directory() . '/mailchimp-api-master/src/MailChimp.php';
+	$mailChimp = new \DrewM\MailChimp\MailChimp( '1adb927105dbebd9f262f02b921eaccb-us14' );
+	$list_id = 'fcd23dec93';
+	$result = $mailChimp->post("lists/$list_id/members", [
+		'email_address' => $_POST['mailchimp_email'],
+		'status'        => 'subscribed',
+	]);
+
+	wp_redirect( home_url( '/?mc=sigup_ok' ) );
+	exit;
+});
 
 
 

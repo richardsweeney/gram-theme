@@ -1,7 +1,7 @@
 <section id="about" class="about-home-wrapper">
     <div class="image-left">
         @if ( $about_home_image )
-            <img src="{{ $about_home_image }}" alt="">
+            <img src="{{ $about_home_image->url }}" alt="">
         @endif
     </div>
     <div class="about-text-right">

@@ -41,8 +41,21 @@ if ( $about_home_image ) {
 }
 
 
+$mc_message = '';
+if ( isset( $_GET['mc'] ) ) {
+	switch ( $_GET['mc'] ) {
+		case 'invalid_email' :
+			$mc_message = __( 'Please add a valid email address', 'gram' );
+			break;
+
+		case 'sigup_ok' :
+			$mc_message = __( 'Thanks for signing up!', 'gram' );
+			break;
+	}
+}
+
+
 bladerunner( 'views.front-page', [
-	'img_src'          => $img_src,
 	'hero_title'       => papi_get_field( 'hero_title' ),
 	'hero_subheading'  => papi_get_field( 'hero_subheading' ),
 	'register_text'    => papi_get_field( 'register_text' ),
@@ -50,8 +63,9 @@ bladerunner( 'views.front-page', [
 	'video_url'        => $video_url,
 	'video_text'       => papi_get_field( 'video_text' ),
 	'about_home_title' => papi_get_field( 'about_home_title' ),
-	'about_home_image' => $about_image,
+	'about_home_image' => $about_home_image,
 	'about_home_text'  => papi_get_field( 'about_home_text' ),
+	'mc_message'       => $mc_message,
 ] );
 
 
