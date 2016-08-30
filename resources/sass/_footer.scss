@@ -2,139 +2,136 @@
         FOOTER 1
   ----------------------------------- */
 .footer {
-  font-family: 'Open Sans', sans-serif;
-  $base-spacing: 1.5em !default;
-  $action-color: #DF4B35 !default;
-  $large-screen: 53.75em !default;
-  $footer-background: #84AF9D;
-  $footer-color: white;
-  $footer-link-color: transparentize($footer-color, 0.6);
-  $footer-disclaimer-color: transparentize($footer-color, 0.6);
-  // margin-top: 2em;
+    font-family: 'Open Sans', sans-serif;
+    $base-spacing: 1.5em !default;
+    $action-color: #df4b35 !default;
+    $large-screen: 53.75em !default;
+    $footer-background: #84af9d;
+    $footer-color: white;
+    $footer-link-color: transparentize($footer-color, 0.6);
+    $footer-disclaimer-color: transparentize($footer-color, 0.6);
+    // margin-top: 2em;
 
-  @include outer-container( 100% );
-  background: $footer-background;
-  padding: 3% 2% 0 2%;
-  width: 100%;
+    @include outer-container(100%);
+    background: $footer-background;
+    padding: 3% 2% 0 2%;
+    width: 100%;
 
-
-  .footer-logo {
-    // background: red;
-    @include span-columns( 6 );
-    float: left;
-    margin-bottom: 0;
-    @include media($mobile) {
-      margin-bottom: 1em;
-      float: left;
-      display: block;
-      margin-right: 18.357652%;
-      width: 30%;
-    }
-  }
-
-  .footer-social {
-    @include span-columns( 6 );
-    // @include omega;
-
-    .genericon {
-      color: rgb(255, 255, 255);
-      font-size: 2em;
-      float: right;
-      padding-left: 0.5em;
-      @include media($mobile) {
-        font-size: 1.2em;
-      }
-      &:hover {
-        color: #C2D7CE;
-      }
+    .footer-logo {
+        // background: red;
+        @include span-columns(6);
+        float: left;
+        margin-bottom: 0;
+        @include media($mobile) {
+            margin-bottom: 1em;
+            float: left;
+            display: block;
+            margin-right: 18.357652%;
+            width: 30%;
+        }
     }
 
-    h3.widget-title {
-      text-align: right;
-      font-family: 'Pathway Gothic One', sans-serif;
-      font-weight: normal;
-      color: #fff;
-      padding: 0 0 10px 0;
-      margin-bottom: 15px;
+    .footer-social {
+        @include span-columns(6);
+        // @include omega;
+
+        .genericon {
+            color: rgb(255, 255, 255);
+            font-size: 2em;
+            float: right;
+            padding-left: 0.5em;
+            @include media($mobile) {
+                font-size: 1.2em;
+            }
+            &:hover {
+                color: #c2d7ce;
+            }
+        }
+
+        h3.widget-title {
+            text-align: right;
+            font-family: 'Pathway Gothic One', sans-serif;
+            font-weight: normal;
+            color: #fff;
+            padding: 0 0 10px 0;
+            margin-bottom: 15px;
+        }
+        i.fa.fa-envelope {
+            @include media($mobile) {
+                font-size: 1.2em;
+            }
+            color: #fff;
+            font-size: 2em;
+            float: right;
+            padding-left: 0.5em;
+            &:hover {
+                color: #c2d7ce;
+            }
+        }
     }
-    i.fa.fa-envelope {
-      @include media($mobile) {
-        font-size: 1.2em;
-      }
-      color: #fff;
-      font-size: 2em;
-      float: right;
-      padding-left: 0.5em;
-      &:hover {
-        color: #C2D7CE;
-      }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: $base-spacing;
     }
-  }
 
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: $base-spacing;
-  }
-
-  ul {
-    flex-basis: 13em;
-    flex-shrink: 0;
-    margin-bottom: $base-spacing * 2;
-    padding: 0;
-  }
-
-  li {
-    line-height: 1.5em;
-    list-style: none;
-    text-align: center;
-  }
-
-  li a {
-    color: $footer-link-color;
-    text-decoration: none;
-
-    &:focus,
-    &:hover {
-      color: transparentize($footer-color, 0);
+    ul {
+        flex-basis: 13em;
+        flex-shrink: 0;
+        margin-bottom: $base-spacing * 2;
+        padding: 0;
     }
-  }
 
-  li h3 {
-    color: $footer-color;
-    font-size: 1em;
-    margin-bottom: 0.4em;
-  }
+    li {
+        line-height: 1.5em;
+        list-style: none;
+        text-align: center;
+    }
 
-  hr {
-    border: 1px solid transparentize($footer-disclaimer-color, 0.3);
-    margin: 0 auto $base-spacing;
-    width: 12em;
-  }
+    li a {
+        color: $footer-link-color;
+        text-decoration: none;
 
-  p {
-    color: $footer-disclaimer-color;
-    font-size: 0.9em;
-    line-height: 1.5em;
-    margin: auto;
-    max-width: 35em;
-    text-align: center;
-  }
+        &:focus,
+        &:hover {
+            color: transparentize($footer-color, 0);
+        }
+    }
+
+    li h3 {
+        color: $footer-color;
+        font-size: 1em;
+        margin-bottom: 0.4em;
+    }
+
+    hr {
+        border: 1px solid transparentize($footer-disclaimer-color, 0.3);
+        margin: 0 auto $base-spacing;
+        width: 12em;
+    }
+
+    p {
+        color: $footer-disclaimer-color;
+        font-size: 0.9em;
+        line-height: 1.5em;
+        margin: auto;
+        max-width: 35em;
+        text-align: center;
+    }
 }
-
 
 /* ----------------------------------
         FOOTER 2
   ----------------------------------- */
 
-
 .footer-2 {
     font-family: 'Pathway Gothic One', sans-serif;
     $base-spacing: 1.5em !default;
-    $action-color: #DF4B35 !default;
+    $action-color: #df4b35 !default;
     $large-screen: 53.75em !default;
-    $footer-background: #C29341;
+    $footer-background: #c29341;
     $footer-color: white;
     $footer-link-color: transparentize($footer-color, 0.6);
     $footer-disclaimer-color: transparentize($footer-color, 0.6);
@@ -147,14 +144,14 @@
     display: flex;
     justify-content: space-between;
 
-  .copyright-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    margin-bottom: $base-spacing;
-    margin-right: 1em;
-    color: $footer-color;
-  }
+    .copyright-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-bottom: $base-spacing;
+        margin-right: 1em;
+        color: $footer-color;
+    }
 
     ul {
         display: flex;
@@ -166,10 +163,10 @@
         }
 
         @include media($large-screen) {
-          float: left;
-          line-height: 1.8em;
-          margin-bottom: 0;
-          margin-left: 1em;
+            float: left;
+            line-height: 1.8em;
+            margin-bottom: 0;
+            margin-left: 1em;
         }
     }
 
@@ -180,22 +177,21 @@
         font-size: 1em;
 
         @include media($large-screen) {
-          display: inline;
-          text-align: left;
+            display: inline;
+            text-align: left;
         }
 
     }
 
     ul li.current_page_item a {
-      color: #fff;
-      padding-bottom: 5px;
-      border-bottom: 2px solid #fff;
+        color: #fff;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #fff;
     }
 
     ul li a {
         color: transparentize($footer-color, 0.2);
         text-decoration: none;
-
 
         &:focus,
         &:hover {
@@ -208,15 +204,15 @@
     .footer-secondary-links {
         @include media($large-screen) {
             float: right;
-    }
-
-    ul.footer-social {
-        margin: 1em 0 0 0;
-
-        @include media($large-screen) {
-            float: right;
-            margin-top: 0;
         }
+
+        ul.footer-social {
+            margin: 1em 0 0 0;
+
+            @include media($large-screen) {
+                float: right;
+                margin-top: 0;
+            }
 
             li {
                 float: left;
@@ -226,91 +222,91 @@
                 padding-right: 0.7em;
 
                 &:last-child {
-                  padding-right: 0;
+                    padding-right: 0;
                 }
             }
 
-    img {
-        height: 1.6em;
-        opacity: 0.7;
-        padding: 1px;
+            img {
+                height: 1.6em;
+                opacity: 0.7;
+                padding: 1px;
 
-        &:focus,
-        &:hover {
-          opacity: 1;
+                &:focus,
+                &:hover {
+                    opacity: 1;
+                }
+            }
         }
-      }
     }
-  }
 }
 
 /* ----------------------------------
         NEWSLETTER
   ----------------------------------- */
 .newsletter {
-  padding: 0;
-  color: white;
-  //width: 50%;
-  //float: right;
+    padding: 0;
+    color: white;
+    //width: 50%;
+    //float: right;
 
-  .nl-text,
-  .nl-form {
-    //@include span-columns(6);
+    .nl-text,
+    .nl-form {
+        //@include span-columns(6);
 
-    //@include media($large-screen) {
-      //@include span-columns(12);
-      //@include pad(1em 5%);
-    //}
-  }
-
-  .nl-text {
-
-    p {
-      margin-bottom: 0;
-    }
-  }
-
-  .nl-form {
-
-    input[type="email"] {
-
-      @include media(600px) {
-        @inclund span-columns(4);
-        width: 100%;
-        border-radius: 3px;
-      }
-
-      @include span-columns(4 of 6);
-      padding: 0 1em;
-      box-shadow: none;
-      border: none !important;
-      border-radius: 3px 0 0 3px;
-      height: 3em;
-      margin: 0;
+        //@include media($large-screen) {
+        //@include span-columns(12);
+        //@include pad(1em 5%);
+        //}
     }
 
-    input[type="submit"] {
+    .nl-text {
 
-      @include media(600px) {
-        @inclund span-columns(4);
-        width: 100%;
-        margin-top: 1em;
-        border-radius: 3px;
-      }
-
-      @include span-columns(2 of 6);
-      @include omega;
-
-      height: 3em;
-      border-radius: 0 3px 3px 0;
-      background: $action-color;
-      text-transform: uppercase;
-      margin: 0;
-
-      &:hover {
-        background: darken(white, 5%);
-      }
+        p {
+            margin-bottom: 0;
+        }
     }
-  }
+
+    .nl-form {
+
+        input[type="email"] {
+
+            @include media(600px) {
+                @inclund span-columns(4);
+                width: 100%;
+                border-radius: 3px;
+            }
+
+            @include span-columns(4 of 6);
+            padding: 0 1em;
+            box-shadow: none;
+            border: none !important;
+            border-radius: 3px 0 0 3px;
+            height: 3em;
+            margin: 0;
+        }
+
+        input[type="submit"] {
+
+            @include media(600px) {
+                @inclund span-columns(4);
+                width: 100%;
+                margin-top: 1em;
+                border-radius: 3px;
+            }
+
+            @include span-columns(2 of 6);
+            @include omega;
+
+            height: 3em;
+            border-radius: 0 3px 3px 0;
+            background: $action-color;
+            text-transform: uppercase;
+            margin: 0;
+
+            &:hover {
+                background: darken(white, 5%);
+            }
+        }
+    }
 }
 

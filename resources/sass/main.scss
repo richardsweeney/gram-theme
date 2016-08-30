@@ -7,10 +7,10 @@ $visual-grid: false;
 @import "vars";
 @import "mixins";
 @import "wordpress";
-@import "woocommerce";
+//@import "woocommerce";
 @import "forms";
 @import "maps";
-@import "kint";
+//@import "kint";
 
 @import "header";
 @import "frontpage";
@@ -29,52 +29,49 @@ $visual-grid: false;
 // Remove this style when starting new project.
 // @import "shipyard-starter-theme-style";
 
-
 body {
-	margin: 0;
+    margin: 0;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
+    max-width: 100%;
+    height: auto;
 }
-
-
 
 .site-header,
 .site-content,
 .site-footer {
-	@include outer-container();
+    @include outer-container();
 
-	.content-area {
-		@include media( 600px ) {
-			@include span-columns( 8 );
-		}
-	}
+    .content-area {
+        @include media($medium-screen-up) {
+            @include span-columns(8);
+        }
+    }
 
-	.widget-area {
-		@include media( 600px ) {
-			@include span-columns( 4 );
-		}
-	}
+    .widget-area {
+        @include media($medium-screen-up) {
+            @include span-columns(4);
+        }
+    }
 }
 
-.skip-link, .screen-reader-text {
-	display: none;
+.skip-link,
+.screen-reader-text {
+    display: none;
 }
-
 
 h1.title {
-	text-align: center;
-	text-transform: uppercase;
-	margin: 2em 0;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 2em 0;
 }
 
 .sidebar {
-  float: right;
-  @include span-columns(3);
-  @include media(900px) {
-    @include span-columns(12);
-  }
+    float: right;
+    @include span-columns(3);
+    @include media(900px) {
+        @include span-columns(12);
+    }
 }
 

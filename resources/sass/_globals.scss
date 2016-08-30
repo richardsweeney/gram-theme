@@ -1,5 +1,4 @@
 
-
 /* layout */
 .container {
 	@include outer-container;
@@ -8,17 +7,10 @@
 
 #content section.newsletter {
 	margin-top: 0;
-	padding: 4em;
 }
 
 #content section {
 	margin: 2em 0;
-	h3 {
-		margin: 1em 0;
-	    text-align: center;
-	    margin: 0 auto;
-	}
-
 	.mg {
 		padding: 1em;
 	}

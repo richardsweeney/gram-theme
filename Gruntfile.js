@@ -13,7 +13,8 @@ module.exports = function( grunt ) {
                 files: {
                     'resources/css/main.css' : 'resources/sass/main.scss'
                 }
-            }
+            },
+            sourcemap: 'auto'
         },
 
         cssmin: {

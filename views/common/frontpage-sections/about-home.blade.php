@@ -7,7 +7,7 @@
     </div>
 	<div class="image-left">
         @if ( $about_home_image )
-        <img src="{{ $about_home_image }}" alt="">
+            <img src="{{ $about_home_image }}" alt="">
         @endif
     </div>
 </section>

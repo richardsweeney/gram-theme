@@ -16,7 +16,7 @@
 
 <!-- ABOUT SECTION
     ================================================== -->
-	{{--@include( 'views.common.frontpage-sections.about-home', [ 'about_home_title' => $about_home_title, 'about_home_text' => $about_home_text, 'about_home_image' => $about_home_image ] )--}}
+	@include( 'views.common.frontpage-sections.about-home', [ 'about_home_title' => $about_home_title, 'about_home_text' => $about_home_text, 'about_home_image' => $about_home_image ] )
 
 @endsection
 

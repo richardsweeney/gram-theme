@@ -9,7 +9,7 @@
 /**
  * Hero Bg Image
  */
-$bg_hero_image = papi_get_field( 'bg_hero_image' );
+$bg_hero_image = papi_get_field( 'bg_hero_image', false );
 if ( $bg_hero_image ) {
     if ( isset( $bg_hero_image->sizes['large'] ) ) {
         $img_src = $bg_hero_image->sizes['large']['url'];
@@ -18,36 +18,26 @@ if ( $bg_hero_image ) {
         $img_src = $bg_hero_image->url;
     }
 }
-else {
-    $img_src = false;
-}
 
 /**
  * Youtube Video
  */
-$video_url = papi_get_field('video_url');
-
+$video_url = papi_get_field( 'video_url', false );
 if ( $video_url ) {
 	$video_url = wp_oembed_get( $video_url );
-} else {
-	$video_url = false;
 }
 
 /**
  * About Image
  */
-$about_home_image = papi_get_field( 'about_home_image' );
-//var_dump($about_home_image);
+$about_home_image = papi_get_field( 'about_home_image', false );
 if ( $about_home_image ) {
-    if ( isset( $about_home_image ) ) {
-        $about_image = $about_home_image->sizes['medium_large']['url'];
+    if ( isset( $about_home_image->sizes['large'] ) ) {
+        $about_image = $about_home_image->sizes['large']['url'];
     }
     else {
         $about_image = $about_home_image->url;
     }
-}
-else {
-    $about_image = false;
 }
 
 

@@ -1,138 +1,138 @@
 section.post-list {
-  @include outer-container;
+    @include outer-container;
 }
 
 article.excerpt {
-  $base-border-color: white !default;
-  $base-border-radius: 3px !default;
-  $base-background-color: white !default;
-  $base-spacing: 1.5em !default;
-  $action-color: #DF4B35 !default;
-  $dark-gray: #333 !default;
-  $base-font-color: $dark-gray !default;
-  $card-border-color: $base-border-color;
-  $card-border: 1px solid $card-border-color;
-  $card-background: lighten($card-border-color, 10%);
-  $card-header-background: $card-background;
-  $card-margin: 1em;
-  $card-image-hover-opacity: 0.7;
+    $base-border-color: white !default;
+    $base-border-radius: 3px !default;
+    $base-background-color: white !default;
+    $base-spacing: 1.5em !default;
+    $action-color: #df4b35 !default;
+    $dark-gray: #333 !default;
+    $base-font-color: $dark-gray !default;
+    $card-border-color: $base-border-color;
+    $card-border: 1px solid $card-border-color;
+    $card-background: lighten($card-border-color, 10%);
+    $card-header-background: $card-background;
+    $card-margin: 1em;
+    $card-image-hover-opacity: 0.7;
 
-  background-color: white;
-  border: $card-border;
-  border-radius: $base-border-radius;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  @media screen and (min-width: 53.75em) {
-      @include span-columns(9);
-      margin-bottom: 2em;
-  }
-  // @media screen and ($mobile) {
-  //     margin-left: 2%;
-  //     margin-right: 2%;
-  // }
-
-  @include media(900px) {
-    @include span-columns(6);
-    @include omega(2n);
-  }
-
-  .card-image {
-    height: auto;
-    max-height: 150px;
-    overflow: hidden;
-
-    img {
-      @include border-top-radius($base-border-radius);
-      opacity: 1;
-      transition: all 0.2s ease-in-out;
-      width: 100%;
-    }
-  }
-
-  .card-header {
     background-color: white;
-    border-bottom: $card-border;
-    border-radius: $base-border-radius $base-border-radius 0 0;
-    font-weight: bold;
-    line-height: 1.5em;
-    padding: ($base-spacing / 3) ($base-spacing / 2);
-    transition: all 0.2s ease-in-out;
-    .entry-title {
-      padding: .5em 0;
-    }
-    .post-details {
-      position: relative;
-      font-size: 12px;
-      width: 90%;
-      color: lighten(black, 30%);
-      i.fa {
-        padding-left: 10px;
-      }
-      i.fa:first-child {
-        padding: 0;
-      }
-      .post-comments-badge {
-        height: 60px;
-        width: 60px;
-        position: absolute;
-        top: -55px;
-        right: -35px;
-        border: none;
-        -webkit-border-radius: 100px;
-        -moz-border-radius: 100px;
-        border-radius: 100px;
-        background: #C2D7CE;
-        text-align: center;
-        display: table;
-
-        a {
-          display: table-cell;
-          vertical-align: middle;
-          color: white;
-          font-size: 16px;
-          line-height: 20px;
-        }
-
-        i.fa {
-          display: block;
-          font-size: 15px;
-          padding: 0;
-          margin-bottom: 4px;
-        }
-
-        &:hover {
-          background-color: darken(#C2D7CE, 10%);
-        }
-      }
-    }
-  }
-
-  .card-copy {
-    font-size: 0.9em;
-    line-height: 1.5em;
-    padding: ($base-spacing / 2) ($base-spacing / 2);
-
-    p {
-      margin: 0 0 ($base-spacing / 2);
-    }
-  }
-
-  &:focus,
-  &:hover {
+    border: $card-border;
+    border-radius: $base-border-radius;
     cursor: pointer;
-
-    img {
-      opacity: $card-image-hover-opacity;
+    transition: all 0.2s ease-in-out;
+    @media screen and (min-width: 53.75em) {
+        @include span-columns(9);
+        margin-bottom: 2em;
     }
-  }
+    // @media screen and ($mobile) {
+    //     margin-left: 2%;
+    //     margin-right: 2%;
+    // }
 
-  &:active {
-    background-color: white;
+    @include media(900px) {
+        @include span-columns(6);
+        @include omega(2n);
+    }
+
+    .card-image {
+        height: auto;
+        max-height: 150px;
+        overflow: hidden;
+
+        img {
+            @include border-top-radius($base-border-radius);
+            opacity: 1;
+            transition: all 0.2s ease-in-out;
+            width: 100%;
+        }
+    }
 
     .card-header {
-      background-color: white;
+        background-color: white;
+        border-bottom: $card-border;
+        border-radius: $base-border-radius $base-border-radius 0 0;
+        font-weight: bold;
+        line-height: 1.5em;
+        padding: ($base-spacing / 3) ($base-spacing / 2);
+        transition: all 0.2s ease-in-out;
+        .entry-title {
+            padding: .5em 0;
+        }
+        .post-details {
+            position: relative;
+            font-size: 12px;
+            width: 90%;
+            color: lighten(black, 30%);
+            i.fa {
+                padding-left: 10px;
+            }
+            i.fa:first-child {
+                padding: 0;
+            }
+            .post-comments-badge {
+                height: 60px;
+                width: 60px;
+                position: absolute;
+                top: -55px;
+                right: -35px;
+                border: none;
+                -webkit-border-radius: 100px;
+                -moz-border-radius: 100px;
+                border-radius: 100px;
+                background: #c2d7ce;
+                text-align: center;
+                display: table;
+
+                a {
+                    display: table-cell;
+                    vertical-align: middle;
+                    color: white;
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+
+                i.fa {
+                    display: block;
+                    font-size: 15px;
+                    padding: 0;
+                    margin-bottom: 4px;
+                }
+
+                &:hover {
+                    background-color: darken(#c2d7ce, 10%);
+                }
+            }
+        }
     }
-  }
+
+    .card-copy {
+        font-size: 0.9em;
+        line-height: 1.5em;
+        padding: ($base-spacing / 2) ($base-spacing / 2);
+
+        p {
+            margin: 0 0 ($base-spacing / 2);
+        }
+    }
+
+    &:focus,
+    &:hover {
+        cursor: pointer;
+
+        img {
+            opacity: $card-image-hover-opacity;
+        }
+    }
+
+    &:active {
+        background-color: white;
+
+        .card-header {
+            background-color: white;
+        }
+    }
 }
 
 /* ----------------------------------
@@ -140,115 +140,115 @@ article.excerpt {
   ----------------------------------- */
 
 .single-post-wrapper {
-  @include outer-container;
-  position:relative;
-  margin-top: 4%;
+    @include outer-container;
+    position: relative;
+    margin-top: 4%;
 
-  .posts-list {
-    background-color: white;
-    cursor: pointer;
-    margin-bottom: 2em;
-    border: none;
-    padding: 4%;
-    @media screen and (min-width: 53.75em) {
-      @include span-columns(9);
-    }
-
-    img.article-img {
-      margin: 0 0 4% 4%;
-    }
-
-    .card-image {
-      height: auto;
-      max-height: 150px;
-      overflow: hidden;
-
-      img {
-        @include border-top-radius($base-border-radius);
-        opacity: 1;
-        transition: all 0.2s ease-in-out;
-        width: 100%;
-      }
-    }
-
-    .card-header {
-      background-color: white;
-      font-weight: bold;
-      line-height: 1.5em;
-      padding: ($base-spacing / 3) ($base-spacing / 2);
-      .entry-title {
-        padding: .5em 0;
-      }
-      .post-details {
-        position: relative;
-        font-size: 12px;
-        width: 90%;
-        color: lighten(black, 30%);
-        i.fa {
-          padding-left: 10px;
-        }
-        i.fa:first-child {
-          padding: 0;
-        }
-        .post-comments-badge {
-          height: 60px;
-          width: 60px;
-          position: absolute;
-          top: -55px;
-          right: -70px;
-          border: none;
-          -webkit-border-radius: 100px;
-          -moz-border-radius: 100px;
-          border-radius: 100px;
-          background: #C2D7CE;
-          text-align: center;
-          display: table;
-
-          a {
-            display: table-cell;
-            vertical-align: middle;
-            color: white;
-            font-size: 16px;
-            line-height: 20px;
-          }
-
-          i.fa {
-            display: block;
-            font-size: 15px;
-            padding: 0;
-            margin-bottom: 4px;
-          }
-
-          &:hover {
-            background-color: darken(#C2D7CE, 10%);
-          }
-        }
-      }
-    }
-
-    .card-copy {
-      font-size: 0.9em;
-      line-height: 1.5em;
-      padding: ($base-spacing / 2) ($base-spacing / 2);
-
-      p {
-        margin: 0 0 ($base-spacing / 2);
-      }
-    }
-
-    &:focus,
-    &:hover {
-      cursor: pointer;
-    }
-
-    &:active {
-      background-color: white;
-
-      .card-header {
+    .posts-list {
         background-color: white;
-      }
+        cursor: pointer;
+        margin-bottom: 2em;
+        border: none;
+        padding: 4%;
+        @media screen and (min-width: 53.75em) {
+            @include span-columns(9);
+        }
+
+        img.article-img {
+            margin: 0 0 4% 4%;
+        }
+
+        .card-image {
+            height: auto;
+            max-height: 150px;
+            overflow: hidden;
+
+            img {
+                @include border-top-radius($base-border-radius);
+                opacity: 1;
+                transition: all 0.2s ease-in-out;
+                width: 100%;
+            }
+        }
+
+        .card-header {
+            background-color: white;
+            font-weight: bold;
+            line-height: 1.5em;
+            padding: ($base-spacing / 3) ($base-spacing / 2);
+            .entry-title {
+                padding: .5em 0;
+            }
+            .post-details {
+                position: relative;
+                font-size: 12px;
+                width: 90%;
+                color: lighten(black, 30%);
+                i.fa {
+                    padding-left: 10px;
+                }
+                i.fa:first-child {
+                    padding: 0;
+                }
+                .post-comments-badge {
+                    height: 60px;
+                    width: 60px;
+                    position: absolute;
+                    top: -55px;
+                    right: -70px;
+                    border: none;
+                    -webkit-border-radius: 100px;
+                    -moz-border-radius: 100px;
+                    border-radius: 100px;
+                    background: #c2d7ce;
+                    text-align: center;
+                    display: table;
+
+                    a {
+                        display: table-cell;
+                        vertical-align: middle;
+                        color: white;
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+
+                    i.fa {
+                        display: block;
+                        font-size: 15px;
+                        padding: 0;
+                        margin-bottom: 4px;
+                    }
+
+                    &:hover {
+                        background-color: darken(#c2d7ce, 10%);
+                    }
+                }
+            }
+        }
+
+        .card-copy {
+            font-size: 0.9em;
+            line-height: 1.5em;
+            padding: ($base-spacing / 2) ($base-spacing / 2);
+
+            p {
+                margin: 0 0 ($base-spacing / 2);
+            }
+        }
+
+        &:focus,
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:active {
+            background-color: white;
+
+            .card-header {
+                background-color: white;
+            }
+        }
     }
-  }
 
     section.sidebar {
         position: relative;
@@ -268,82 +268,80 @@ article.excerpt {
         .widget {
             margin-bottom: 1em;
             .text-widget {
-              font-size: 0.8em;
-              font-weight: bold;
+                font-size: 0.8em;
+                font-weight: bold;
             }
         }
 
         h3.widget-title {
             font-family: 'Pathway Gothic One', sans-serif;
-            color:#C29341;
+            color: #c29341;
             font-size: 1.4em;
             margin: 0 0 1em 0;
             font-weight: normal;
             text-align: center;
-            border: 1px solid #C29341;
+            border: 1px solid #c29341;
             padding: 0.2em 0;
             @media screen and (min-width: 53.75em) {
                 margin: 1em 0;
             }
         }
 
-        li  {
+        li {
             margin: 0.5em 0;
         }
 
         .cat-item a {
-            background-color:lighten(#E4DED0, 5%);
+            background-color: lighten(#e4ded0, 5%);
             color: lighten(#333, 20%);
             padding: 0.2em;
             margin: 2em 0;
-            &:hover{
+            &:hover {
                 color: #fff;
-                background-color: darken(#E4DED0, 5%);
-                border-bottom: 2px solid #E4DED0;
+                background-color: darken(#e4ded0, 5%);
+                border-bottom: 2px solid #e4ded0;
             }
         }
 
         a {
             color: lighten(#333, 20%);
             padding: 0.2em;
-            &:hover{
+            &:hover {
                 color: darken(#dbd3c0, 10%);
             }
         }
 
-      .post-author-meta {
-        display: block;
-        width: 225px;
-        list-style: none;
-        position: absolute;
-        top: 570px;
-        left: 50%;
-        margin-left: -600px;
-        text-align: left;
-        li {
-          display: block;
-        }
-        li.author-bio {
-          font-size: 13px;
-          color: #b2b2b2;
-        }
-
-        .author-social {
-          float: left;
-          padding: 15px 0;
-          border-bottom: 3px solid #f3f3f3;
-          i.fa {
-            color:#b2b2b2;
-            margin-right: 0.5em;
-            &:hover {
-              color: darken(#b2b2b2, 30%);
+        .post-author-meta {
+            display: block;
+            width: 225px;
+            list-style: none;
+            position: absolute;
+            top: 570px;
+            left: 50%;
+            margin-left: -600px;
+            text-align: left;
+            li {
+                display: block;
             }
-          }
+            li.author-bio {
+                font-size: 13px;
+                color: #b2b2b2;
+            }
+
+            .author-social {
+                float: left;
+                padding: 15px 0;
+                border-bottom: 3px solid #f3f3f3;
+                i.fa {
+                    color: #b2b2b2;
+                    margin-right: 0.5em;
+                    &:hover {
+                        color: darken(#b2b2b2, 30%);
+                    }
+                }
+            }
+
         }
-
-
-      }
-
 
     }
 }
