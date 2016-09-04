@@ -12,8 +12,8 @@ function shipyard_render_svg( $svg_file ) {
 		$svg_file .= '.svg';
 	}
 
-	$file_path            = get_stylesheet_directory() . '/resources/img/' . $svg_file;
-	$compressed_file_path = get_stylesheet_directory() . '/resources/img/compressed/' . $svg_file;
+	$file_path            = get_stylesheet_directory() . '/resources/img/svg/' . $svg_file;
+	$compressed_file_path = get_stylesheet_directory() . '/resources/img/compressed/svg' . $svg_file;
 
 	if ( is_file( $compressed_file_path ) ) {
 		include( $compressed_file_path );
@@ -124,6 +124,11 @@ function shipyard_render_image_metadata() {
         <meta itemprop="height" content="<?php echo $featured_image[2] ?>">
     </div>
 <?php }
+
+
+function gram_get_post_details() {
+	printf( __( 'By %s on %s', 'gram' ), get_the_author(), '<time datetime="' . get_the_time( 'U' ) . '">' . date_i18n( get_option( 'date_format' ), get_the_time('U') ) . '</time>' );
+}
 
 
 /**

@@ -30,12 +30,20 @@ function shipyard_customize_register( $wp_customize ) {
 		$wp_customize,
 		'main_logo',
 		[
-			'label'       => __( 'Main logo', 'msp' ),
-			'section'     => 'shipyard_header_section',
-			'settings'    => 'main_logo',
-			'priority'    => 2,
+			'label'    => __( 'Main logo', 'msp' ),
+			'section'  => 'shipyard_header_section',
+			'settings' => 'main_logo',
+			'priority' => 2,
 		]
 	) );
+
+	$wp_customize->add_setting( 'shipyard_email_text' );
+	$wp_customize->add_control( 'shipyard_email_text', [
+		'label'             => __( 'Email text', 'msp' ),
+		'type'              => 'textarea',
+		'section'           => 'main_logo',
+		'sanitize_callback' => 'wp_kses_post',
+	]);
 
 
 	// Contact info

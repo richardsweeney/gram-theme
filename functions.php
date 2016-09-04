@@ -40,6 +40,8 @@ function shipyard_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+	add_image_size( 'small-banner', 600, 400, ['left', 'top'] );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'primary', 'shipyard' ),

@@ -1,6 +1,6 @@
 
 <section class="sidebar">
-    {{ dynamic_sidebar( 'sidebar' ) }}
+    <?php dynamic_sidebar( 'sidebar' ) ?>
 </section>
 
 

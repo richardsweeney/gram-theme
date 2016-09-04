@@ -1,30 +1,31 @@
-<article id="post-{{ get_the_ID() }}" {{ post_class( 'excerpt' ) }} itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="card">
-    <div class="card-header">
+<article id="post-{{ get_the_ID() }}" {{ post_class( 'card-outer' ) }} itemscope itemtype="http://schema.org/BlogPosting">
 
-        @if( is_single() ) : {{ the_title( '<h3 class="entry-title">', '</h3>' ) }}
-        @else
-           {{ the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ) }}
-        @endif
-        <div class="post-details">
-            <i class="fa fa-user"></i> {{ get_the_author() }}
-            <i class="fa fa-clock-o"></i> <time>{{ the_date() }}</time>
-            <i class="fa fa-folder"></i> {{ the_category( ', ') }}
-            <div class="post-comments-badge">
-                <a href="{{ comments_link() }}"><i class="fa fa-comments"></i> {{ comments_number( 0, 1, '%') }}</a>
-            </div><!-- post-comments-badge -->
+    <div class="card">
+        <div class="card-header">
 
-            {{ edit_post_link(' Edit', '<i class="fa fa-pencil"></i>') }}
+            <header>
+                <h3 class="entry-title"><a href="{{ get_permalink() }}" rel="bookmark">{{ the_title() }}</a></h3>
+            </header>
+
+            <div class="post-details">
+                {{ shipyard_render_svg( 'clock' ) }}<time datetime="{{ get_the_time( 'U' ) }}">{{ date_i18n( get_option( 'date_format' ), get_the_time('U') ) }}</time>
+
+                @if( have_comments() )
+                    <div class="post-comments-badge">
+                        <a href="{{ comments_link() }}"> {{ comments_number( 0, 1, '%') }}</a>
+                    </div>
+                @endif
+            </div>
         </div>
-    </div>
 
-    @if( has_post_thumbnail() )
-        <div class="card-image"><a href="{{ the_permalink() }}">{{ the_post_thumbnail() }}</a></div>
-    @endif
+        @if( has_post_thumbnail() )
+            <div class="card-image"><a href="{{ the_permalink() }}">{{ the_post_thumbnail('small-banner') }}</a></div>
+        @endif
 
-    <div class="card-copy">
-      <p>{{ the_excerpt() }}</p>
+        <div class="card-copy">
+            <p>{{ the_excerpt() }}</p>
+        </div>
+
     </div>
-  </div>
 
 </article>

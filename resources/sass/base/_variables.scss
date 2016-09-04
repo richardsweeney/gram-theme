@@ -24,6 +24,10 @@ $hover-color: #C2D7CE;
 $primary-theme-color: #84AF9D;
 $secondary-theme-color: #E4DED0;
 $tertiary-theme-color: #C29341;
+$footer-background: #84af9d;
+$footer-color: white;
+$footer-link-color: transparentize($footer-color, 0.6);
+$footer-disclaimer-color: transparentize($footer-color, 0.6);
 
 // Font Colors
 $base-background-color: $primary-theme-color;

@@ -1,17 +1,20 @@
 <div id="js-parallax-window" class="parallax-window">
 
-    <div class="parallax-static-content">
-        <b>
-            <h1>{{ bloginfo('name') }}</h1>
-            <p>{{ bloginfo('description') }}</p>
-        </b>
-    </div>
+    @while( have_posts() )
+        {{ the_post() }}
 
-    @if( has_post_thumbnail() )
-    <div id="js-parallax-background" class="parallax-background" style="background: url('{{ the_post_thumbnail_url() }}') 0% 0% / cover;"></div>
-  	@endif
+        <div id="js-parallax-window" class="parallax-window">
+            <div class="parallax-static-content container">
+                <h1>{{ the_title() }}</h1>
+                {{ the_content() }}
+            </div>
 
-    <a href="#section-features" class="jump-down"><i class="fa fa-chevron-down"></i></a>
+            @if( has_post_thumbnail() )
+                <div id="js-parallax-background" class="parallax-background" style="background: url('{{ the_post_thumbnail_url() }}') 0 0 / cover;"></div>
+            @endif
+        </div>
+
+    @endwhile
 
 </div>
 

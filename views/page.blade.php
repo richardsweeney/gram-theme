@@ -2,16 +2,22 @@
 
 @section( 'main' )
 
-    <section class="posts-list">
+    <section class="page container">
+        <div class="page-content">
 
-        @while( have_posts() )
-            {{ the_post() }}
+            @while( have_posts() )
+                {{ the_post() }}
 
-            @include( 'views.pages.page' )
-        @endwhile
+                <article {{ post_class() }}>
 
+                    <div class="post-content">
+                        {{ the_content() }}
+                    </div>
+
+                </article>
+            @endwhile
+
+        </div>
     </section>
-
-    @include( 'views.common.sidebar' )
 
 @endsection

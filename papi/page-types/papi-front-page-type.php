@@ -21,50 +21,8 @@ class Front_Page_Type extends Papi_Page_Type {
 	 * Register content meta box.
 	 */
 	public function register() {
-		$this->box( __( 'Hero Section', 'gram' ), [ $this, 'register_hero_meta_section' ] );
 		$this->box( __( 'Video Home section', 'gram' ), [ $this, 'video_home_section' ] );
 		$this->box( __( 'About Home section', 'gram' ), [ $this, 'about_home_section' ] );
-	}
-
-
-	/**
-	 * Hero with autocomplete fields.
-	 *
-	 * @return array
-	 */
-	public function register_hero_meta_section() {
-		return [
-			papi_property( [
-				'title' => __( 'Background Image', 'gram' ),
-				'slug'  => 'bg_hero_image',
-				'type'  => 'image',
-			] ),
-			papi_property( [
-				'title' => __( 'Hero Title', 'gram' ),
-				'slug'  => 'hero_title',
-				'type'  => 'string',
-				'settings' => [
-					'allow_html' => true
-				],
-			] ),
-			papi_property( [
-				'title'    => __( 'Hero Subheading', 'gram' ),
-				'slug'     => 'hero_subheading',
-				'type'     => 'text',
-				'settings' => [
-					'allow_html' => true
-				],
-			] ),
-			papi_property( [
-				'title'    => __( 'Register Email Text', 'gram' ),
-				'slug'     => 'register_text',
-				'type'     => 'text',
-				'settings' => [
-					'allow_html' => true
-				],
-			] ),
-
-		];
 	}
 
 

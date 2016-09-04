@@ -7,8 +7,6 @@
         <meta charset="{{ bloginfo( 'charset' ) }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11">
-        <!-- Font Awesome Icons -->
-        <script src="https://use.fontawesome.com/1d1c7c86b0.js"></script>
 
         {{ wp_head() }}
 
@@ -25,15 +23,21 @@
 
                 @include( 'views.common.frontpage-sections.signup-form' )
             @else
-                <div id="js-parallax-window" class="parallax-window other-pages">
-                    <div class="overlay"></div>
-                    <div class="parallax-static-content">
-                        <h1>{{ the_title() }}</h1>
+                @if ( is_page() || is_singular( 'post' ) )
+                    <div id="js-parallax-window" class="parallax-window">
+
+                        <div id="js-parallax-window" class="parallax-window">
+                            <div class="parallax-static-content page container">
+                                <h1>{{ the_title() }}</h1>
+                            </div>
+
+                            @if( has_post_thumbnail() )
+                                <div id="js-parallax-background" class="parallax-background" style="background: url('{{ the_post_thumbnail_url() }}') 0 0 / cover;"></div>
+                            @endif
+                        </div>
+
                     </div>
-                    @if ( has_post_thumbnail() )
-                        <div id="js-parallax-background" class="parallax-background" style="background: url('{{ bloginfo( 'stylesheet_directory' ) }}/resources/img/bg_gram.jpg'); background-position: 50% 50%;"></div>
-                    @endif
-                </div>
+                @endif
             @endif
 
             <div id="content" class="site-content">
@@ -46,11 +50,5 @@
 
         {{ wp_footer() }}
     </body>
+
 </html>
-
-
-
-
-
-
-

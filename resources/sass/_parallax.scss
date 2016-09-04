@@ -1,69 +1,37 @@
-$parallax-window-height: 30em;
+$parallax-window-height: 450px;
 $parallax-background-height: $parallax-window-height * 2;
 
-header {
-  margin-bottom: 3em;
-}
-
 .parallax-window {
-  max-height: $parallax-window-height;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  width: 100%;
+    max-height: $parallax-window-height;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
 }
 
-// .parallax-static-content {
-//     position: relative;
-//     z-index: 9;
-//     background-color: rgba(0, 0, 0, 0.498039);
-//     color: rgb(255, 255, 255);
-//     width: 48%;
-//     top: 10%;
-//     padding: 1em 2em;
-//     margin: 100px auto;
-// }
-
-.parallax-static-content {
-  padding: 1em 2em;
-  position: relative;
-  z-index: 9;
-  background-color: rgba(0, 0, 0, 0.498039);
-  color: #f2f2f2;
-  width: 48%;
-  margin: 100px auto;
-  top: 10%;
-  .page-title {
+.parallax-static-content.container {
     color: white;
-    text-transform: uppercase;
-  }
-
-  @include media($mobile) {
-    width: 70%;
-  }
-
-  h1 {
-    padding: 0.5em 0;
-    font-size: 3em;
-    font-weight: normal;
-  }
-  p {
-    font-weight: normal;
-    font-size: 1.2em;
-  }
-
+    position: relative;
+    z-index: 9;
+    background: rgba( black, 0.4 );
+    width: 600px;
+    max-width: 100%;
+    padding-top: $base-spacing;
+    padding-bottom: $base-spacing;
+    margin: ($base-spacing * 4) auto;
+    font-size: rem(20);
+    &.page {
+        margin: ($base-spacing * 5) auto;
+        padding-bottom: 0;
+    }
 }
 
 .parallax-background {
-  background: url("/content/uploads/2016/08/bg.jpg") no-repeat;
-  // background-position: top;
-  background-size: cover;
-  height: $parallax-background-height;
-  left: 0;
-  position: absolute;
-  top: - $parallax-window-height / 3;
-  width: 100%;
+    height: $parallax-background-height;
+    left: 0;
+    position: absolute;
+    top: - $parallax-window-height / 3;
+    width: 100%;
 }
 
-
-
+// Based on http://codepen.io/skeurentjes/

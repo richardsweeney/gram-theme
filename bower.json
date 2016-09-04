@@ -20,6 +20,8 @@
     "test",
     "tests"
   ],
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "masonry": "^4.1.1"
   }
 }

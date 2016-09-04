@@ -32,7 +32,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/resources/js/all/isotope.pkgd.min.js', array('jquery'), '3.0.1', true );
 
-	wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/resources/js/all/imagesloaded.pkgd.min.js', array('jquery'), '4.1.0', true );
+	wp_enqueue_script( 'imgs-loaded-js', get_template_directory_uri() . '/resources/js/all/imagesloaded.pkgd.min.js', array('jquery'), '4.1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -103,7 +103,7 @@ add_action( 'init', function() {
 	require get_template_directory() . '/mailchimp-api-master/src/MailChimp.php';
 	$mailChimp = new \DrewM\MailChimp\MailChimp( '1adb927105dbebd9f262f02b921eaccb-us14' );
 	$list_id = 'fcd23dec93';
-	$result = $mailChimp->post("lists/$list_id/members", [
+	$result = $mailChimp->post( "lists/$list_id/members", [
 		'email_address' => $_POST['mailchimp_email'],
 		'status'        => 'subscribed',
 	]);

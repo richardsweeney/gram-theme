@@ -1,138 +1,93 @@
-section.post-list {
-    @include outer-container;
+
+.posts-list {
+    @include display(flex);
+    @include flex-flow(row wrap);
+    @include justify-content(center);
+    @include align-items(stretch);
 }
 
-article.excerpt {
-    $base-border-color: white !default;
-    $base-border-radius: 3px !default;
-    $base-background-color: white !default;
-    $base-spacing: 1.5em !default;
-    $action-color: #df4b35 !default;
-    $dark-gray: #333 !default;
-    $base-font-color: $dark-gray !default;
-    $card-border-color: $base-border-color;
-    $card-border: 1px solid $card-border-color;
-    $card-background: lighten($card-border-color, 10%);
-    $card-header-background: $card-background;
-    $card-margin: 1em;
-    $card-image-hover-opacity: 0.7;
-
-    background-color: white;
-    border: $card-border;
-    border-radius: $base-border-radius;
-    cursor: pointer;
+.card-outer {
     transition: all 0.2s ease-in-out;
-    @media screen and (min-width: 53.75em) {
-        @include span-columns(9);
-        margin-bottom: 2em;
+    background-color: #fafafa;
+    border: 1px solid $light-gray;
+    border-radius: $base-border-radius;
+    margin: 0 0 flex-gutter();
+    @include media($medium-screen-up) {
+        margin-right: 2%;
+        @include flex-grow(2);
     }
-    // @media screen and ($mobile) {
-    //     margin-left: 2%;
-    //     margin-right: 2%;
-    // }
-
-    @include media(900px) {
-        @include span-columns(6);
-        @include omega(2n);
+    @include media(min-width $medium-screen max-width $large-screen) {
+        width: 48%;
+        &:nth-of-type(2n + 2),
+        &:last-child {
+            margin-right: 0;
+        }
     }
-
+    @include media($large-screen-up) {
+        width: 32%;
+        &:nth-of-type(3n + 3),
+        &:last-child {
+            margin-right: 0;
+        }
+    }
     .card-image {
-        height: auto;
-        max-height: 150px;
+        //height: auto;
+        //max-height: 200px;
         overflow: hidden;
-
         img {
-            @include border-top-radius($base-border-radius);
             opacity: 1;
             transition: all 0.2s ease-in-out;
             width: 100%;
         }
     }
-
     .card-header {
-        background-color: white;
-        border-bottom: $card-border;
-        border-radius: $base-border-radius $base-border-radius 0 0;
         font-weight: bold;
-        line-height: 1.5em;
         padding: ($base-spacing / 3) ($base-spacing / 2);
-        transition: all 0.2s ease-in-out;
-        .entry-title {
-            padding: .5em 0;
-        }
-        .post-details {
-            position: relative;
-            font-size: 12px;
-            width: 90%;
-            color: lighten(black, 30%);
-            i.fa {
-                padding-left: 10px;
+        position: relative;
+    }
+    .post-details {
+        color: lighten(black, 30%);
+        .post-comments-badge {
+            border: none;
+            border-radius: 100%;
+            background: $action-color;
+            text-align: center;
+            display: table;
+            @include size(50px);
+            @include position(absolute, $small-spacing $small-spacing null null);
+            a {
+                display: table-cell;
+                vertical-align: middle;
+                color: white;
+                font-size: 16px;
+                line-height: 20px;
             }
-            i.fa:first-child {
-                padding: 0;
-            }
-            .post-comments-badge {
-                height: 60px;
-                width: 60px;
-                position: absolute;
-                top: -55px;
-                right: -35px;
-                border: none;
-                -webkit-border-radius: 100px;
-                -moz-border-radius: 100px;
-                border-radius: 100px;
-                background: #c2d7ce;
-                text-align: center;
-                display: table;
-
-                a {
-                    display: table-cell;
-                    vertical-align: middle;
-                    color: white;
-                    font-size: 16px;
-                    line-height: 20px;
-                }
-
-                i.fa {
-                    display: block;
-                    font-size: 15px;
-                    padding: 0;
-                    margin-bottom: 4px;
-                }
-
-                &:hover {
-                    background-color: darken(#c2d7ce, 10%);
-                }
+            &:hover {
+                background-color: darken(#c2d7ce, 10%);
             }
         }
     }
-
     .card-copy {
-        font-size: 0.9em;
-        line-height: 1.5em;
-        padding: ($base-spacing / 2) ($base-spacing / 2);
-
-        p {
-            margin: 0 0 ($base-spacing / 2);
-        }
+        padding: 0 $small-spacing $small-spacing;
     }
-
     &:focus,
     &:hover {
-        cursor: pointer;
-
         img {
-            opacity: $card-image-hover-opacity;
+            opacity: 0.75;
         }
     }
-
     &:active {
         background-color: white;
-
         .card-header {
             background-color: white;
         }
     }
+}
+
+.pagination.container {
+    padding-top: $base-spacing;
+    padding-bottom: $base-spacing * 2;
+    text-align: center;
 }
 
 /* ----------------------------------
@@ -274,7 +229,6 @@ article.excerpt {
         }
 
         h3.widget-title {
-            font-family: 'Pathway Gothic One', sans-serif;
             color: #c29341;
             font-size: 1.4em;
             margin: 0 0 1em 0;

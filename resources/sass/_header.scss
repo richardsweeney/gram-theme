@@ -1,12 +1,34 @@
-.menu-toggle {
-    @include media($medium-screen-up) {
-        display: none;
+
+.site-header.container {
+    padding: $base-spacing;
+    @include clearfix;
+}
+
+.navigation {
+    .logo {
+        @include media($medium-screen-up) {
+            float: left;
+        }
+        img {
+            max-width: 150px;
+        }
     }
 }
 
-.menu {
-    display: none;
+.nav-menu {
+    padding-top: $small-spacing;
     @include media($medium-screen-up) {
-        display: block;
+        float: right;
+    }
+    li {
+        display: inline-block;
+        margin-right: $small-spacing;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    a {
+        color: $base-font-color;
     }
 }
+

@@ -2,8 +2,6 @@
 
 @section( 'main' )
 
-<!-- ABOUT
-    ================================================== -->
 	@include( 'views.pages.about', [
 		'about_bg_img'        => $about_bg_img,
 		'about_feature_title' => $about_feature_title,

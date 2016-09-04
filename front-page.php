@@ -7,25 +7,13 @@
  */
 
 /**
- * Hero Bg Image
- */
-$bg_hero_image = papi_get_field( 'bg_hero_image', false );
-if ( $bg_hero_image ) {
-    if ( isset( $bg_hero_image->sizes['large'] ) ) {
-        $img_src = $bg_hero_image->sizes['large']['url'];
-    }
-    else {
-        $img_src = $bg_hero_image->url;
-    }
-}
-
-/**
  * Youtube Video
  */
 $video_url = papi_get_field( 'video_url', false );
 if ( $video_url ) {
 	$video_url = wp_oembed_get( $video_url );
 }
+
 
 /**
  * About Image
@@ -56,9 +44,7 @@ if ( isset( $_GET['mc'] ) ) {
 
 
 bladerunner( 'views.front-page', [
-	'hero_title'       => papi_get_field( 'hero_title' ),
-	'hero_subheading'  => papi_get_field( 'hero_subheading' ),
-	'register_text'    => papi_get_field( 'register_text' ),
+	'register_text'    => get_theme_mod( 'shipyard_email_text', 'Want to keep up to date with Gram’s news, events and special offers?' ),
 	'video_title'      => papi_get_field( 'video_title' ),
 	'video_url'        => $video_url,
 	'video_text'       => papi_get_field( 'video_text' ),
