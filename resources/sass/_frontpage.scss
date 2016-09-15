@@ -31,7 +31,6 @@
     }
 }
 
-
 .about-home-wrapper.container {
     padding-top: $base-spacing;
     padding-bottom: $base-spacing;
@@ -42,9 +41,6 @@
     @include media($large-screen-up) {
         padding-top: $base-spacing * 2;
         padding-bottom: $base-spacing * 2;
-    }
-    h2 {
-        color: $tertiary-theme-color;
     }
     @include media($medium-screen-up) {
         .image-container,

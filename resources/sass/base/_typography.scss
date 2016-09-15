@@ -1,10 +1,10 @@
 body {
-  @include font-feature-settings("kern", "liga", false);
-  -webkit-font-smoothing: antialiased;
-  color: $base-font-color;
-  font-family: 'Open Sans', sans-serif;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
+    @include font-feature-settings("kern", "liga", false);
+    -webkit-font-smoothing: antialiased;
+    color: $base-font-color;
+    font-family: 'Open Sans', sans-serif;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
 }
 
 h1,
@@ -13,67 +13,65 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Pathway Gothic One', sans-serif;
-  font-size: $base-font-size;
-  line-height: $heading-line-height;
-  margin: 0 0 $small-spacing;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: $base-font-size;
+    line-height: $heading-line-height;
+    margin: 0 0 $small-spacing;
 }
 
 h1 {
-  font-size: rem(40);
+    font-size: rem(40);
 }
 
 h2 {
-  font-size: rem(36);
+    font-size: rem(36);
 }
 
 h3 {
-  font-size: rem(32);
+    font-size: rem(32);
 }
 
 h4 {
-  font-size: rem(28);
+    font-size: rem(28);
 }
 
 h5 {
-  font-size: rem(24);
+    font-size: rem(24);
 }
 
 h6 {
-  font-size: rem(20);
+    font-size: rem(20);
 }
 
 p {
-  margin: 0 0 $small-spacing;
+    margin: 0 0 $small-spacing;
 }
 
 a {
-  color: $action-color;
-  text-decoration: none;
-  transition: color 0.1s linear;
-
-  &:active,
-  &:focus,
-  &:hover {
-    color: darken($action-color, 15%);
-  }
-
-  &:active,
-  &:focus {
-    outline: none;
-  }
+    color: $action-color;
+    text-decoration: none;
+    transition: color 0.1s linear;
+    &:active,
+    &:focus,
+    &:hover {
+        color: darken($action-color, 15%);
+    }
+    &:active,
+    &:focus {
+        outline: none;
+    }
 }
 
 hr {
-  border-bottom: $base-border;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  margin: $base-spacing 0;
+    border-bottom: $base-border;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin: $base-spacing 0;
 }
 
 img,
 picture {
-  margin: 0;
-  max-width: 100%;
+    margin: 0;
+    max-width: 100%;
 }

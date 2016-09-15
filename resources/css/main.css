@@ -6,7 +6,7 @@ button {
   -o-appearance: none;
   appearance: none;
   -webkit-font-smoothing: antialiased;
-  background-color: #84AF9D;
+  background-color: #84af9d;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -183,7 +183,7 @@ p {
   margin: 0 0 0.75rem; }
 
 a {
-  color: #84AF9D;
+  color: #84af9d;
   text-decoration: none;
   transition: color 0.1s linear; }
   a:active, a:focus, a:hover {
@@ -327,11 +327,14 @@ input[type="url"] {
   height: 400px; }
 
 .site-header.container {
-  padding: 1.5rem; }
+  padding: 1.5rem 0.75rem 0.75rem; }
   .site-header.container::after {
     clear: both;
     content: "";
     display: table; }
+  @media screen and (min-width: 40rem) {
+    .site-header.container {
+      padding: 1.5rem 1.5rem 0.75rem; } }
 
 @media screen and (min-width: 40rem) {
   .navigation .logo {
@@ -345,6 +348,8 @@ input[type="url"] {
   @media screen and (min-width: 40rem) {
     .nav-menu {
       float: right; } }
+  .nav-menu ul {
+    padding-left: 0; }
   .nav-menu li {
     display: inline-block;
     margin-right: 0.75rem; }
@@ -383,7 +388,7 @@ input[type="url"] {
   width: 100%; }
 
 .newsletter-container {
-  background-color: #84AF9D;
+  background-color: #84af9d;
   padding: 3rem 0;
   max-width: 100%;
   margin-left: auto;
@@ -454,8 +459,6 @@ input[type="url"] {
     .about-home-wrapper.container {
       padding-top: 3rem;
       padding-bottom: 3rem; } }
-  .about-home-wrapper.container h2 {
-    color: #C29341; }
   @media screen and (min-width: 40rem) {
     .about-home-wrapper.container .image-container,
     .about-home-wrapper.container .about-text {
@@ -559,7 +562,7 @@ input[type="url"] {
 .post-comments-badge {
   border: none;
   border-radius: 100%;
-  background: #84AF9D;
+  background: #84af9d;
   text-align: center;
   display: table;
   height: 50px;
@@ -615,39 +618,49 @@ article.single-post {
     display: table; }
   .footer .footer-inner {
     padding-top: 3rem;
-    padding-bottom: 3rem;
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: end;
-    -moz-box-align: end;
-    box-align: end;
-    -webkit-align-items: flex-end;
-    -moz-align-items: flex-end;
-    -ms-align-items: flex-end;
-    -o-align-items: flex-end;
-    align-items: flex-end;
-    -ms-flex-align: end; }
+    padding-bottom: 1.5rem; }
+    @media screen and (min-width: 40rem) {
+      .footer .footer-inner {
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: end;
+        -moz-box-align: end;
+        box-align: end;
+        -webkit-align-items: flex-end;
+        -moz-align-items: flex-end;
+        -ms-align-items: flex-end;
+        -o-align-items: flex-end;
+        align-items: flex-end;
+        -ms-flex-align: end; } }
 
-@media screen and (min-width: 40rem) {
-  .footer-inner-column {
-    margin-right: 2%;
-    width: 48%; }
-    .footer-inner-column:nth-of-type(2n + 2), .footer-inner-column:last-child {
-      margin-right: 0; } }
+.footer-inner-column {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 1.5rem; }
+  @media screen and (min-width: 40rem) {
+    .footer-inner-column {
+      margin: 0 2% 0 0;
+      text-align: left;
+      width: 48%; }
+      .footer-inner-column:nth-of-type(2n + 2), .footer-inner-column:last-child {
+        margin-right: 0; } }
 
-.footer-logo img {
-  max-width: 250px; }
+.footer-logo {
+  display: block; }
+  .footer-logo img {
+    max-width: 250px; }
 
 .social-link-list {
-  text-align: right;
   list-style: none;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  display: block; }
   .social-link-list li {
     display: inline-block; }
   .social-link-list svg {
@@ -661,20 +674,27 @@ article.single-post {
     .social-link-list svg:hover {
       opacity: 1; }
 
+@media screen and (min-width: 40rem) {
+  .footer-inner-column .social-link-list {
+    text-align: right; } }
+
 /* ----------------------------------
         FOOTER 2
   ----------------------------------- */
 .footer-2 {
-  background: #C29341;
+  background: #c29341;
   border-top: 2px solid white;
   color: #fff;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  text-align: right; }
+  text-align: center; }
   .footer-2::after {
     clear: both;
     content: "";
     display: table; }
+  @media screen and (min-width: 40rem) {
+    .footer-2 {
+      text-align: right; } }
   .footer-2 a {
     color: #fff; }
   .footer-2 .menu {
