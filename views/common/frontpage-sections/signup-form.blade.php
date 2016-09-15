@@ -7,7 +7,7 @@
         </div>
 
         <div class="nl-form">
-            @if(!empty($mc_message))
+            @if ( ! empty( $mc_message ) )
                 <p class="mc-message">
                     {{ $mc_message }}
                 </p>
@@ -15,8 +15,7 @@
 
             <form class="form-inline" role="form" action="" method="post">
                 <div class="form-group">
-{{--                    <label class="sr-only" for="subscribe-email">{{ __( 'Email address', 'gram' ) }}</label>--}}
-                    <input type="text" name="mailchimp_email" placeholder="Enter your email..." class="subscribe-email form-control" id="subscribe-email">
+                    <input type="text" name="mailchimp_email" placeholder="Enter your email address" class="subscribe-email form-control" id="subscribe-email">
                 </div>
                 <button type="submit" class="btn">{{ __( 'Join our mailing list', 'gram' ) }}</button>
             </form>

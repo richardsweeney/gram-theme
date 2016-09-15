@@ -3,7 +3,7 @@ $base-font-family: 'Open Sans', sans-serif;
 $heading-font-family: 'Pathway Gothic One', sans-serif;
 
 // Font Sizes
-$base-font-size: 1em;
+$base-font-size: rem(16);
 
 // Line height
 $base-line-height: 1.5;
@@ -11,7 +11,7 @@ $heading-line-height: 1.2;
 
 // Other Sizes
 $base-border-radius: 3px;
-$base-spacing: $base-line-height * 1em;
+$base-spacing: $base-line-height * rem(16);
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 

@@ -57,11 +57,11 @@ function shipyard_render_customizer_social_icons() {
 	ob_start(); ?>
 
 	<ul class="social-link-list">
-		<?php foreach( [ 'facebook', 'twitter', 'instagram', 'googleplus' ] as $social_link ) :
+		<?php foreach( [ 'facebook', 'twitter', 'instagram', 'pinterest', 'youtube' ] as $social_link ) :
 			if ( get_theme_mod( 'shipyard_' . $social_link ) ) : ?>
 				<li>
-					<a class="social-link" href="<?php echo get_theme_mod( 'shipyard_' . $social_link ); ?>" target="_blank">
-						<?php  echo shipyard_render_svg( $social_link . '.svg' ) ?>
+					<a class="social-link" href="<?php echo esc_url( get_theme_mod( 'shipyard_' . $social_link ) ); ?>" target="_blank">
+						<?php echo shipyard_render_svg( "{$social_link}-square" ) ?>
 					</a>
 				</li>
 			<?php endif;
@@ -103,21 +103,11 @@ function shipyard_get_featured_image( $size = 'full' ) {
 }
 
 
-function shipyard_get_featured_image_src( $size = 'full' ) {
-	$img = shipyard_get_featured_image();
-	if ( $img ) {
-		return $img[0];
-	}
-
-	return false;
-}
-
-
 function shipyard_render_image_metadata() {
 	if ( ! has_post_thumbnail() ) return;
 
-	$featured_image = shipyard_get_featured_image();
-	?>
+	$featured_image = shipyard_get_featured_image(); ?>
+
     <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content="<?php echo $featured_image[0] ?>">
         <meta itemprop="width" content="<?php echo $featured_image[1] ?>">
@@ -129,12 +119,3 @@ function shipyard_render_image_metadata() {
 function gram_get_post_details() {
 	printf( __( 'By %s on %s', 'gram' ), get_the_author(), '<time datetime="' . get_the_time( 'U' ) . '">' . date_i18n( get_option( 'date_format' ), get_the_time('U') ) . '</time>' );
 }
-
-
-/**
- * Custom Post Types
- */
-require get_template_directory() . '/inc/post-types/CPT.php';
-
-//Product Custom Post Type
-require get_template_directory() . '/inc/post-types/register-products.php';

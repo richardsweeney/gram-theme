@@ -28,7 +28,7 @@
 
                         <div id="js-parallax-window" class="parallax-window">
                             <div class="parallax-static-content page container">
-                                <h1>{{ the_title() }}</h1>
+                                <header><h1>{{ the_title() }}</h1></header>
                             </div>
 
                             @if( has_post_thumbnail() )

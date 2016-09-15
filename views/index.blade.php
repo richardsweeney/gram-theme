@@ -2,12 +2,19 @@
 
 @section( 'main' )
 
-    <section class="posts-list container">
+    <section class="container">
 
-        @while( have_posts() )
-            {{ the_post() }}
-            @include( 'views.posts.excerpt' )
-        @endwhile
+        <header>
+            <h1>{{ the_archive_title() }}</h1>
+        </header>
+
+        <div class="posts-list">
+
+            @while( have_posts() )
+                {{ the_post() }}
+                @include( 'views.posts.excerpt' )
+            @endwhile
+        </div>
 
     </section>
 

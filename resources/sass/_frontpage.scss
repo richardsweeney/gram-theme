@@ -6,7 +6,10 @@
 
 .newsletter-inner-container {
     color: #fff;
-    @include outer-container();
+    @include media($medium-screen-up) {
+        @include display(flex);
+        @include align-items(center);
+    }
     button {
         width: 100%;
         border: 1px solid white;
@@ -17,14 +20,14 @@
     font-size: rem(20);
     padding-bottom: $base-spacing;
     @include media($medium-screen-up) {
-        @include span-columns(6);
+        width: 48%;
+        margin-right: 2%;
     }
 }
 
 .nl-form {
     @include media($medium-screen-up) {
-        @include span-columns(6);
-        @include omega();
+        width: 48%;
     }
 }
 
@@ -32,6 +35,10 @@
 .about-home-wrapper.container {
     padding-top: $base-spacing;
     padding-bottom: $base-spacing;
+    @include media($medium-screen-up) {
+        @include display(flex);
+        @include align-items(center);
+    }
     @include media($large-screen-up) {
         padding-top: $base-spacing * 2;
         padding-bottom: $base-spacing * 2;
@@ -39,15 +46,13 @@
     h2 {
         color: $tertiary-theme-color;
     }
-    .image-container {
-        @include media($medium-screen-up) {
-            @include span-columns(6);
+    @include media($medium-screen-up) {
+        .image-container,
+        .about-text {
+            width: 48%;
         }
-    }
-    .about-text {
-        @include media($medium-screen-up) {
-            @include span-columns(6);
-            @include omega();
+        .image-container {
+            margin-right: 2%;
         }
     }
 }

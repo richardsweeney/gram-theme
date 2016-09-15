@@ -26,6 +26,12 @@ img {
     height: auto;
 }
 
+svg {
+    display: inline-block;
+    vertical-align: middle;
+    @include size(rem(20));
+}
+
 .site-content,
 .site-footer {
     @include outer-container();

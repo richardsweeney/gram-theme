@@ -22,7 +22,7 @@ $parallax-background-height: $parallax-window-height * 2;
     font-size: rem(20);
     &.page {
         margin: ($base-spacing * 5) auto;
-        padding-bottom: 0;
+        padding-bottom: $small-spacing;
     }
 }
 
