@@ -1,7 +1,7 @@
-HSB Helsingborg theme
-=====================
+GRAM Malmö theme
+================
 
-This is a WordPress theme for HSB Helsingborg.
+This is a WordPress theme for Gram Malmö
 
 ## Grunt
 
