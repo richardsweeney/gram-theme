@@ -8,10 +8,10 @@
 }
 
 .card-outer {
-    background-color: lighten($light-gray, 10%);
+    background-color: lighten($light-gray, 12%);
     border: 1px solid $light-gray;
     border-radius: $base-border-radius;
-    margin: 0 0 flex-gutter();
+    margin: 0 0 $small-spacing;
     font-size: rem(15);
     @include flex-grow(1);
     @include media($medium-screen-up) {
@@ -33,9 +33,12 @@
     }
     .entry-title {
         width: 85%;
-        height: 80px;
+        height: 90px;
         overflow: hidden;
         margin-bottom: 0;
+        a {
+            color: $base-font-color;
+        }
     }
     .card-header {
         padding: ($base-spacing / 3) ($base-spacing / 2) 0;
@@ -48,40 +51,12 @@
         padding-top: $small-spacing;
         font-size: rem(14px);
         @include clearfix;
-        svg {
-            margin-right: 2px;
-            @include size(16px);
-        }
-        time {
-            display: block;
-        }
     }
     .card-copy {
-        padding: $small-spacing;
+        padding: 0 $small-spacing $small-spacing;
     }
-}
-
-.post-comments-badge {
-    border: none;
-    border-radius: 100%;
-    background: $action-color;
-    text-align: center;
-    display: table;
-    @include size(50px);
-    @include position(absolute, $small-spacing $small-spacing null null);
-    svg {
-        fill: white;
-        @include size(rem(16));
-    }
-    a {
-        display: table-cell;
-        vertical-align: middle;
-        color: white;
-        font-size: 16px;
-        line-height: 20px;
-    }
-    &:hover {
-        background-color: darken(#c2d7ce, 10%);
+    .button {
+        margin-top: $base-spacing;
     }
 }
 
@@ -95,16 +70,40 @@
         SINGLE POSTS
   ----------------------------------- */
 
-.single-posts-container {
-    position: relative;
-}
-
 article.single-post {
-    padding: $base-spacing 0 ($base-spacing * 2);
+    padding: $base-spacing 0;
     @include media($medium-screen-up) {
         @include span-columns(8);
         @include shift(2);
     }
 }
 
+.single-post-feat-image {
+    text-align: center;
+}
 
+.single-post-article {
+    padding-top: $base-spacing;
+    header {
+        padding-bottom: $small-spacing;
+    }
+    footer {
+        margin-top: $base-spacing;
+        padding-top: $small-spacing;
+        border-top: 1px solid $x-light-gray;
+    }
+}
+
+.single-post-pagination {
+    padding: 0 0 ($base-spacing * 2);
+    @include clearfix;
+}
+
+@include media($medium-screen-up) {
+    .prev-posts-link {
+        float: left;
+    }
+    .next-posts-link {
+        float: right;
+    }
+}

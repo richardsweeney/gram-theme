@@ -22,27 +22,11 @@
                 @include( 'views.common.frontpage-sections.intro' )
 
                 @include( 'views.common.frontpage-sections.signup-form' )
-            @else
-                @if ( is_page() || is_singular( 'post' ) )
-                    <div id="js-parallax-window" class="parallax-window">
-
-                        <div id="js-parallax-window" class="parallax-window">
-                            <div class="parallax-static-content page container">
-                                <header><h1>{{ the_title() }}</h1></header>
-                            </div>
-
-                            @if( has_post_thumbnail() )
-                                <div id="js-parallax-background" class="parallax-background" style="background: url('{{ the_post_thumbnail_url() }}') 0 0 / cover;"></div>
-                            @endif
-                        </div>
-
-                    </div>
-                @endif
             @endif
 
-            <div id="content" class="site-content">
+            <main id="content">
                 @yield( 'main' )
-            </div>
+            </main>
 
         </div>
 

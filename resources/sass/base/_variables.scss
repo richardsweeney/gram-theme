@@ -16,6 +16,7 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
+$x-light-gray: #f1f1f1;
 $light-gray: #ddd;
 $dark-gray: #333;
 $orange: #df4b35;
@@ -30,7 +31,7 @@ $footer-link-color: transparentize($footer-color, 0.6);
 $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
 // Font Colors
-$base-background-color: $primary-theme-color;
+$base-background-color: white;
 $base-font-color: $dark-gray;
 $action-color: $primary-theme-color;
 

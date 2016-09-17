@@ -1,8 +1,0 @@
-.page-content {
-    padding: $base-spacing;
-    padding-bottom: $base-spacing * 2;
-    @include media($medium-screen-up) {
-        @include span-columns(8);
-        @include shift(2);
-    }
-}

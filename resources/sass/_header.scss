@@ -1,10 +1,17 @@
 
 .site-header.container {
     padding: $base-spacing $small-spacing $small-spacing;
+    margin-bottom: $base-spacing;
+    border-bottom: 1px solid $x-light-gray;
     @include clearfix;
-    @include media( $medium-screen-up ) {
+    @include media($medium-screen-up) {
         padding: $base-spacing $base-spacing $small-spacing;
     }
+}
+
+.home .site-header.container {
+    border-bottom: none;
+    margin-bottom: 0;
 }
 
 .navigation {

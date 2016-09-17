@@ -11,7 +11,6 @@ $visual-grid: false;
 @import "header";
 @import "parallax";
 @import "frontpage";
-@import "page";
 @import "blog";
 @import "footer";
 
@@ -32,21 +31,13 @@ svg {
     @include size(rem(20));
 }
 
+.site {
+    @include clearfix;
+}
+
 .site-content,
 .site-footer {
     @include outer-container();
-
-    .content-area {
-        @include media($medium-screen-up) {
-            @include span-columns(8);
-        }
-    }
-
-    .widget-area {
-        @include media($medium-screen-up) {
-            @include span-columns(4);
-        }
-    }
 }
 
 .container {
@@ -57,7 +48,29 @@ svg {
     }
 }
 
+.centered-content {
+     padding: $base-spacing 0 ($base-spacing * 2);
+     @include media($large-screen-up) {
+         padding: $base-spacing $base-spacing ($base-spacing * 2);
+         @include span-columns(8);
+         @include shift(2);
+     }
+ }
+
+body div.sharedaddy h3.sd-title {
+    font-size: rem(24px);
+    margin: $base-spacing 0 $small-spacing;
+    &:before {
+        border-top: none;
+        margin: 0;
+    }
+}
+
 .skip-link,
 .screen-reader-text {
     display: none;
+}
+
+.parallax-window {
+    min-height: 400px;
 }

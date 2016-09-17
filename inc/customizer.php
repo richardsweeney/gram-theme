@@ -49,16 +49,35 @@ add_action( 'customize_register', function( WP_Customize_Manager $wp_customize )
 			'label'    => __( 'Main logo', 'gram' ),
 			'section'  => 'shipyard_footer',
 			'settings' => 'footer_logo',
-			'priority' => 1,
 		]
 	) );
+
+	$wp_customize->add_setting( 'shipyard_address' );
+	$wp_customize->add_control( 'shipyard_address', [
+		'label'    => __( 'Address', 'gram' ),
+		'section'  => 'shipyard_footer',
+		'type'     => 'textarea',
+	]);
+
+	$wp_customize->add_setting( 'shipyard_email_address' );
+	$wp_customize->add_control( 'shipyard_email_address', [
+		'label'    => __( 'Email Address', 'gram' ),
+		'section'  => 'shipyard_footer',
+		'type'     => 'email',
+	]);
+
+	$wp_customize->add_setting( 'shipyard_telephone' );
+	$wp_customize->add_control( 'shipyard_telephone', [
+		'label'    => __( 'Telephone number', 'gram' ),
+		'section'  => 'shipyard_footer',
+		'type'     => 'tel',
+	]);
 
 	$wp_customize->add_setting( 'shipyard_facebook' );
 	$wp_customize->add_control( 'shipyard_facebook', [
 		'label'    => __( 'Facebook', 'gram' ),
 		'section'  => 'shipyard_footer',
 		'type'     => 'url',
-		'priority' => 2,
 	]);
 
 	$wp_customize->add_setting( 'shipyard_twitter' );
@@ -66,7 +85,6 @@ add_action( 'customize_register', function( WP_Customize_Manager $wp_customize )
 		'label'    => __( 'Twitter', 'gram' ),
 		'section'  => 'shipyard_footer',
 		'type'     => 'url',
-		'priority' => 3,
 	]);
 
 	$wp_customize->add_setting( 'shipyard_instagram' );
@@ -74,7 +92,6 @@ add_action( 'customize_register', function( WP_Customize_Manager $wp_customize )
 		'label'    => __( 'Instagram', 'gram' ),
 		'section'  => 'shipyard_footer',
 		'type'     => 'url',
-		'priority' => 4,
 	]);
 
 	$wp_customize->add_setting( 'shipyard_youtube' );
@@ -82,7 +99,6 @@ add_action( 'customize_register', function( WP_Customize_Manager $wp_customize )
 		'label'    => __( 'Youtube', 'gram' ),
 		'section'  => 'shipyard_footer',
 		'type'     => 'url',
-		'priority' => 5,
 	]);
 
 	$wp_customize->add_setting( 'shipyard_pinterest' );
@@ -90,7 +106,6 @@ add_action( 'customize_register', function( WP_Customize_Manager $wp_customize )
 		'label'    => __( 'Pinterest', 'gram' ),
 		'section'  => 'shipyard_footer',
 		'type'     => 'url',
-		'priority' => 6,
 	]);
 
 

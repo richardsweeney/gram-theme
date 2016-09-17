@@ -69,22 +69,12 @@
     background: $tertiary-theme-color;
     border-top: 2px solid $footer-color;
     color: #fff;
-    padding-top: $base-spacing;
-    padding-bottom: $base-spacing;
+    padding: ($base-spacing * 1.5) 0;
     text-align: center;
     @include clearfix;
-    @include media($medium-screen-up) {
-        text-align: right;
-    }
     a {
         color: #fff;
-    }
-    .menu {
-        padding-left: 0;
-        li {
-            display: inline-block;
-            margin-right: $small-spacing;
-        }
+        text-decoration: underline;
     }
 }
 

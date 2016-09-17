@@ -2,22 +2,32 @@
 
 @section( 'main' )
 
-    <section class="page container">
-        <div class="page-content">
+    @while( have_posts() )
+        {{ the_post() }}
 
-            @while( have_posts() )
-                {{ the_post() }}
+        <div class="container">
 
-                <article {{ post_class() }}>
+            <article {{ post_class() }}>
+
+                @if ( has_post_thumbnail() )
+                    <div class="single-post-feat-image">
+                        {{ the_post_thumbnail( 'large' ) }}
+                    </div>
+                @endif
+
+                <div class="centered-content single-post-main-content">
+                    <header>
+                        <h1>{{ the_title() }}</h1>
+                    </header>
 
                     <div class="post-content">
                         {{ the_content() }}
                     </div>
-
-                </article>
-            @endwhile
+                </div>
+            </article>
 
         </div>
-    </section>
+
+    @endwhile
 
 @endsection
