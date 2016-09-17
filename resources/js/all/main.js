@@ -70,5 +70,5 @@
 			$( ".nav .more" ).removeClass( "active-nav-item" );
 		} );
 	} );
-	
+
 }( jQuery, shipyard ));

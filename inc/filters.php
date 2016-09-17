@@ -10,9 +10,8 @@ add_filter( 'papi/settings/directories', function () {
 /**
  * Filter custom page types
  */
-add_filter( 'papi/settings/show_standard_page_type_page', function () {
-	return true;
-} );
+add_filter( 'papi/settings/show_standard_page_type_page', '__return_true' );
+
 
 /**
  * Filter the blade cache path
