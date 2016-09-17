@@ -87,35 +87,20 @@ function shipyard_get_logo() {
 }
 
 
-/**
- * Get the featured image for a post.
- *
- * @param string $size
- *
- * @return array|bool|false
- */
-function shipyard_get_featured_image( $size = 'full' ) {
-	if ( has_post_thumbnail() ) {
-		return wp_get_attachment_image_src( get_post_thumbnail_id(), $size );
-	}
+function shipyard_maybe_add_ga() {
+	$ua_code = get_theme_mod( 'shipyard_google_analytics_code', false );
+	if ( ! $ua_code || ( is_user_logged_in() && current_user_can( 'manage_options' ) ) ) {
+		return;
+	} ?>
 
-	return false;
-}
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+		ga('create', '<?php echo $ua_code ?>', 'auto');
+		ga('send', 'pageview');
+	</script>
 
-function shipyard_render_image_metadata() {
-	if ( ! has_post_thumbnail() ) return;
-
-	$featured_image = shipyard_get_featured_image(); ?>
-
-    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-        <meta itemprop="url" content="<?php echo $featured_image[0] ?>">
-        <meta itemprop="width" content="<?php echo $featured_image[1] ?>">
-        <meta itemprop="height" content="<?php echo $featured_image[2] ?>">
-    </div>
 <?php }
-
-
-function gram_get_post_details() {
-	printf( __( 'By %s on %s', 'gram' ), get_the_author(), '<time datetime="' . get_the_time( 'U' ) . '">' . date_i18n( get_option( 'date_format' ), get_the_time('U') ) . '</time>' );
-}

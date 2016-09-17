@@ -15,11 +15,6 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	$parallax_js = '/resources/js/vendor/parallax.js/parallax.min.js';
 
-	$ua_code = get_theme_mod( 'shipyard_google_analytics_code' );
-	if ( empty( $ua_code ) || ( is_user_logged_in() && current_user_can( 'manage_options' ) ) ) {
-		$ua_code = '';
-	}
-
 	wp_register_script( 'parallax-js', get_template_directory_uri() . $parallax_js, [ 'jquery' ], filemtime( get_template_directory() . $parallax_js ), true );
 	wp_enqueue_script( 'shipyard-js', get_template_directory_uri() . $main_js, [ 'jquery', 'parallax-js' ], filemtime( get_template_directory() . $main_js ), true );
 
@@ -42,7 +37,6 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	$t10ns = [
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),
-		'ua_code' => $ua_code,
 	];
 
 	wp_localize_script( 'shipyard-js', 'shipyard', $t10ns );

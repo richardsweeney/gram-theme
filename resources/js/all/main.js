@@ -70,27 +70,5 @@
 			$( ".nav .more" ).removeClass( "active-nav-item" );
 		} );
 	} );
-
-	// SMOOTH SCROLLING DOWN
-	// jQuery('a[href^="#"]').click(function(e) {
-
-	// jQuery('html,body').animate({ scrollTop: jQuery(this.hash).offset().top}, 1000);
-
-	// return false;
-
-	// e.preventDefault();
-
-	// });
-
-
-	// initialize Isotope after all images have loaded
-	// var $container = $( '.portfolio-items' ).imagesLoaded( function () {
-	// 	$container.isotope( {
-	// 		itemSelector: '.item',
-	// 		layoutMode: 'fitRows'
-	// 	} );
-	// } );
-
-
-
+	
 }( jQuery, shipyard ));

@@ -10,6 +10,8 @@
 
         {{ wp_head() }}
 
+        {{ shipyard_maybe_add_ga() }}
+
     </head>
 
     <body {{ body_class() }}>
