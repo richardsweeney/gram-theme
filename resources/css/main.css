@@ -413,6 +413,20 @@ input[type="url"] {
   top: -150px;
   width: 100%; }
 
+.landing-page-image-credit {
+  color: #ddd;
+  padding: 0.375rem 0.75rem;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: right;
+  font-size: 0.875rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+  .landing-page-image-credit a {
+    color: #ddd;
+    text-decoration: underline; }
+
 .newsletter-container {
   background-color: #84af9d;
   padding: 3rem 0;

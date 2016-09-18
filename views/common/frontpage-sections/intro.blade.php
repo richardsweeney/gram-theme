@@ -16,5 +16,9 @@
 
     @endwhile
 
+    <div class="landing-page-image-credit">
+        Image: Unpackaged, <a href="http://www.beunpackaged.com">www.beunpackaged.com</a>
+    </div>
+
 </div>
 
