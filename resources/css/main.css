@@ -544,6 +544,9 @@ input[type="url"] {
   border-radius: 3px;
   margin: 0 0 0.75rem;
   font-size: 0.9375rem;
+  max-width: 510px;
+  padding-bottom: 3rem;
+  position: relative;
   -webkit-flex-grow: 1;
   -moz-flex-grow: 1;
   flex-grow: 1;
@@ -583,7 +586,9 @@ input[type="url"] {
   .card-outer .card-copy {
     padding: 0 0.75rem 0.75rem; }
   .card-outer .button {
-    margin-top: 1.5rem; }
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem; }
 
 .pagination.container {
   padding-top: 1.5rem;

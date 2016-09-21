@@ -13,6 +13,9 @@
     border-radius: $base-border-radius;
     margin: 0 0 $small-spacing;
     font-size: rem(15);
+    max-width: 510px;
+    padding-bottom: $base-spacing * 2;
+    @include position(relative);
     @include flex-grow(1);
     @include media($medium-screen-up) {
         margin-right: 2%;
@@ -41,7 +44,7 @@
         }
     }
     .card-header {
-        padding: ($base-spacing / 3) ($base-spacing / 2) 0;
+        padding: ($base-spacing / 3) $small-spacing 0;
         position: relative;
     }
     footer {
@@ -56,7 +59,7 @@
         padding: 0 $small-spacing $small-spacing;
     }
     .button {
-        margin-top: $base-spacing;
+        @include position(absolute, null null $small-spacing $small-spacing);
     }
 }
 
