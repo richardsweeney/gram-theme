@@ -25,13 +25,9 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_style( 'shipyard-style', get_stylesheet_uri() );/* Custom stylesheet */
 
-	wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/resources/js/all/isotope.pkgd.min.js', array('jquery'), '3.0.1', true );
+//	wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/resources/js/all/isotope.pkgd.min.js', array('jquery'), '3.0.1', true );
 
-	wp_enqueue_script( 'imgs-loaded-js', get_template_directory_uri() . '/resources/js/all/imagesloaded.pkgd.min.js', array('jquery'), '4.1.0', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+//	wp_enqueue_script( 'imgs-loaded-js', get_template_directory_uri() . '/resources/js/all/imagesloaded.pkgd.min.js', array('jquery'), '4.1.0', true );
 
 	wp_enqueue_style( 'shipyard-css', get_template_directory_uri() . $main_css, [], filemtime( get_template_directory() . $main_css ) );
 
@@ -62,30 +58,8 @@ add_action( 'login_enqueue_scripts', function() {
 
 
 /**
- * Register the sidebar
+ * Mailchimp callback handler.
  */
-add_action( 'widgets_init', function() {
-	register_sidebar( [
-		'name'          => __( 'Sidebar', 'gram' ),
-		'id'            => 'sidebar',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	] );
-	register_sidebar( [
-		'name'          => __( 'Footer', 'gram' ),
-		'id'            => 'footer-1',
-		'description'   => '',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	] );
-});
-
-
 add_action( 'init', function() {
 	if ( ! isset( $_POST['mailchimp_email'] ) ) return;
 
@@ -107,6 +81,9 @@ add_action( 'init', function() {
 });
 
 
+/**
+ * Move the sharing Jetpack buttons.
+ */
 add_action( 'loop_start', function() {
 	remove_filter( 'the_content', 'sharing_display', 19 );
 	remove_filter( 'the_excerpt', 'sharing_display', 19 );

@@ -21,6 +21,15 @@ Alignments
 	margin-right: auto;
 }
 
+figure {
+	margin: 0;
+	padding: 0;
+	figcaption {
+		padding: $small-spacing / 2;
+		font-size: rem(14);
+	}
+}
+
 /*--------------------------------------------------------------
 Comments
 --------------------------------------------------------------*/
@@ -63,15 +72,6 @@ Captions
 	display: block;
 	margin: 0 auto;
 }
-
-.wp-caption-text {
-	text-align: center;
-}
-
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
-}
-
 /*--------------------------------------------------------------
 Galleries
 --------------------------------------------------------------*/
