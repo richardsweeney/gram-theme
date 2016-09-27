@@ -87,6 +87,15 @@ function shipyard_get_logo() {
 }
 
 
+function gram_papi_get_image( $image_array ) {
+	return sprintf(
+		'<img src="%s" alt="%s">',
+		isset( $image_array->sizes['square'] ) ? $image_array->sizes['square']['url'] : $image_array->url,
+		$image_array->alt
+	);
+}
+
+
 function shipyard_maybe_add_ga() {
 	$ua_code = get_theme_mod( 'shipyard_google_analytics_code', false );
 	if ( ! $ua_code || ( is_user_logged_in() && current_user_can( 'manage_options' ) ) ) {

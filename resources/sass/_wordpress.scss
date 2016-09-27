@@ -5,13 +5,13 @@ Alignments
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1.5em;
+	margin-right: $small-spacing;
 }
 
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
+	margin-left: $small-spacing;
 }
 
 .aligncenter {
@@ -64,7 +64,7 @@ object {
 Captions
 --------------------------------------------------------------*/
 .wp-caption {
-	margin-bottom: 1.5em;
+	margin-bottom: $small-spacing;
 	max-width: 100%;
 }
 
@@ -76,7 +76,7 @@ Captions
 Galleries
 --------------------------------------------------------------*/
 .gallery {
-	margin-bottom: 1.5em;
+	margin-bottom: $small-spacing;
 }
 
 .gallery-item {

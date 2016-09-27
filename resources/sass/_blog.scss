@@ -11,7 +11,7 @@
     background-color: lighten($light-gray, 12%);
     border: 1px solid $light-gray;
     border-radius: $base-border-radius;
-    margin: 0 0 $small-spacing;
+    margin: 0 0 ($base-spacing / 1.5);
     font-size: rem(15);
     max-width: 510px;
     padding-bottom: $base-spacing * 2;
@@ -42,6 +42,9 @@
         a {
             color: $base-font-color;
         }
+    }
+    h2 {
+        font-size: rem(36);
     }
     .card-header {
         padding: ($base-spacing / 3) $small-spacing 0;
@@ -86,7 +89,6 @@ article.single-post {
 }
 
 .single-post-article {
-    padding-top: $base-spacing;
     header {
         padding-bottom: $small-spacing;
     }

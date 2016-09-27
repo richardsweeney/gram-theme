@@ -1,11 +1,11 @@
 
 .site-header.container {
-    padding: $base-spacing $small-spacing $small-spacing;
     margin-bottom: $base-spacing;
+    padding-top: $small-spacing;
     border-bottom: 1px solid $x-light-gray;
     @include clearfix;
     @include media($medium-screen-up) {
-        padding: $base-spacing $base-spacing $small-spacing;
+        padding: $base-spacing;
     }
 }
 
@@ -16,11 +16,12 @@
 
 .navigation {
     .logo {
+        margin-left: -3px;
         @include media($medium-screen-up) {
             float: left;
         }
         img {
-            max-width: 150px;
+            width: 160px;
         }
     }
 }

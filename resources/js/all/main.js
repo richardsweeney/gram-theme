@@ -1,24 +1,6 @@
-( function ( $, shipyard ) {
+( function ( $ ) {
 
-	// DROPDOWN TOGGLE MENU
-	$( '#js-mobile-menu' ).click( function () {
-		$( this ).next( '#js-navigation-menu' ).toggle();
-	} );
-
-	$( document ).click( function ( e ) {
-		var target = e.target;
-		if ( !$( target ).is( '#js-mobile-menu' ) && !$( target ).parents().is( '#js-mobile-menu' ) ) {
-			$( '#js-navigation-menu' ).hide();
-		}
-	} );
-
-
-	// PRALLAX BACKGROUNDS
-	$( document ).ready( function () {
-		if ( $( "#js-parallax-window" ).length ) {
-			parallax();
-		}
-	} );
+	parallax();
 
 	$( window ).scroll( function ( e ) {
 		if ( $( "#js-parallax-window" ).length ) {
@@ -45,30 +27,4 @@
 		}
 	}
 
-
-	// NAVIGATION
-	$( document ).ready( function () {
-		var menu = $( '#navigation-menu' );
-		var menuToggle = $( '#js-mobile-menu' );
-		var signUp = $( '.sign-up' );
-
-		$( menuToggle ).on( 'click', function ( e ) {
-			e.preventDefault();
-			menu.slideToggle( function () {
-				if ( menu.is( ':hidden' ) ) {
-					menu.removeAttr( 'style' );
-				}
-			} );
-		} );
-
-		// underline under the active nav item
-		$( ".nav .nav-link" ).click( function () {
-			$( ".nav .nav-link" ).each( function () {
-				$( this ).removeClass( "active-nav-item" );
-			} );
-			$( this ).addClass( "active-nav-item" );
-			$( ".nav .more" ).removeClass( "active-nav-item" );
-		} );
-	} );
-
-}( jQuery, shipyard ));
+}( jQuery ));

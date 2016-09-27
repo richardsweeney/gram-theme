@@ -4,38 +4,14 @@
  * Enqueue scripts and styles.
  */
 add_action( 'wp_enqueue_scripts', function() {
-	if ( true === shipyard_is_dev() ) {
-		$main_js  = '/resources/js/all.js';
-		$main_css = '/resources/css/main.css';
-	}
-	else {
-		$main_js  = '/resources/js/all-min.js';
-		$main_css = '/resources/css/main.min.css';
-	}
+	$main_js  = '/resources/js/all-min.js';
+	$main_css = '/resources/css/main.min.css';
 
-	$parallax_js = '/resources/js/vendor/parallax.js/parallax.min.js';
+	wp_enqueue_script( 'shipyard-js', get_template_directory_uri() . $main_js, [ 'jquery' ], filemtime( get_template_directory() . $main_js ), true );
 
-	wp_register_script( 'parallax-js', get_template_directory_uri() . $parallax_js, [ 'jquery' ], filemtime( get_template_directory() . $parallax_js ), true );
-	wp_enqueue_script( 'shipyard-js', get_template_directory_uri() . $main_js, [ 'jquery', 'parallax-js' ], filemtime( get_template_directory() . $main_js ), true );
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Pathway+Gothic+One&subset=latin-ext' );
 
-	// Google Fonts:
-	wp_enqueue_style( 'google-heading', '//fonts.googleapis.com/css?family=Pathway+Gothic+One&subset=latin-ext');
-
-	wp_enqueue_style( 'google-body', '//fonts.googleapis.com/css?family=Open+Sans:400,700');
-
-	wp_enqueue_style( 'shipyard-style', get_stylesheet_uri() );/* Custom stylesheet */
-
-//	wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/resources/js/all/isotope.pkgd.min.js', array('jquery'), '3.0.1', true );
-
-//	wp_enqueue_script( 'imgs-loaded-js', get_template_directory_uri() . '/resources/js/all/imagesloaded.pkgd.min.js', array('jquery'), '4.1.0', true );
-
-	wp_enqueue_style( 'shipyard-css', get_template_directory_uri() . $main_css, [], filemtime( get_template_directory() . $main_css ) );
-
-	$t10ns = [
-		'ajaxurl' => admin_url( 'admin-ajax.php' ),
-	];
-
-	wp_localize_script( 'shipyard-js', 'shipyard', $t10ns );
+	wp_enqueue_style( 'shipyard-css', get_template_directory_uri() . $main_css, [ 'google-fonts' ], filemtime( get_template_directory() . $main_css ) );
 });
 
 
@@ -43,18 +19,20 @@ add_action( 'wp_enqueue_scripts', function() {
 /**
  * Change the Login Logo
  */
-add_action( 'login_enqueue_scripts', function() {
-	$shipyard_logo = get_theme_mod( 'shipyard_logo' );
-	if ( ! empty( $shipyard_logo ) ) { ?>
-
-		<style type="text/css">
-			.login h1 a {
-				background-image: url(<?php echo $shipyard_logo; ?>);
-			}
-		</style>
-
-	<?php }
-});
+add_action( 'login_enqueue_scripts', function() { ?>
+	<style type="text/css">
+		body #login {
+			padding-top: 1%;
+		}
+		#login h1 a {
+			background-image: url( '<?php echo get_template_directory_uri() ?>/resources/img/gram-logo.svg' );
+			background-size: 300px;
+			height: 300px;
+			width: 300px;
+			margin-bottom: -50px;
+		}
+	</style>
+<?php });
 
 
 /**
