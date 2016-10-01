@@ -39,6 +39,7 @@ class Sections_Page_Type extends Papi_Page_Type {
 				'slug'  => 'page_sections',
 				'type'  => 'flexible',
 				'settings' => [
+					'add_new_label' => __( 'Add new section', 'gram' ),
 					'layout' => 'row',
 					'items' => [
 						[

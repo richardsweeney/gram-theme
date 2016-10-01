@@ -691,12 +691,14 @@ article.single-post {
 
 @media screen and (min-width: 40rem) {
   .circular-image-with-text .sections-section__image {
-    width: 31%;
+    width: 32%;
     margin-right: 4%; }
   .circular-image-with-text .sections-section__text {
     width: 64%; }
     .circular-image-with-text .sections-section__text h3 {
       text-align: left; }
+    .circular-image-with-text .sections-section__text.no-image {
+      margin-left: 18%; }
   .circular-image-with-text.img-right .sections-section__image {
     order: 2;
     margin-left: 4%;

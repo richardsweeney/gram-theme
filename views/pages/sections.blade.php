@@ -16,10 +16,14 @@
                 @foreach ( $sections as $section )
                     @if ( 'circlular-image-with-text' === $section['_layout'] )
                         <div class="sections-section circular-image-with-text {{ $section['alignment'] or '' }}">
-                            <div class="sections-section__image">
-                                {!! gram_papi_get_image( $section['image'], 'square' ) !!}
-                            </div>
-                            <div class="sections-section__text">
+                            @if ( isset( $section['image'] ) )
+                                <div class="sections-section__image">
+                                    {!! gram_papi_get_image( $section['image'], 'square' ) !!}
+                                </div>
+                                <div class="sections-section__text">
+                            @else
+                                <div class="sections-section__text no-image">
+                            @endif
                                 @if ( ! empty( $section['title'] ) )
                                     <h3>{{ $section['title'] }}</h3>
                                 @endif
