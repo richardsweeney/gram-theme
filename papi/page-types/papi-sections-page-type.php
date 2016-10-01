@@ -41,17 +41,31 @@ class Sections_Page_Type extends Papi_Page_Type {
 				'layout' => 'row',
 				'items' => [
 					[
-						'title' => __( 'Wide image', 'gram' ),
+						'title' => __( 'Wide image with text.', 'gram' ),
 						'items' => [
 							papi_property([
-								'title' => __( 'Image', 'gram' ),
+								'title' => __( 'Wide Image', 'gram' ),
 								'type' => 'image',
 								'slug' => 'image',
+							]),
+							papi_property([
+								'title' => __( 'Title', 'gram' ),
+								'type' => 'string',
+								'slug' => 'title',
+							]),
+							papi_property([
+								'title' => __( 'Text', 'gram' ),
+								'type' => 'editor',
+								'slug' => 'text',
+								'settings' => [
+									'media_buttons' => false,
+									'drag_drop_upload' => false,
+								],
 							]),
 						],
 					],
 					[
-						'title' => __( 'Image with text', 'gram' ),
+						'title' => __( 'Circlular image with text.', 'gram' ),
 						'items' => [
 							papi_property([
 								'title' => __( 'Title', 'gram' ),
