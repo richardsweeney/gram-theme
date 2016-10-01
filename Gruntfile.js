@@ -39,7 +39,6 @@ module.exports = function ( grunt ) {
 		concat: {
 			dist: {
 				src: [
-					'resources/js/all/shipyard_google_analytics.js',
 					'resources/js/all/main.js'
 				],
 				dest: 'resources/js/all.js'

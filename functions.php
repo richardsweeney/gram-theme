@@ -41,6 +41,7 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'post-thumbnails' );
 
 	add_image_size( 'small-banner', 600, 400, ['left', 'top'] );
+	add_image_size( 'large-banner', 1200, 400, true );
 	add_image_size( 'square', 600, 600, true );
 
 	// This theme uses wp_nav_menu() in one location.

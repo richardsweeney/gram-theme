@@ -87,10 +87,10 @@ function shipyard_get_logo() {
 }
 
 
-function gram_papi_get_image( $image_array ) {
+function gram_papi_get_image( $image_array, $size ) {
 	return sprintf(
 		'<img src="%s" alt="%s">',
-		isset( $image_array->sizes['square'] ) ? $image_array->sizes['square']['url'] : $image_array->url,
+		isset( $image_array->sizes[ $size ] ) ? $image_array->sizes[ $size ]['url'] : $image_array->url,
 		$image_array->alt
 	);
 }

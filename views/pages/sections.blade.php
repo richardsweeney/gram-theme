@@ -5,7 +5,7 @@
     @while( have_posts() )
         {{ the_post() }}
 
-        <div class="container">
+        <div class="container sections-container">
 
             <article {{ post_class() }}>
 
@@ -14,18 +14,33 @@
                 </header>
 
                 @foreach ( $sections as $section )
-                    <div class="sections-section {{ $section['_layout'] }} {{ $section['alignment'] or '' }}">
-                        <div class="sections-section__image">
-                            {!! gram_papi_get_image( $section['image'] ) !!}
-                        </div>
-                        <div class="sections-section__text">
-                            @if ( ! empty( $section['title'] ) )
-                                <h3>{{ $section['title'] }}</h3>
-                            @endif
+                    @if ( 'circlular-image-with-text' === $section['_layout'] )
+                        <div class="sections-section circular-image-with-text {{ $section['alignment'] or '' }}">
+                            <div class="sections-section__image">
+                                {!! gram_papi_get_image( $section['image'], 'square' ) !!}
+                            </div>
+                            <div class="sections-section__text">
+                                @if ( ! empty( $section['title'] ) )
+                                    <h3>{{ $section['title'] }}</h3>
+                                @endif
 
-                            {!! $section['text'] !!}
+                                {!! $section['text'] !!}
+                            </div>
                         </div>
-                    </div>
+                    @elseif ( 'wide-image-with-text' === $section['_layout'] )
+                        <div class="sections-section wide-image-with-text">
+                            <div class="sections-section__text">
+                                @if ( ! empty( $section['title'] ) )
+                                    <h3>{{ $section['title'] }}</h3>
+                                @endif
+
+                                {!! $section['text'] !!}
+                            </div>
+                            <div class="sections-section__image">
+                                {!! gram_papi_get_image( $section['image'], 'large-banner' ) !!}
+                            </div>
+                        </div>
+                    @endif
                 @endforeach
 
             </article>

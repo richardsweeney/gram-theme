@@ -8,6 +8,7 @@
 		}
 	} );
 
+
 	function parallax() {
 		if ( $( "#js-parallax-window" ).length > 0 ) {
 			var plxBackground = $( "#js-parallax-background" );
