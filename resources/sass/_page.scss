@@ -25,6 +25,9 @@
         width: 400px;
         border-radius: 50%;
         padding-bottom: $small-spacing;
+        &.svg {
+            border-radius: 0;
+        }
         @include media($medium-screen-up) {
             padding-bottom: 0;
             width: auto;

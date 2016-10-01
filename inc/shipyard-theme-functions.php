@@ -87,15 +87,28 @@ function shipyard_get_logo() {
 }
 
 
-function gram_papi_get_image( $image_array, $size ) {
+/**
+ * Render an image from a papi image object.
+ *
+ * @param object $papi_image_object
+ * @param string $size
+ *
+ * @return string
+ */
+function gram_papi_get_image( $papi_image_object, $size ) {
+	$file_type = wp_check_filetype( $papi_image_object->file );
 	return sprintf(
-		'<img src="%s" alt="%s">',
-		isset( $image_array->sizes[ $size ] ) ? $image_array->sizes[ $size ]['url'] : $image_array->url,
-		$image_array->alt
+		'<img src="%s" alt="%s" class="%s">',
+		isset( $papi_image_object->sizes[ $size ] ) ? $papi_image_object->sizes[ $size ]['url'] : $papi_image_object->url,
+		esc_attr( $papi_image_object->alt ),
+		esc_attr( $file_type['ext'] )
 	);
 }
 
 
+/**
+ * Add Google Analytics where appropriate.
+ */
 function shipyard_maybe_add_ga() {
 	$ua_code = get_theme_mod( 'shipyard_google_analytics_code', false );
 	if ( ! $ua_code || ( is_user_logged_in() && current_user_can( 'manage_options' ) ) ) {

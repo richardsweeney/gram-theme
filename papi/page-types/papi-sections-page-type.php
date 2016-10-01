@@ -46,11 +46,6 @@ class Sections_Page_Type extends Papi_Page_Type {
 							'title' => __( 'Wide image with text.', 'gram' ),
 							'items' => [
 								papi_property([
-									'title' => __( 'Wide Image', 'gram' ),
-									'type' => 'image',
-									'slug' => 'image',
-								]),
-								papi_property([
 									'title' => __( 'Title', 'gram' ),
 									'type' => 'string',
 									'slug' => 'title',
@@ -63,6 +58,12 @@ class Sections_Page_Type extends Papi_Page_Type {
 										'media_buttons' => false,
 										'drag_drop_upload' => false,
 									],
+								]),
+								papi_property([
+									'title' => __( 'Wide Image', 'gram' ),
+									'type' => 'image',
+									'slug' => 'image',
+									'description' => __( 'The image will be cropped to 1200 * 400px (if the image is large enough to be cropped!)', 'gram' ),
 								]),
 							],
 						],

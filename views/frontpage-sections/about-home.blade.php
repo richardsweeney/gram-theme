@@ -6,7 +6,7 @@
     </div>
     <div class="about-text">
         <h2>{{ $about_home_title }}</h2>
-        <p class="text">{{ $about_home_text }}</p>
+        {!! $about_home_text !!}
     </div>
 </section>
 

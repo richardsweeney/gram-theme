@@ -48,24 +48,46 @@
 
 .about-home-wrapper.container {
     padding-top: $base-spacing;
-    padding-bottom: $base-spacing;
     @include media($medium-screen-up) {
         @include display(flex);
         @include align-items(center);
-    }
-    @include media($large-screen-up) {
         padding-top: $base-spacing * 2;
-        padding-bottom: $base-spacing * 2;
-    }
-    @include media($medium-screen-up) {
-        .image-container,
+        .image-container {
+            width: 32%;
+        }
         .about-text {
-            width: 48%;
+            width: 64%;
         }
         .image-container {
-            margin-right: 2%;
+            margin-right: 4%;
         }
+    }
+    &.video-section {
+        padding-bottom: $base-spacing * 2;
+        @include media($medium-screen-up) {
+            .about-text {
+                width: 48%;
+            }
+            .video-container {
+                width: 48%;
+                margin-left: 4%;
+                @include flex(1 1 auto);
+            }
+        }
+    }
+    iframe {
+        width: 100%;
+        border: 0;
+    }
+    img {
+        border-radius: 50%;
     }
 }
 
 
+.video-section {
+    @include media($medium-screen-up) {
+        @include display(flex);
+        @include align-items(center);
+    }
+}
