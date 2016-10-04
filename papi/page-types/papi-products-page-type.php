@@ -25,36 +25,38 @@ class Products_Page_Type extends Papi_Page_Type {
 
 	public function products_section() {
 		return papi_property( [
-			'title' => __( 'Products repeater', 'gram' ),
-			'slug'  => 'products_section',
-			'type'  => 'repeater',
+			'title'    => __( 'Products repeater', 'gram' ),
+			'slug'     => 'products_section',
+			'type'     => 'repeater',
 			'settings' => [
-				'layout' => 'row',
-				'items' => [
-					papi_property([
-						'title' => __( 'Product Category', 'gram' ),
-						'type' => 'string',
-						'slug' => 'product_category',
-					]),
-					papi_property([
-						'title' => __( 'Product Category Image', 'gram' ),
-						'type' => 'image',
-						'slug' => 'product_image',
-					]),
-					papi_property([
-						'title' => __( 'Products list', 'gram' ),
-						'type' => 'repeater',
-						'slug' => 'products_repeater',
+				'layout'        => 'row',
+				'add_new_label' => __( 'Add new product category', 'gram' ),
+				'items'         => [
+					papi_property( [
+						'title' => __( 'Category Name', 'gram' ),
+						'type'  => 'string',
+						'slug'  => 'product_category',
+					] ),
+					papi_property( [
+						'title' => __( 'Category Image', 'gram' ),
+						'type'  => 'image',
+						'slug'  => 'product_image',
+					] ),
+					papi_property( [
+						'title'    => __( 'Products list', 'gram' ),
+						'type'     => 'repeater',
+						'slug'     => 'products_repeater',
 						'settings' => [
-							'items' => [
-								papi_property([
+							'add_new_label' => __( 'Add new product', 'gram' ),
+							'items'         => [
+								papi_property( [
 									'title' => __( 'Product', 'gram' ),
-									'type' => 'string',
-									'slug' => 'product',
-								]),
+									'type'  => 'string',
+									'slug'  => 'product',
+								] ),
 							],
 						],
-					]),
+					] ),
 				],
 			],
 		] );
