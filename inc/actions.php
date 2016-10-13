@@ -107,3 +107,15 @@ add_action( 'pre_get_posts', function( WP_Query $query ) {
 		$query->set( 'posts_per_page', 18 );
 	}
 });
+
+
+/**
+ * Redirect the single products template to the archives.
+ */
+add_action( 'template_redirect', function() {
+	$post_type = 'product-category';
+	if ( is_singular( $post_type ) ) {
+		wp_redirect( get_post_type_archive_link( $post_type ) );
+		exit;
+	}
+});
