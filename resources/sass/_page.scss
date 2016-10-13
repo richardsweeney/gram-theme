@@ -68,12 +68,27 @@
     }
 }
 
-.wide-image-with-text {
+.sections-section.wide-image-with-text {
     .sections-section__image {
         margin: 0 -$small-spacing;
+        &.mobile-image {
+            margin-bottom: $base-spacing;
+        }
+        &.desktop-image {
+            display: none;
+        }
+        @include media( $medium-screen-up ) {
+            &.desktop-image {
+                display: block;
+            }
+            &.mobile-image {
+                display: none;
+            }
+        }
     }
     .sections-section__text {
         padding-bottom: $small-spacing;
+        width: 100%;
         @include media($medium-screen-up) {
             text-align: center;
             @include span-columns(8);
@@ -81,3 +96,4 @@
         }
     }
 }
+

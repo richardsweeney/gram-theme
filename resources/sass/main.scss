@@ -1,5 +1,3 @@
-$visual-grid: false;
-
 @import "bourbon/bourbon";
 @import "base/base";
 @import "neat/neat";
@@ -13,7 +11,9 @@ $visual-grid: false;
 @import "frontpage";
 @import "blog";
 @import "page";
+@import "products-page";
 @import "footer";
+@import "modal";
 
 
 body,

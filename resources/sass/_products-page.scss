@@ -1,0 +1,85 @@
+
+.products-container.container {
+    padding-bottom: $base-spacing * 2;
+    @include clearfix;
+}
+
+.products-list,
+.products-list__products {
+    list-style: none;
+    margin: 0;
+    @include outer-container;
+}
+
+.products-list {
+    padding: 0;
+    display: flex;
+    @include flex-flow(row wrap);
+    @include justify-content(space-around);
+    @include outer-container;
+}
+
+.products-list__products {
+    padding: $small-spacing;
+}
+
+.modal-container {
+    .products-list__products {
+        display: block;
+    }
+}
+
+.products-list__parent-list-item {
+    margin-bottom: $base-spacing * 2;
+    margin-right: 2%;
+    @include media(min-width $medium-screen max-width $large-screen) {
+        width: 49%;
+        &:nth-of-type(2n + 2) {
+            margin-right: 0;
+        }
+    }
+    @include media( $large-screen-up ) {
+        width: 32%;
+        &:nth-of-type(3n + 3) {
+            margin-right: 0;
+        }
+    }
+    a {
+        display: block;
+        position: relative;
+        border: 1px solid $light-gray;
+        border-radius: 1px;
+        &:hover,
+        &.active {
+            border-color: $tertiary-theme-color;
+            h2 {
+                opacity: 1;
+            }
+            .category-text-container {
+                background: rgba($tertiary-theme-color, 0.9);
+            }
+        }
+    }
+}
+
+.category-text-container {
+    display: flex;
+    background: rgba($tertiary-theme-color, 0);
+    text-align: center;
+    @include transition(background 0.3s ease);
+    @include position(absolute, 0 0 0 0);
+    @include align-items(center);
+    @include justify-content(center);
+    @include media($medium-screen-up) {
+        bottom: 0;
+        background: none;
+    }
+    h2 {
+        color: white;
+        @include transition(opacity 0.3 ease);
+        @include media($medium-screen-up) {
+            display: block;
+            opacity: 0;
+        }
+    }
+}

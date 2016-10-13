@@ -97,12 +97,40 @@ function shipyard_get_logo() {
  */
 function gram_papi_get_image( $papi_image_object, $size ) {
 	$file_type = wp_check_filetype( $papi_image_object->file );
+	$src_set   = wp_get_attachment_image_srcset( $papi_image_object->id, $size );
+
 	return sprintf(
-		'<img src="%s" alt="%s" class="%s">',
+		'<img src="%s" alt="%s" %s class="gram-papi-image %s">',
 		isset( $papi_image_object->sizes[ $size ] ) ? $papi_image_object->sizes[ $size ]['url'] : $papi_image_object->url,
 		esc_attr( $papi_image_object->alt ),
+		( $src_set ) ? 'srcset="' . $src_set . '"' : '',
 		esc_attr( $file_type['ext'] )
 	);
+}
+
+
+/**
+ * @param $papi_image_object
+ * @param string $size
+ *
+ * @return mixed
+ */
+function gram_papi_get_image_src( $papi_image_object, $size = 'thumbnail' ) {
+	return isset( $papi_image_object->sizes[ $size ] ) ? $papi_image_object->sizes[ $size ]['url'] : $papi_image_object->url;
+}
+
+
+/**
+ * @return array
+ */
+function gram_get_js_t10ns() {
+	$t10ns = [];
+
+	if ( is_post_type_archive( 'product-category' ) ) {
+		$t10ns['products'] = gram_get_products_archive_collection();
+	}
+
+	return $t10ns;
 }
 
 
@@ -126,3 +154,37 @@ function shipyard_maybe_add_ga() {
 	</script>
 
 <?php }
+
+
+/**
+ * @return array
+ */
+function gram_get_products_archive_collection() {
+	global $wp_query;
+
+	$products = [];
+	foreach ( $wp_query->posts as $product ) {
+		$products[] = [
+			'title'     => $product->post_title,
+			'thumbnail' => get_the_post_thumbnail( $product->ID, 'full' ),
+			'products'  => gram_get_products_product_repeater( $product->ID ),
+		];
+	}
+
+	return $products;
+}
+
+
+/**
+ * @param int $post_id
+ *
+ * @return array
+ */
+function gram_get_products_product_repeater( $post_id ) {
+	$products = papi_get_field( $post_id, 'products', [] );
+	if ( empty( $products ) ) {
+		return [];
+	}
+
+	return wp_list_pluck( $products, 'product' );
+}

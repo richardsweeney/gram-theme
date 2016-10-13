@@ -1,0 +1,112 @@
+.modal {
+    $modal-background: $base-background-color;
+    $modal-close-color: darken($light-gray, 30%);
+    $modal-image-height: 135px;
+    $modal-image-width: $modal-image-height;
+    $modal-trigger-image-width: 300px;
+
+    .modal-state {
+        display: none;
+    }
+
+    .modal-fade-screen {
+        background-color: rgba(#000, 0.6);
+        opacity: 0;
+        padding-top: 0.6em;
+        text-align: left;
+        transition: opacity 0.25s ease;
+        visibility: hidden;
+        z-index: 99999999999;
+        @include position(fixed, 0);
+        @include media($large-screen) {
+            padding-top: $base-spacing * 2;
+        }
+        .modal-bg {
+            @include position(absolute, 0);
+            cursor: pointer;
+        }
+    }
+
+    .modal-close {
+        background: $modal-background;
+        cursor: pointer;
+        @include position(absolute, $base-spacing $base-spacing null null);
+        @include size(1.5em);
+        &::after,
+        &::before {
+            background: $modal-close-color;
+            content: "";
+            display: block;
+            margin: -3px 0 0 -1px;
+            transform: rotate(45deg);
+            @include position(absolute, 3px 3px 0 50%);
+            @include size(0.15em 1.5em);
+        }
+
+        &:hover::after,
+        &:hover::before {
+            background: darken($modal-close-color, 10%);
+        }
+
+        &::before {
+            transform: rotate(-45deg);
+        }
+    }
+
+    .modal-inner {
+        background: $modal-background;
+        border-radius: $base-border-radius;
+        margin: auto;
+        margin-top: 0;
+        max-height: 95%;
+        overflow: auto;
+        padding: $base-spacing;
+        position: relative;
+        transition: opacity 0.25s ease;
+        width: 95%;
+
+        @include media($medium-screen) {
+            padding: ($base-spacing * 1.5) ($base-spacing * 2);
+            width: 60%;
+        }
+
+        .modal-content {
+            &.lots {
+                @include media($medium-screen) {
+                    columns: 2 8em;
+                }
+            }
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+    }
+
+    .modal-navigation {
+        padding-top: $base-spacing;
+        @include clearfix;
+        button {
+            padding: ( $small-spacing / 1.5 ) $small-spacing;
+        }
+        .prev {
+            float: left;
+        }
+        .next {
+            float: right;
+        }
+    }
+
+    .modal-state:checked + .modal-fade-screen {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .modal-state:checked + .modal-fade-screen .modal-inner {
+        top: 0.5em;
+    }
+}
+
+.modal-open {
+    overflow: hidden;
+}

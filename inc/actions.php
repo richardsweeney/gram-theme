@@ -4,10 +4,12 @@
  * Enqueue scripts and styles.
  */
 add_action( 'wp_enqueue_scripts', function() {
-	$main_js  = '/resources/js/all-min.js';
-	$main_css = '/resources/css/main.min.css';
+	$main_js  = '/resources/js/app.js';
+	$main_css = '/resources/css/main.css';
 
 	wp_enqueue_script( 'shipyard-js', get_template_directory_uri() . $main_js, [ 'jquery' ], filemtime( get_template_directory() . $main_js ), true );
+
+	wp_localize_script( 'shipyard-js', 'gram', gram_get_js_t10ns() );
 
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Pathway+Gothic+One&subset=latin-ext' );
 
@@ -71,5 +73,37 @@ add_action( 'loop_start', function() {
 });
 
 
+/**
+ * Register the product category post type.
+ */
+add_action( 'init', function() {
+	include_once 'class-custom-post-type.php';
+
+	new \TheShipyard\Custom_Post_Type(
+		'product-category',
+		[
+			'singular' => __( 'Product Category', 'gram' ),
+			'plural'   => __( 'Product Categories', 'gram' ),
+		],
+		[
+			'menu_icon' => 'dashicons-carrot',
+			'rewrite'   => [
+				'slug' => 'products'
+			],
+			'supports'  => [ 'title', 'thumbnail' ],
+		]
+	);
+});
 
 
+/**
+ * Show at least 18 product categories in alphabetical order
+ * for the archives.
+ */
+add_action( 'pre_get_posts', function( WP_Query $query ) {
+	if ( ! is_admin() && is_post_type_archive( 'product-category' ) ) {
+		$query->set( 'orderby', 'title' );
+		$query->set( 'order', 'ASC' );
+		$query->set( 'posts_per_page', 18 );
+	}
+});

@@ -33,6 +33,9 @@
                         </div>
                     @elseif ( 'wide-image-with-text' === $section['_layout'] )
                         <div class="sections-section wide-image-with-text">
+                            <div class="sections-section__image mobile-image">
+                                {!! gram_papi_get_image( $section['image'], 'large-banner' ) !!}
+                            </div>
                             <div class="sections-section__text">
                                 @if ( ! empty( $section['title'] ) )
                                     <h3>{{ $section['title'] }}</h3>
@@ -40,7 +43,7 @@
 
                                 {!! $section['text'] !!}
                             </div>
-                            <div class="sections-section__image">
+                            <div class="sections-section__image desktop-image">
                                 {!! gram_papi_get_image( $section['image'], 'large-banner' ) !!}
                             </div>
                         </div>
