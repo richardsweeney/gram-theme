@@ -48,7 +48,9 @@
         color: $base-font-color;
         border-bottom: 1px solid white;
         @include transition(all 0.2s ease);
-        &:hover {
+        &:hover,
+        &:active,
+        &:focus {
             text-decoration: none;
             border-color: $base-font-color;
         }
