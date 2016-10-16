@@ -64,6 +64,7 @@
         position: relative;
         transition: opacity 0.25s ease;
         width: 95%;
+        max-width: 700px;
 
         @include media($medium-screen) {
             padding: ($base-spacing * 1.5) ($base-spacing * 2);

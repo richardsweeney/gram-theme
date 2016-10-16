@@ -15,6 +15,33 @@
                             </div>
                         </a>
                     </li>
+                @endforeach                @foreach ( $products as $product )
+                    <li class="products-list__parent-list-item">
+                        <a href="#" @click.prevent="showModal({{ $loop->index }})">
+                            {!! $product['thumbnail'] !!}
+                            <div class="category-text-container">
+                                <h2 class="category-text-container__header">{{ $product['title'] }}</h2>
+                            </div>
+                        </a>
+                    </li>
+                @endforeach                @foreach ( $products as $product )
+                    <li class="products-list__parent-list-item">
+                        <a href="#" @click.prevent="showModal({{ $loop->index }})">
+                            {!! $product['thumbnail'] !!}
+                            <div class="category-text-container">
+                                <h2 class="category-text-container__header">{{ $product['title'] }}</h2>
+                            </div>
+                        </a>
+                    </li>
+                @endforeach                @foreach ( $products as $product )
+                    <li class="products-list__parent-list-item">
+                        <a href="#" @click.prevent="showModal({{ $loop->index }})">
+                            {!! $product['thumbnail'] !!}
+                            <div class="category-text-container">
+                                <h2 class="category-text-container__header">{{ $product['title'] }}</h2>
+                            </div>
+                        </a>
+                    </li>
                 @endforeach
             </ul>
 
@@ -41,29 +68,9 @@
 
                         <button class="next" :disabled="currentProductIndex === (products.length - 1)" @click.prevent="nextProductCategory()">{{ __( 'Next', 'gram' ) }}</button>
                     </div>
-
-                    {{--<button @click.prevent="hideModal()">{{ __( 'Close', 'gram' ) }}</button>--}}
                 </div>
             </div>
         </div>
-
-
-        {{--<div class="modal">--}}
-            {{--<label for="modal-1">--}}
-                {{--<div class="modal-trigger">Click for Modal</div>--}}
-            {{--</label>--}}
-            {{--<input class="modal-state" id="modal-1" type="checkbox" />--}}
-            {{--<div class="modal-inner">--}}
-                {{--<h3>@{{ currentProduct.title }}</h3>--}}
-                {{--<ul>--}}
-                    {{--<li v-for="product in currentProduct.products">--}}
-                        {{--@{{ product }}--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
-                {{--<button @click.prevent="hideModal()">{{ __( 'Close', 'gram' ) }}</button>--}}
-            {{--</div>--}}
-            {{--<div class="modal-close" for="modal-1"></div>--}}
-        {{--</div>--}}
 
     </article>
 

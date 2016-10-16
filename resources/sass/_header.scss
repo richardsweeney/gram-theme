@@ -1,11 +1,14 @@
 
 .site-header.container {
     margin-bottom: $base-spacing;
-    padding-top: $small-spacing;
+    padding-top: $base-spacing;
+    padding-bottom: $small-spacing;
     border-bottom: 1px solid $x-light-gray;
+    text-align: center;
     @include clearfix;
     @include media($medium-screen-up) {
         padding: $base-spacing;
+        text-align: left;
     }
 }
 
@@ -43,6 +46,18 @@
     }
     a {
         color: $base-font-color;
+        border-bottom: 1px solid white;
+        @include transition(all 0.2s ease);
+        &:hover {
+            text-decoration: none;
+            border-color: $base-font-color;
+        }
+    }
+    .current-menu-item {
+        border-bottom: 1px solid;
+        a:hover {
+            border-bottom: none;
+        }
     }
 }
 
