@@ -15,33 +15,6 @@
                             </div>
                         </a>
                     </li>
-                @endforeach                @foreach ( $products as $product )
-                    <li class="products-list__parent-list-item">
-                        <a href="#" @click.prevent="showModal({{ $loop->index }})">
-                            {!! $product['thumbnail'] !!}
-                            <div class="category-text-container">
-                                <h2 class="category-text-container__header">{{ $product['title'] }}</h2>
-                            </div>
-                        </a>
-                    </li>
-                @endforeach                @foreach ( $products as $product )
-                    <li class="products-list__parent-list-item">
-                        <a href="#" @click.prevent="showModal({{ $loop->index }})">
-                            {!! $product['thumbnail'] !!}
-                            <div class="category-text-container">
-                                <h2 class="category-text-container__header">{{ $product['title'] }}</h2>
-                            </div>
-                        </a>
-                    </li>
-                @endforeach                @foreach ( $products as $product )
-                    <li class="products-list__parent-list-item">
-                        <a href="#" @click.prevent="showModal({{ $loop->index }})">
-                            {!! $product['thumbnail'] !!}
-                            <div class="category-text-container">
-                                <h2 class="category-text-container__header">{{ $product['title'] }}</h2>
-                            </div>
-                        </a>
-                    </li>
                 @endforeach
             </ul>
 
