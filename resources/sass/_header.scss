@@ -4,11 +4,9 @@
     padding-top: $base-spacing;
     padding-bottom: $small-spacing;
     border-bottom: 1px solid $x-light-gray;
-    text-align: center;
     @include clearfix;
     @include media($medium-screen-up) {
         padding: $base-spacing;
-        text-align: left;
     }
 }
 
@@ -29,37 +27,4 @@
     }
 }
 
-.nav-menu {
-    padding-top: $small-spacing;
-    @include media($medium-screen-up) {
-        float: right;
-    }
-    ul {
-        padding-left: 0;
-    }
-    li {
-        display: inline-block;
-        margin-right: $small-spacing;
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-    a {
-        color: $base-font-color;
-        border-bottom: 1px solid white;
-        @include transition(all 0.2s ease);
-        &:hover,
-        &:active,
-        &:focus {
-            text-decoration: none;
-            border-color: $base-font-color;
-        }
-    }
-    .current-menu-item {
-        border-bottom: 1px solid;
-        a:hover {
-            border-bottom: none;
-        }
-    }
-}
 

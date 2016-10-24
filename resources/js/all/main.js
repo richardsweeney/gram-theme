@@ -8,6 +8,11 @@ var Vue = require( 'vue' );
 		parallax();
 	} );
 
+	$('.sliding-panel-button, .sliding-panel-fade-screen, .sliding-panel-close, .nav-menu-toggle').on('click touchstart',function (e) {
+		$('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
+		e.preventDefault();
+	});
+
 
 	function parallax() {
 		if ( $( "#js-parallax-window" ).length > 0 ) {
