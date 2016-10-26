@@ -40,23 +40,6 @@ add_filter( 'login_headertitle', function() {
  */
 add_filter( 'the_seo_framework_indicator', '__return_false' );
 
-
-/**
- * Set the option for blog_visiblity automatically
- * to avoid human error in this regard!
- */
-add_filter( 'pre_option_blog_public', function( $option ) {
-	$url = get_site_url();
-	$is_visible = 0;
-
-	if ( false === strpos( $url, '.stage.o-lab.se' ) && false === strpos( $url, '.stage2.o-lab.se' ) && false === strpos( $url, '.dev' ) ) {
-		$is_visible = 1;
-	}
-
-	return $is_visible;
-});
-
-
 /**
  * Sanitize filenames on upload
  */
