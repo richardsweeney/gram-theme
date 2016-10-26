@@ -36,6 +36,12 @@ add_filter( 'login_headertitle', function() {
 
 
 /**
+ * Seo framework tweaks.
+ */
+add_filter( 'the_seo_framework_indicator', '__return_false' );
+
+
+/**
  * Set the option for blog_visiblity automatically
  * to avoid human error in this regard!
  */
