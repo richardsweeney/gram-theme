@@ -1,4 +1,4 @@
-$parallax-window-height: 450px;
+$parallax-window-height: 600px;
 $parallax-background-height: $parallax-window-height * 2;
 
 .parallax-window {
@@ -30,7 +30,6 @@ $parallax-background-height: $parallax-window-height * 2;
 
 .parallax-background {
 	height: $parallax-background-height;
-	left: 0;
 	position: absolute;
 	top: - $parallax-window-height / 3;
 	width: 100%;

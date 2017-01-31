@@ -2,28 +2,28 @@ var Vue = require( 'vue' );
 
 ( function ( $ ) {
 
-	parallax();
+	var plxBackground = $( "#js-parallax-background" );
+	var plxWindow = $( "#js-parallax-window" );
+
+	parallax(plxBackground, plxWindow);
 
 	$( window ).scroll( function ( e ) {
-		parallax();
+		parallax(plxBackground, plxWindow);
 	} );
 
-	$('.sliding-panel-button, .sliding-panel-fade-screen, .sliding-panel-close, .nav-menu-toggle').on('click touchstart',function (e) {
+	$('.sliding-panel-button, .sliding-panel-fade-screen, .sliding-panel-close, .nav-menu-toggle').on('click touchstart', function (e) {
 		$('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
 		e.preventDefault();
 	});
 
+	function parallax(plxBackground, plxWindow) {
+		if ( plxWindow.length > 0 ) {
 
-	function parallax() {
-		if ( $( "#js-parallax-window" ).length > 0 ) {
-			var plxBackground = $( "#js-parallax-background" );
-			var plxWindow = $( "#js-parallax-window" );
-
-			var plxWindowTopToPageTop = $( plxWindow ).offset().top;
+			var plxWindowTopToPageTop = plxWindow.offset().top;
 			var windowTopToPageTop = $( window ).scrollTop();
 			var plxWindowTopToWindowTop = plxWindowTopToPageTop - windowTopToPageTop;
 
-			var plxBackgroundTopToPageTop = $( plxBackground ).offset().top;
+			var plxBackgroundTopToPageTop = plxBackground.offset().top;
 			var windowInnerHeight = window.innerHeight;
 			var plxBackgroundTopToWindowTop = plxBackgroundTopToPageTop - windowTopToPageTop;
 			// var plxBackgroundTopToWindowBottom = windowInnerHeight - plxBackgroundTopToWindowTop;
