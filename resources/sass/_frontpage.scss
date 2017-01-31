@@ -16,7 +16,7 @@
 .newsletter-container {
     background-color: $primary-theme-color;
     padding: ($base-spacing * 2) 0 ;
-    @include outer-container(100%);
+    @include outer-container($max-site-width);
 }
 
 .newsletter-inner-container {

@@ -1,4 +1,13 @@
 
+.gram-footer {
+	@include outer-container($max-site-width);
+}
+
+//.footer,
+//.footer-2 {
+	//max-width: $max-site-width;
+//}
+
 .footer {
 	background: $footer-background;
 	color: #fff;

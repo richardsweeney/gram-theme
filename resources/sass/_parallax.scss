@@ -2,36 +2,38 @@ $parallax-window-height: 450px;
 $parallax-background-height: $parallax-window-height * 2;
 
 .parallax-window {
-    max-height: $parallax-window-height;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    width: 100%;
+	max-height: $parallax-window-height;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	width: 100%;
+	max-width: $max-site-width;
+	margin: 0 auto;
 }
 
 .parallax-static-content.container {
-    color: white;
-    position: relative;
-    z-index: 9;
-    background: rgba( black, 0.4 );
-    width: 550px;
-    max-width: 100%;
-    padding-top: $base-spacing;
-    padding-bottom: $base-spacing;
-    margin: ($base-spacing * 4) auto;
-    font-size: rem(20);
-    &.page {
-        margin: ($base-spacing * 5) auto;
-        padding-bottom: $small-spacing;
-    }
+	color: white;
+	position: relative;
+	z-index: 9;
+	background: rgba(black, 0.4);
+	width: 550px;
+	max-width: 100%;
+	padding-top: $base-spacing;
+	padding-bottom: $base-spacing;
+	margin: ($base-spacing * 4) auto;
+	font-size: rem(20);
+	&.page {
+		margin: ($base-spacing * 5) auto;
+		padding-bottom: $small-spacing;
+	}
 }
 
 .parallax-background {
-    height: $parallax-background-height;
-    left: 0;
-    position: absolute;
-    top: - $parallax-window-height / 3;
-    width: 100%;
+	height: $parallax-background-height;
+	left: 0;
+	position: absolute;
+	top: - $parallax-window-height / 3;
+	width: 100%;
 }
 
 // Based on http://codepen.io/skeurentjes/
