@@ -188,3 +188,74 @@ function gram_get_products_product_repeater( $post_id ) {
 
 	return wp_list_pluck( $products, 'product' );
 }
+
+
+/**
+ * Add a button shortcode.
+ *
+ * @param array $atts
+ *
+ * @return string
+ */
+add_shortcode( 'gram-button', function( array $atts = array() ) {
+	$vars = shortcode_atts([
+		'title'    => 'Click here',
+		'target'   => '_self',
+		'url'      => '#',
+		'centered' => false,
+	], $atts );
+
+	return sprintf(
+		'<p class="button-container %s"><a class="button" href="%s" target="%s">%s</a></p>',
+		$vars['centered'] ? esc_attr( 'centered' ) : '',
+		esc_url( $vars['url'] ),
+		esc_attr( $vars['target'] ),
+		esc_html( $vars['title'] )
+	);
+});
+
+
+/**
+ * Register the dashboard widget
+ */
+add_action( 'wp_dashboard_setup', function() {
+	wp_add_dashboard_widget(
+		'gram_malmo',
+		'Gram Malmö',
+		'gram_dashboard_widget_render'
+	);
+});
+
+
+/**
+ * Render the widget.
+ */
+function gram_dashboard_widget_render() { ?>
+	<img style="margin: 0 auto; display: block;" width="300px" src="<?php echo get_template_directory_uri(); ?>/resources/img/gram-logo.svg" alt="Gram Logo">
+
+	<h4>NEW!!! Button Shortcode</h4>
+
+	<p>Use it like this<br><strong>[gram-button title="Click me!" url="http://example.com"]</strong></p>
+
+	<p>If you want to open the link in a new window add the target attribute<br><strong>[gram-button ... target="_blank"]</strong></p>
+
+	<p>If you want to center the button add the centered attribute<br><strong>[gram-button ... centered="true"]</strong></p>
+
+	<h4>Full example</h4>
+
+	<p><strong>[gram-button title="Click me!" url="http://example.com" target="_blank" centered="true"]</strong></p>
+
+	<p>will product a centered button with the text 'Click me!' that opens the link <a href="http://example.com">http://example.com</a> in a new window.</p>
+
+
+<?php }
+
+
+/**
+ * Remove some of the dashboard widgets.
+ */
+add_action( 'admin_init', function() {
+    remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
+    remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+});
+

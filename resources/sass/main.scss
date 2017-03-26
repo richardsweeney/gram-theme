@@ -50,6 +50,13 @@ svg {
     }
 }
 
+.button-container {
+    padding: $base-spacing 0;
+    &.centered {
+        text-align: center;
+    }
+}
+
 .centered-content {
      padding: $base-spacing 0 ($base-spacing * 2);
      @include media($large-screen-up) {
