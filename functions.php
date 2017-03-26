@@ -45,23 +45,23 @@ add_action( 'after_setup_theme', function() {
 	add_image_size( 'square', 600, 600, true );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
+	register_nav_menus([
 		'primary' => __( 'primary', 'shipyard' ),
 		'footer' => esc_html__( 'footer', 'shipyard' ),
-	) );
+	]);
 
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
-	add_theme_support( 'html5', array(
+	add_theme_support( 'html5', [
 		'search-form',
 		'comment-form',
 		'comment-list',
 		'gallery',
 		'caption',
-	) );
+	]);
 
 });
 
