@@ -69,7 +69,7 @@ gulp.task('default', function() {
 	gulp.watch('./resources/sass/**/*.scss', ['sass']);
 
 	browserSync.init({
-		proxy: "gram.dev"
+		proxy: "grammalmo.dev"
 	});
 	gulp.watch(['./views/*.php','./views/**/*.php','./views/**/**/*.php','./views/**/**/**/*.php']).on('change', browserSync.reload);
 

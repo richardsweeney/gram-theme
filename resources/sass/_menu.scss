@@ -17,34 +17,21 @@
     z-index: 999999;
     text-align: center;
     @include media($large-screen-up) {
-        position: static;
-        background: none;
-        transform: translateX(0);
-        @include size(auto auto);
+        @include size(350px 100%);
     }
 
     ul {
         padding: 0;
         margin: 70px 0 0;
-        @include media(max-width $large-screen) {
-            font-size: rem(21);
-        }
+        font-size: rem(21);
         @include media($large-screen-up) {
-            margin-top: 10px;
-            float: right;
+            font-size: rem(18);
         }
     }
 
     li {
         list-style: none;
         display: block;
-        @include media($large-screen-up) {
-            display: inline-block;
-            margin-right: $small-spacing;
-            &:last-child {
-                margin-right: 0;
-            }
-        }
     }
 
     li a {
@@ -52,17 +39,6 @@
         display: block;
         padding: $small-spacing;
         @include transition(all 0.2s ease);
-        @include media($large-screen-up) {
-            color: $base-font-color;
-            border-bottom: 1px solid white;
-            padding: 0;
-            &:hover,
-            &:active,
-            &:focus {
-                text-decoration: none;
-                border-color: $base-font-color;
-            }
-        }
         &:focus {
             background-color: $sliding-panel-background-focus;
         }
@@ -72,10 +48,6 @@
         background-color: $sliding-panel-background-hover;
         color: $sliding-panel-color-hover;
         text-decoration: none;
-        @include media($large-screen-up) {
-            background-color: #fff;
-            color: $base-font-color;
-        }
     }
 
     &.is-visible {
@@ -90,9 +62,6 @@
         fill: white;
         @include size(35px);
     }
-    @include media($large-screen-up) {
-        display: none;
-    }
 }
 
 
@@ -103,9 +72,8 @@
     transition: all 0.2s ease-in-out;
     visibility: hidden;
     z-index: 999998;
-
     &.is-visible {
-        opacity: 0.2;
+        opacity: 0.3;
         visibility: visible;
     }
 }
@@ -119,9 +87,6 @@
     svg {
         margin-top: 5px;
         @include size(35px);
-    }
-    @include media($large-screen-up) {
-        display: none;
     }
 }
 
