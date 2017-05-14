@@ -1,4 +1,46 @@
 
+.gram-crowdfunding-banner {
+    @include outer-container;
+    padding-top: $base-spacing;
+    padding-bottom: $base-spacing * 2;
+    @include media($medium-screen-up) {
+        @include display(flex);
+        @include align-items(center);
+    }
+}
+
+.gram-crowdfunding-banner__image,
+.gram-crowdfunding-banner__text {
+    display: block;
+    text-align: center;
+    @include media($medium-screen-up) {
+        text-align: center;
+        width: 50%;
+    }
+}
+
+.gram-crowdfunding-banner__image {
+    padding-bottom: $base-spacing;
+    @include media($medium-screen-up) {
+        padding-bottom: 0;
+    }
+}
+
+.gram-crowdfunding-banner__text {
+    padding: 0 $base-spacing;
+    @include media($large-screen-up) {
+        padding: 0 100px;
+    }
+    .button {
+        text-transform: uppercase;
+    }
+}
+
+.gcbt-message {
+    font-size: rem(21);
+}
+
+
 .landing-page-image-credit {
     $color: $light-gray;
     color: $color;

@@ -1,3 +1,21 @@
+
+<div class="gram-crowdfunding-banner">
+
+    <div class="gram-crowdfunding-banner__image">
+        <img src="{{ get_template_directory_uri() }}/resources/img/crowdfunding.png" alt="Gram Crowdfunding Image">
+    </div>
+
+    <div class="gram-crowdfunding-banner__text">
+        <p class="gcbt-message">Read more about how you can help us and donate</p>
+
+        <p><a target="_blank" href="https://www.indiegogo.com/projects/hjalp-gram-flytta-och-expandera-help-gram-expand-food#/" class="button donate-now">Donate Now</a></p>
+    </div>
+
+
+</div>
+
+{{--
+
 <div id="js-parallax-window" class="parallax-window">
 
     @while( have_posts() )
@@ -16,3 +34,4 @@
 
 </div>
 
+--}}
