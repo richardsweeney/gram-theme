@@ -11,9 +11,10 @@
 					<div class="footer-inner-column footer-social">
 						<ul class="opening-hours">
 							<li><h3>{{ __( 'Opening hours', 'gram' ) }}</h3></li>
-							<li>{{ __( 'Monday - Friday', 'gram' ) }} 10.00 - 19.00</li>
-							<li>{{ __( 'Saturday', 'gram' ) }} 10.00 - 17.00</li>
-							<li>{{ __( 'Sunday', 'gram' ) }} 11.00 - 16.00</li>
+							<li>Monday – stängt/closed</li>
+							<li>Tuesday-Friday: 10.00-18.00</li>
+							<li>Saturday: 10.00-17.00</li>
+							<li>Sunday: 11.00-15.00</li>
 						</ul>
 
 						{!! shipyard_render_customizer_social_icons() !!}
