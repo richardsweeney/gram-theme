@@ -36,15 +36,14 @@
     }
     .entry-title {
         width: 85%;
-        height: 75px;
-        overflow: hidden;
         margin-bottom: 0;
+        @include media($large-screen-up) {
+            height: 75px;
+            overflow: hidden;
+        }
         a {
             color: $base-font-color;
         }
-    }
-    h2 {
-        font-size: rem(31);
     }
     .card-header {
         padding: ($base-spacing / 3) $small-spacing 0;
