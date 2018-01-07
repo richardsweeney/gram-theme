@@ -33,6 +33,8 @@ add_action( 'after_setup_theme', function() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	add_theme_support( 'woocommerce' );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -49,7 +51,6 @@ add_action( 'after_setup_theme', function() {
 		'primary' => __( 'primary', 'shipyard' ),
 		'footer' => esc_html__( 'footer', 'shipyard' ),
 	]);
-
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
