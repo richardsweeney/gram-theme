@@ -11,7 +11,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_localize_script( 'shipyard-js', 'gram', gram_get_js_t10ns() );
 
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Pathway+Gothic+One&subset=latin-ext' );
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Oswald' );
 
 	wp_enqueue_style( 'shipyard-css', get_template_directory_uri() . $main_css, [ 'google-fonts' ], filemtime( get_template_directory() . $main_css ) );
 });

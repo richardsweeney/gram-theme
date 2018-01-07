@@ -3,11 +3,6 @@
 	@include outer-container($max-site-width);
 }
 
-//.footer,
-//.footer-2 {
-	//max-width: $max-site-width;
-//}
-
 .footer {
 	background: $footer-background;
 	color: #fff;
@@ -18,6 +13,11 @@
 		@include media($medium-screen-up) {
 			@include display(flex);
 			@include align-items(center);
+			&.footer-address {
+				padding-top: $base-spacing;
+				border-top: 1px solid rgba(white, 0.15);
+				@include justify-content(center);
+			}
 		}
 	}
 }
@@ -75,20 +75,11 @@
 	}
 }
 
-/* ----------------------------------
-        FOOTER 2
-  ----------------------------------- */
-
-.footer-2 {
-	background: $tertiary-theme-color;
-	border-top: 2px solid $footer-color;
-	color: #fff;
-	padding: ($base-spacing * 1.5) 0;
+.address {
+	font-size: 0.9rem;
 	text-align: center;
-	@include clearfix;
 	a {
 		color: #fff;
-		text-decoration: underline;
 	}
 }
 

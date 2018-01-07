@@ -22,11 +22,7 @@
 
 				</div>
 
-			</div>
-
-			<div class="footer-2">
-				<div class="footer-inner container">
-
+				<div class="footer-inner container footer-address">
 					<div class="address">
 						{{ get_theme_mod( 'shipyard_address' ) }}
 						<span class="email-address">
