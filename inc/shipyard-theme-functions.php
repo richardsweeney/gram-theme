@@ -246,8 +246,6 @@ function gram_dashboard_widget_render() { ?>
 	<p><strong>[gram-button title="Click me!" url="http://example.com" target="_blank" centered="true"]</strong></p>
 
 	<p>will product a centered button with the text 'Click me!' that opens the link <a href="http://example.com">http://example.com</a> in a new window.</p>
-
-
 <?php }
 
 
@@ -258,4 +256,13 @@ add_action( 'admin_init', function() {
     remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
     remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
 });
+
+function gram_is_woocommerce() {
+	if ( ! function_exists( 'is_cart' ) ) {
+		return false;
+	}
+
+	return is_cart() || is_checkout();
+}
+
 
