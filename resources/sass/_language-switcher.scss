@@ -1,0 +1,19 @@
+.language-switcher {
+	list-style: none;
+	margin: 10px 20px 0 0;
+	padding: 0;
+	@include media($medium-screen-up) {
+		float: right;
+	}
+	li {
+		margin-right: 10px;
+		display: inline-block;
+		&.current-lang {
+			a {
+				text-decoration: none;
+				color: $base-font-color;
+				cursor: default;
+			}
+		}
+	}
+}

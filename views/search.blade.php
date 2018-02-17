@@ -7,7 +7,7 @@
         <div class="container">
 
             <header>
-                <h1>{{ __( 'Search results for' ) }} <span class="search-term">"{{ the_search_query() }}"</span></h1>
+                <h1>{{ __( 'Search results for', 'gram' ) }} <span class="search-term">"{{ the_search_query() }}"</span></h1>
             </header>
 
             <div class="search-results-container">

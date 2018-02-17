@@ -12,7 +12,7 @@
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-add_action( 'after_setup_theme', function() {
+add_action( 'after_setup_theme', function () {
 
 	/*
 	 * Make theme available for translation.
@@ -42,15 +42,22 @@ add_action( 'after_setup_theme', function() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'small-banner', 600, 400, ['left', 'top'] );
+	add_image_size( 'small-banner', 600, 400, [ 'left', 'top' ] );
 	add_image_size( 'large-banner', 1200, 400, true );
 	add_image_size( 'square', 600, 600, true );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus([
+	register_nav_menus( [
 		'primary' => __( 'primary', 'shipyard' ),
-		'footer' => esc_html__( 'footer', 'shipyard' ),
-	]);
+		'footer'  => esc_html__( 'footer', 'shipyard' ),
+	] );
+
+	register_sidebar( [
+		'name' => 'footer',
+		'id' => 'gram-footer',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+	] );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -62,9 +69,8 @@ add_action( 'after_setup_theme', function() {
 		'comment-list',
 		'gallery',
 		'caption',
-	]);
-
-});
+	] );
+} );
 
 require get_template_directory() . '/inc/actions.php';
 require get_template_directory() . '/inc/filters.php';

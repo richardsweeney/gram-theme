@@ -46,9 +46,12 @@
 }
 
 .opening-hours {
-	list-style: none;
-	padding: 0 0 $base-spacing;
+	ul {
+		list-style: none;
+		padding: 0 0 $base-spacing;
+	}
 }
+
 
 .social-link-list {
 	list-style: none;

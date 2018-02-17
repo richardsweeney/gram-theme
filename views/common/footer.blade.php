@@ -8,14 +8,11 @@
 					<div class="footer-inner-column footer-logo">
 						<img src="{{ get_theme_mod( 'footer_logo' ) }}" alt="{{ get_bloginfo( 'title' ) }}">
 					</div>
+
 					<div class="footer-inner-column footer-social">
-						<ul class="opening-hours">
-							<li><h3>{{ __( 'Opening hours', 'gram' ) }}</h3></li>
-							<li>Monday – stängt/closed</li>
-							<li>Tuesday-Friday: 11.00-19.00</li>
-							<li>Saturday: 10.00-17.00</li>
-							<li>Sunday: 11.00-15.00</li>
-						</ul>
+						<div class="opening-hours">
+							@php dynamic_sidebar( 'gram-footer' ) @endphp
+						</div>
 
 						{!! shipyard_render_customizer_social_icons() !!}
 					</div>

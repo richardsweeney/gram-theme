@@ -20,12 +20,11 @@ if ( $video_url ) {
  */
 $about_home_image = papi_get_field( 'about_home_image', false );
 if ( $about_home_image ) {
-    if ( isset( $about_home_image->sizes['large'] ) ) {
-        $about_image = $about_home_image->sizes['large']['url'];
-    }
-    else {
-        $about_image = $about_home_image->url;
-    }
+	if ( isset( $about_home_image->sizes['large'] ) ) {
+		$about_image = $about_home_image->sizes['large']['url'];
+	} else {
+		$about_image = $about_home_image->url;
+	}
 }
 
 
@@ -42,16 +41,25 @@ if ( isset( $_GET['mc'] ) ) {
 	}
 }
 
+$data = [
+	'email_placeholder_text' => __( 'Enter your email address', 'gram' ),
+	'signup_button_text'     => __( 'Join our mailing list', 'gram' ),
+	'register_text'          => __( 'Want to keep up to date with Gram’s news, events and special offers?', 'gram' ),
+	'video_title'            => papi_get_field( 'video_title' ),
+	'video_url'              => $video_url,
+	'video_text'             => papi_get_field( 'video_text' ),
+	'about_home_title'       => papi_get_field( 'about_home_title' ),
+	'about_home_image'       => $about_home_image,
+	'about_home_text'        => papi_get_field( 'about_home_text' ),
+	'mc_message'             => $mc_message,
+];
 
-bladerunner( 'views.front-page', [
-	'register_text'    => get_theme_mod( 'shipyard_email_text', 'Want to keep up to date with Gram’s news, events and special offers?' ),
-	'video_title'      => papi_get_field( 'video_title' ),
-	'video_url'        => $video_url,
-	'video_text'       => papi_get_field( 'video_text' ),
-	'about_home_title' => papi_get_field( 'about_home_title' ),
-	'about_home_image' => $about_home_image,
-	'about_home_text'  => papi_get_field( 'about_home_text' ),
-	'mc_message'       => $mc_message,
-] );
+if ( 'sv' === pll_current_language() ) {
+	$data['email_placeholder_text'] = 'E-post';
+	$data['signup_button_text'] = 'Anmäl dig till Grams nyhetsbrev';
+	$data['register_text'] = 'Ta del av nyheter, evenemang och erbjudanden från Gram';
+}
+
+bladerunner( 'views.front-page', $data );
 
 

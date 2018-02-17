@@ -15,9 +15,9 @@
 
             <form class="form-inline" role="form" action="" method="post">
                 <div class="form-group">
-                    <input type="text" name="mailchimp_email" placeholder="Enter your email address" class="subscribe-email form-control" id="subscribe-email">
+                    <input type="text" name="mailchimp_email" placeholder="{{ $email_placeholder_text }}" class="subscribe-email form-control" id="subscribe-email">
                 </div>
-                <button type="submit" class="btn">{{ __( 'Join our mailing list', 'gram' ) }}</button>
+                <button type="submit" class="btn">{{ $signup_button_text }}</button>
             </form>
         </div>
     </div>

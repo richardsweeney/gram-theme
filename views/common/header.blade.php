@@ -28,6 +28,10 @@
 			{{ shipyard_render_svg('bars') }}
 		</a>
 
+		@if ( function_exists( 'pll_the_languages' ) )
+			<ul class="language-switcher">@php pll_the_languages() @endphp</ul>
+		@endif
+
 		<div class="js-menu-screen sliding-panel-fade-screen"></div>
 
 		<nav role="navigation" class="nav-menu js-menu sliding-panel-content">
