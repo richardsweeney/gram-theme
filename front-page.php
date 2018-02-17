@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: richardsweeney
- * Date: 2016-07-04
- * Time: 13:03
- */
 
 /**
  * Youtube Video
@@ -32,11 +26,11 @@ $mc_message = '';
 if ( isset( $_GET['mc'] ) ) {
 	switch ( $_GET['mc'] ) {
 		case 'invalid_email' :
-			$mc_message = __( 'Please add a valid email address', 'gram' );
+			$mc_message = ('sv' === pll_current_language()) ? 'Vängligen ange en giltig epostadress' : 'Please add a valid email address';
 			break;
 
 		case 'sigup_ok' :
-			$mc_message = __( 'Thanks for signing up!', 'gram' );
+			$mc_message = ('sv' === pll_current_language()) ? 'Tack för att du prenumererade!' : 'Thanks for signing up!';
 			break;
 	}
 }
