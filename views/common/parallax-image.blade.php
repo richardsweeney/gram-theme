@@ -4,7 +4,7 @@
         <div
             id="js-parallax-background"
             class="parallax-background"
-            style="background: url('{{ the_post_thumbnail_url() }}') no-repeat top center / cover;"
+            style="background: url('{{ the_post_thumbnail_url() }}') no-repeat bottom center / cover;"
         ></div>
     </div>
 @endif

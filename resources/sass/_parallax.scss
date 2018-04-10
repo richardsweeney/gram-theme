@@ -1,8 +1,9 @@
-$parallax-window-height: 600px;
+$parallax-window-height: 700px;
 $parallax-background-height: $parallax-window-height * 2;
 
 .parallax-window {
 	max-height: $parallax-window-height;
+	min-height: 600px;
 	overflow: hidden;
 	position: relative;
 	text-align: center;
@@ -20,7 +21,7 @@ $parallax-background-height: $parallax-window-height * 2;
 	max-width: 100%;
 	padding-top: $base-spacing;
 	padding-bottom: $base-spacing;
-	margin: ($base-spacing * 4) auto;
+	margin: ($base-spacing * 8) auto;
 	font-size: rem(20);
 	&.page {
 		margin: ($base-spacing * 5) auto;
@@ -31,7 +32,7 @@ $parallax-background-height: $parallax-window-height * 2;
 .parallax-background {
 	height: $parallax-background-height;
 	position: absolute;
-	top: - $parallax-window-height / 3;
+	top: - 100px;
 	width: 100%;
 }
 
