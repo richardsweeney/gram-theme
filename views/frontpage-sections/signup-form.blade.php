@@ -13,10 +13,7 @@
                 </p>
             @endif
 
-            <form class="form-inline" role="form" action="" method="post">
-                <div class="form-group">
-                    <input type="text" name="mailchimp_email" placeholder="{{ $email_placeholder_text }}" class="subscribe-email form-control" id="subscribe-email">
-                </div>
+            <form class="form-inline" role="form" action="http://eepurl.com/dtrPZX" method="get" target="_blank">
                 <button type="submit" class="btn">{{ $signup_button_text }}</button>
             </form>
         </div>
