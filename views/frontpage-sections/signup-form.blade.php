@@ -13,7 +13,7 @@
                 </p>
             @endif
 
-            <form class="form-inline" role="form" action="https://grammalmo.us14.list-manage.com/subscribe?u=9b21c7576fe8961b842a00214&id=fcd23dec93" method="get" target="_blank">
+            <form class="form-inline" role="form" action="https://eepurl.com/dtrPZX" method="get" target="_blank">
                 <button type="submit" class="btn">{{ $signup_button_text }}</button>
             </form>
         </div>
