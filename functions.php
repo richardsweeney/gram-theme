@@ -5,6 +5,13 @@
  * @package shipyard
  */
 
+add_action( 'template_redirect', function() {
+	if ( ! is_user_logged_in() ) {
+		wp_safe_redirect( wp_login_url() );
+		exit;
+	}
+} );
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
