@@ -77,6 +77,10 @@ add_action( 'after_setup_theme', function () {
 		'gallery',
 		'caption',
 	] );
+
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 } );
 
 require get_template_directory() . '/inc/actions.php';
