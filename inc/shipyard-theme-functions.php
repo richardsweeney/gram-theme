@@ -1,5 +1,12 @@
 <?php
 
+add_action( 'wp_head', function() {
+	?>
+	<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+	<script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us14.list-manage.com","uuid":"9b21c7576fe8961b842a00214","lid":"fcd23dec93","uniqueMethods":true}) })</script>
+	<?php
+});
+
 /**
  * Output a SVG-file via an include
  *
