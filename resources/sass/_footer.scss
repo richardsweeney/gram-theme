@@ -11,8 +11,8 @@
 		padding-top: $base-spacing * 2;
 		padding-bottom: $base-spacing;
 		@include media($medium-screen-up) {
-			@include display(flex);
-			@include align-items(center);
+			display: flex;
+			align-items: center;
 			&.footer-address {
 				padding-top: $base-spacing;
 				border-top: 1px solid rgba(white, 0.15);

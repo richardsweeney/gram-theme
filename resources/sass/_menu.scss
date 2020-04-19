@@ -15,7 +15,7 @@
     transform: translateX(100%);
     transition: all 0.25s linear;
     z-index: 999999;
-    text-align: center;
+    // text-align: center;
     @include media($large-screen-up) {
         @include size(350px 100%);
     }
@@ -27,6 +27,23 @@
         @include media($large-screen-up) {
             font-size: rem(18);
         }
+
+        ul.sub-menu {
+            margin: -5px 0 0;
+            font-size: rem(16);
+
+            a {
+                position: relative;
+                padding: $small-spacing / 2 $small-spacing * 4;
+                &:before {
+                    position: absolute;
+                    top: -2px;
+                    left: 30px;
+                    font-size: rem(24);
+                    content: '-';
+                }
+            }
+        }
     }
 
     li {
@@ -37,7 +54,7 @@
     li a {
         color: $sliding-panel-color;
         display: block;
-        padding: $small-spacing;
+        padding: $small-spacing $small-spacing * 2;
         @include transition(all 0.2s ease);
         &:focus {
             background-color: $sliding-panel-background-focus;

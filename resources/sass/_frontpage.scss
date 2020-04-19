@@ -4,8 +4,8 @@
     padding-top: $base-spacing;
     padding-bottom: $base-spacing * 2;
     @include media($medium-screen-up) {
-        @include display(flex);
-        @include align-items(center);
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -64,8 +64,8 @@
 .newsletter-inner-container {
     color: #fff;
     @include media($medium-screen-up) {
-        @include display(flex);
-        @include align-items(center);
+        display: flex;
+        align-items: center;
     }
     button {
         width: 100%;
@@ -91,8 +91,8 @@
 .about-home-wrapper.container {
     padding-top: $base-spacing;
     @include media($medium-screen-up) {
-        @include display(flex);
-        @include align-items(center);
+        display: flex;
+        align-items: center;
         padding-top: $base-spacing * 2;
         .image-container {
             width: 32%;
@@ -113,7 +113,7 @@
             .video-container {
                 width: 48%;
                 margin-left: 4%;
-                @include flex(1 1 auto);
+                flex: 1 1 auto;
             }
         }
     }
@@ -129,7 +129,7 @@
 
 .video-section {
     @include media($medium-screen-up) {
-        @include display(flex);
-        @include align-items(center);
+        display: flex;
+        align-items: center;
     }
 }
